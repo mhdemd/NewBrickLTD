@@ -1,0 +1,86 @@
+# Environments #
+################
+/venv/
+/.venv/
+/.env
+
+
+
+# Python #
+##########
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pkl
+*.db
+#*.sqlite3
+*.log
+*.pot
+
+# Django #
+##########
+/media
+#/db.sqlite3
+/local_settings.py
+
+# Kivy #
+##########
+/*.kivy/
+
+# AutoCAD #
+############
+*.dvb
+*.dxf
+*.dwg
+
+# Docker #
+##########
+/docker-compose.override.yml
+/docker-compose.local.yml
+/.docker
+/Dockerfile
+
+# IDEs and Editors #
+####################
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln
+*.sw?
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Unit test / coverage reports #
+################################
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Other #
+##########
+/*.log
+*.tmp
+*.bak
+*.swp
