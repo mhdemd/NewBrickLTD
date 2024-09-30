@@ -1,20 +1,21 @@
 from django.db import models
-
-# import MultiFieldPanel:
-from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+from modelcluster.fields import ParentalKey
+from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.fields import RichTextField
-from wagtail.models import Page
+from wagtail.images import get_image_model_string
+from wagtail.models import Orderable, Page
 
 
-class HomePage(Page):
-    # add the Hero section of HomePage:
+class HomePageSlide(Orderable):
+    id = models.BigAutoField(primary_key=True)
+    page = ParentalKey("HomePage", related_name="slides", on_delete=models.CASCADE)
     image = models.ForeignKey(
-        "wagtailimages.Image",
+        get_image_model_string(),
         null=True,
         blank=False,
         on_delete=models.SET_NULL,
         related_name="+",
-        help_text="Homepage image",
+        help_text="Slide image",
     )
     text_1 = models.CharField(blank=True, max_length=255, help_text="Line 1")
     text_2 = models.CharField(blank=True, max_length=255, help_text="Line 2 & 3")
@@ -29,7 +30,6 @@ class HomePage(Page):
         features=["bold", "italic", "link", "ul", "ol", "blockquote"],
         help_text="Line 5",
     )
-
     hero_cta = models.CharField(
         blank=False,
         verbose_name="Hero CTA",
@@ -45,9 +45,8 @@ class HomePage(Page):
         verbose_name="Hero CTA link",
         help_text="Choose a page to link to for the Call to Action",
     )
-
     badge_image = models.ForeignKey(
-        "wagtailimages.Image",
+        get_image_model_string(),
         null=True,
         blank=False,
         on_delete=models.SET_NULL,
@@ -55,23 +54,24 @@ class HomePage(Page):
         help_text="Badge image",
     )
 
-    body = RichTextField(blank=True)
+    panels = [
+        FieldPanel("image"),
+        FieldPanel("text_1"),
+        FieldPanel("text_2"),
+        FieldPanel("text_3"),
+        FieldPanel("text_4"),
+        FieldPanel("text_5"),
+        FieldPanel("hero_cta"),
+        FieldPanel("hero_cta_link"),
+        FieldPanel("badge_image"),
+    ]
 
-    # modify your content_panels:
+
+class HomePage(Page):
+
     content_panels = Page.content_panels + [
         MultiFieldPanel(
-            [
-                FieldPanel("image"),
-                FieldPanel("text_1"),
-                FieldPanel("text_2"),
-                FieldPanel("text_3"),
-                FieldPanel("text_4"),
-                FieldPanel("text_5"),
-                FieldPanel("hero_cta"),
-                FieldPanel("hero_cta_link"),
-                FieldPanel("badge_image"),
-            ],
+            [InlinePanel("slides", label="Slides")],
             heading="Main slider",
         ),
-        FieldPanel("body"),
     ]

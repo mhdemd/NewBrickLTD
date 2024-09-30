@@ -56,59 +56,74 @@
     <!-- main div -->
     <div class="page-wrapper">
 
-        <!--Main Slider Start -->
+        <!-- Main Slider Start -->
         <section class="main-slider">
-            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
+            <!-- Initialize Swiper container -->
+            <div class="swiper-container thm-swiper__slider" data-swiper-options='{
+                "slidesPerView": 1,
+                "loop": true,
                 "effect": "fade",
                 "pagination": {
-                "el": "#main-slider-pagination",
-                "type": "bullets",
-                "clickable": true
+                    "el": "#main-slider-pagination",
+                    "type": "bullets",
+                    "clickable": true
                 },
                 "navigation": {
-                "nextEl": "#main-slider__swiper-button-next",
-                "prevEl": "#main-slider__swiper-button-prev"
+                    "nextEl": "#main-slider__swiper-button-next",
+                    "prevEl": "#main-slider__swiper-button-prev"
                 },
                 "autoplay": {
-                "delay": 5000
+                    "delay": 5000
                 }}'>
 
-                <!-- main-slider -->
+                <!-- Main slider wrapper, looping through the slides -->
                 <div class="swiper-wrapper">
+                    {% for slide in page.slides.all %}
                     <div class="swiper-slide">
-
-                        <div class="main-slider__image" style="background-image: url({% image page.image fill-1920x814 as img_url %}{{ img_url.url }});"></div>
-          
+                        <!-- Background image of the slide -->
+                        <div class="main-slider__image" 
+                            style="background-image: url({% image slide.image fill-1920x814 as img_url %}{{ img_url.url }});"></div>
+                        
+                        <!-- Slide content section -->
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-7 col-lg-9">
                                     <div class="main-slider__content">
-                                        <p class="main-slider__sub-title">{{ page.text_1 }}</p>
-                                        <h2 class="main-slider__title">{{ page.text_2|linebreaksbr }}</h2>
-                                        <h4 class="main-slider__text">{{ page.text_3 }}</h4>
-                                        {% load custom_tags %}
-                                        {{ page.text_4|add_class_to_paragraphs|safe }}<br>{{ page.text_5|add_class_to_paragraphs|safe }}
-                                        
+                                        <!-- Sub-title (text_1) -->
+                                        <p class="main-slider__sub-title">{{ slide.text_1 }}</p>
 
-                                        {% if page.hero_cta and page.hero_cta_link %}
+                                        <!-- Main title (text_2), applying line breaks if necessary -->
+                                        <h2 class="main-slider__title">{{ slide.text_2|linebreaksbr }}</h2>
+
+                                        <!-- Additional text (text_3) -->
+                                        <h4 class="main-slider__text">{{ slide.text_3 }}</h4>
+
+                                        <!-- Rich text content (text_4 and text_5) -->
+                                        {% load custom_tags %}
+                                        {{ slide.text_4|add_class_to_paragraphs|safe }}<br>{{ slide.text_5|add_class_to_paragraphs|safe }}
+
+                                        <!-- Call to Action (CTA) button, only if both CTA text and link are present -->
+                                        {% if slide.hero_cta and slide.hero_cta_link %}
                                         <div class="main-slider__btn-box">
-                                            <a href="{{ page.hero_cta_link }}" class="thm-btn main-slider__btn">{{ page.hero_cta }}</a>
+                                            <a href="{{ slide.hero_cta_link.url }}" class="thm-btn main-slider__btn">{{ slide.hero_cta }}</a>
                                         </div>
                                         {% endif %}
 
-                                        {% if page.badge_image %}
-
-                                        <img class="main-slider__badge" src="{% image page.badge_image fill-130x130 as img_url %}{{ img_url.url }}" alt="">
-
+                                        <!-- Badge image, optional -->
+                                        {% if slide.image %}
+                                        <img class="main-slider__badge" 
+                                            src="{% image slide.image fill-130x130 as badge_img_url %}{{ badge_img_url.url }}" 
+                                            alt="Badge Image">
                                         {% endif %}
                                     </div>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                     </div>
+                    {% endfor %}
                 </div>
 
-                <!-- main-slider navigation buttons -->
+                <!-- Main slider navigation buttons -->
                 <div class="main-slider__nav">
                     <div class="swiper-button-prev" id="main-slider__swiper-button-next">
                         <i class="icon-left-arrow"></i>
@@ -119,7 +134,8 @@
                 </div>
             </div>
         </section>
-        <!--Main Slider End-->
+        <!-- Main Slider End -->
+
 
         <!--Services One Start-->
         <section class="services-one">
