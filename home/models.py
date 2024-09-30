@@ -1,9 +1,12 @@
 from django.db import models
 from modelcluster.fields import ParentalKey
+from wagtail import blocks
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
-from wagtail.fields import RichTextField
+from wagtail.fields import RichTextField, StreamField
 from wagtail.images import get_image_model_string
+from wagtail.images.blocks import ImageChooserBlock
 from wagtail.models import Orderable, Page
+from wagtail.snippets.blocks import SnippetChooserBlock
 
 
 class HomePageSlide(Orderable):
@@ -67,11 +70,46 @@ class HomePageSlide(Orderable):
     ]
 
 
+class ServiceMemberBlock(blocks.StructBlock):
+    name = blocks.CharBlock(
+        required=True, max_length=100, help_text="Name of the team member"
+    )
+    job_title = blocks.CharBlock(
+        required=True, max_length=100, help_text="Job title of the team member"
+    )
+    image = ImageChooserBlock(required=True, help_text="Image of the team member")
+    profile_link = blocks.URLBlock(
+        required=False, help_text="Link to team member's profile"
+    )
+
+    class Meta:
+        template = "blocks/service_member.html"
+        label = "Service Member"
+
+
+class ServiceGroupBlock(blocks.StructBlock):
+    members = blocks.ListBlock(
+        ServiceMemberBlock(), max_num=4, help_text="Maximum 4 members per service group"
+    )
+
+    class Meta:
+        template = "blocks/service_group.html"
+        label = "Service Group"
+
+
 class HomePage(Page):
+    body = StreamField(
+        [
+            ("service_group", ServiceGroupBlock()),
+        ],
+        default=[],
+        verbose_name="Services",
+    )
 
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [InlinePanel("slides", label="Slides")],
             heading="Main slider",
         ),
+        FieldPanel("body", heading="Services"),
     ]

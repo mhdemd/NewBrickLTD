@@ -1,0 +1,5 @@
+<div class="row">
+    {% for member in value.members %}
+        {% include "blocks/service_member.html" with value=member %}
+    {% endfor %}
+</div>
