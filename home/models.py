@@ -11,7 +11,7 @@ class HomePage(Page):
     image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
-        blank=True,
+        blank=False,
         on_delete=models.SET_NULL,
         related_name="+",
         help_text="Homepage image",
@@ -20,14 +20,18 @@ class HomePage(Page):
     text_2 = models.CharField(blank=True, max_length=255, help_text="Line 2 & 3")
     text_3 = models.CharField(blank=True, max_length=255, help_text="Line 4")
     text_4 = RichTextField(
-        blank=True, features=["bold", "italic", "link", "ul", "ol"], help_text="Line 4"
+        blank=True,
+        features=["bold", "italic", "link", "ul", "ol", "blockquote"],
+        help_text="Line 4",
     )
     text_5 = RichTextField(
-        blank=True, features=["bold", "italic", "link", "ul", "ol"], help_text="Line 5"
+        blank=True,
+        features=["bold", "italic", "link", "ul", "ol", "blockquote"],
+        help_text="Line 5",
     )
 
     hero_cta = models.CharField(
-        blank=True,
+        blank=False,
         verbose_name="Hero CTA",
         max_length=255,
         help_text="Text to display on Call to Action",
@@ -35,11 +39,20 @@ class HomePage(Page):
     hero_cta_link = models.ForeignKey(
         "wagtailcore.Page",
         null=True,
-        blank=True,
+        blank=False,
         on_delete=models.SET_NULL,
         related_name="+",
         verbose_name="Hero CTA link",
         help_text="Choose a page to link to for the Call to Action",
+    )
+
+    badge_image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name="+",
+        help_text="Badge image",
     )
 
     body = RichTextField(blank=True)
@@ -56,6 +69,7 @@ class HomePage(Page):
                 FieldPanel("text_5"),
                 FieldPanel("hero_cta"),
                 FieldPanel("hero_cta_link"),
+                FieldPanel("badge_image"),
             ],
             heading="Main slider",
         ),

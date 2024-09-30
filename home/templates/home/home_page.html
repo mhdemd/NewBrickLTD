@@ -86,21 +86,20 @@
                                         <p class="main-slider__sub-title">{{ page.text_1 }}</p>
                                         <h2 class="main-slider__title">{{ page.text_2|linebreaksbr }}</h2>
                                         <h4 class="main-slider__text">{{ page.text_3 }}</h4>
+                                        {% load custom_tags %}
+                                        {{ page.text_4|add_class_to_paragraphs|safe }}<br>{{ page.text_5|add_class_to_paragraphs|safe }}
+                                        
 
-                                        <p class="main-slider__text-two">
-                                            {{ page.text_4|richtext  }} <br> {{ page.text_5|richtext  }}
-                                        </p>
-
-                                        {% if slide.button_text and slide.button_link %}
+                                        {% if page.hero_cta and page.hero_cta_link %}
                                         <div class="main-slider__btn-box">
-                                            <a href="{{ slide.button_link }}" class="thm-btn main-slider__btn">{{ slide.button_text }}</a>
+                                            <a href="{{ page.hero_cta_link }}" class="thm-btn main-slider__btn">{{ page.hero_cta }}</a>
                                         </div>
-
                                         {% endif %}
-                                        {% if slide.badge_image %}
-                                        <div class="main-slider__badge">
-                                            <img src="{{ slide.badge_image.url }}" alt="">
-                                        </div>
+
+                                        {% if page.badge_image %}
+
+                                        <img class="main-slider__badge" src="{% image page.badge_image fill-130x130 as img_url %}{{ img_url.url }}" alt="">
+
                                         {% endif %}
                                     </div>
                                 </div>
