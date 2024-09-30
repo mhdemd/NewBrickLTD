@@ -1,0 +1,7 @@
+# admin panel
+email: mahdi.emadi@yahoo.com
+user: me6
+pass: 1gzLHahoaVAkeySa
+
+# token:
+nYfiZeOAX30OdFYgGONkCifxShgqBnd2
