@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from django import template
+from django.utils.html import format_html
 
 register = template.Library()
 
@@ -20,3 +21,11 @@ def add_class_to_paragraphs(value):
         p["class"] = p.get("class", []) + ["main-slider__text-two"]
 
     return str(soup)
+
+
+@register.filter(name="add_class")
+def add_class(field, css_class):
+    # Check if the input is a form field (and not a string)
+    if hasattr(field, "as_widget"):
+        return field.as_widget(attrs={"class": css_class})
+    return field  # If it's not a form field, just return it as is

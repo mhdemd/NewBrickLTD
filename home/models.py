@@ -1,4 +1,7 @@
+from django.core.mail import send_mail
 from django.db import models
+from django.http import JsonResponse
+from django.template.response import TemplateResponse
 from modelcluster.fields import ParentalKey
 from wagtail import blocks
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
@@ -6,7 +9,8 @@ from wagtail.fields import RichTextField, StreamField
 from wagtail.images import get_image_model_string
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.models import Orderable, Page
-from wagtail.snippets.blocks import SnippetChooserBlock
+
+from .forms import ContactForm
 
 
 class HomePageSlide(Orderable):
@@ -105,6 +109,24 @@ class HomePage(Page):
         default=[],
         verbose_name="Services",
     )
+
+    def serve(self, request):
+        form = ContactForm(request.POST or None)
+        context = self.get_context(request)
+
+        if request.method == "POST":
+            if form.is_valid():
+                send_mail(
+                    subject=f"New Contact: {form.cleaned_data['name']}",
+                    message=form.cleaned_data["message"],
+                    from_email=form.cleaned_data["email"],
+                    recipient_list=["mahdi.emadi@yahoo.com"],
+                )
+                context["form"] = form
+                return TemplateResponse(request, "home/home_page.html", context)
+
+        context["form"] = form
+        return TemplateResponse(request, "home/home_page.html", context)
 
     content_panels = Page.content_panels + [
         MultiFieldPanel(
