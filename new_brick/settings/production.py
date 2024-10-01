@@ -17,6 +17,7 @@ STORAGES = {
     },
 }
 
+ALLOWED_HOSTS = ["newbrick.runflare.run", "www.newbrick.runflare.run"]
 
 try:
     from .local import *
