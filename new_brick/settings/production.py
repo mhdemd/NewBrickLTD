@@ -18,6 +18,7 @@ STORAGES = {
 }
 
 ALLOWED_HOSTS = ["newbrick.runflare.run", "www.newbrick.runflare.run"]
+CSRF_TRUSTED_ORIGINS = ["https://newbrick.runflare.run"]
 
 try:
     from .local import *
