@@ -2,6 +2,7 @@ from .base import *
 
 DEBUG = False
 
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 STATIC_URL = "/public/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "public", "static")
