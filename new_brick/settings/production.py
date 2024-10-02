@@ -2,7 +2,6 @@ from .base import *
 
 DEBUG = False
 
-SECRET_KEY = "django-insecure-skke3wjt6mags4%jkqi1a*lwlv@3(031lq%$rydq=y(eb14-ve"
 
 STATIC_URL = "/public/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "public", "static")
