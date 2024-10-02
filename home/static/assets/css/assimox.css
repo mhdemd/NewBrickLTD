@@ -420,6 +420,14 @@ ul {
   -webkit-text-stroke-color: rgba(0, 0, 0, 0.30);
 }
 
+@media (max-width: 768px) {
+  .handle-preloader .animation-preloader .txt-loading .letters-loading {
+    font-size: 20px; 
+    letter-spacing: 10px; 
+    line-height: 50px; 
+  }
+}
+
 .handle-preloader .animation-preloader .txt-loading .letters-loading:before {
   animation: letters-loading 4s infinite;
   content: attr(data-text-preloader);
