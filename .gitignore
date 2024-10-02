@@ -20,7 +20,7 @@ __pycache__/
 
 # Django #
 ##########
-/media
+# /media
 #/db.sqlite3
 /local_settings.py
 
