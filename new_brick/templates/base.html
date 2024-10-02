@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/favicon-32x32.png' %}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicons/favicon-16x16.png' %}" />
     <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest' %}" />
-    <meta name="description" content="Assimox HTML 5 Template " />
+    <meta name="description" content="New Brick LTD provides expert emergency building services, specializing in plumbing, electrical repairs, and small-scale construction tasks. Our reliable and fast-response team ensures high-quality solutions for urgent residential and commercial maintenance needs." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,7 +64,7 @@
                     <!-- main-menu__left -->
                     <div class="main-menu__left">
                         <div class="main-menu__logo">
-                            <a href="index.html"><img src="{% static 'assets/images/resources/logo-3.png' %}" alt=""></a>
+                            <a href="/"><img src="{% static 'assets/images/resources/logo-3.png' %}" alt="New Brick LTD company logo"></a>
                         </div>
                         <div class="main-menu__main-menu-box">
                             <!-- Home About Us Services Projects Pages Contact Us -->
@@ -72,7 +72,7 @@
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 <ul class="main-menu__list">
                                     <li class="dropdown current">
-                                        <a href="index.html">Home </a>
+                                        <a href="/">Home </a>
                                     </li>
                                     <li class="dropdown">
                                         <a href="#">About Us</a>
@@ -158,8 +158,8 @@
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
         <div class="logo-box">
-            <a href="index.html" aria-label="logo image"><img src="{% static 'assets/images/resources/logo-1.png' %}" width="200"
-                    alt="" /></a>
+            <a href="/" aria-label="logo image"><img src="{% static 'assets/images/resources/logo-1.png' %}" width="200"
+                    alt="New Brick LTD company logo" /></a>
         </div>
         <!-- /.logo-box -->
         <div class="mobile-nav__container"></div>
@@ -168,7 +168,7 @@
         <ul class="mobile-nav__contact list-unstyled">
             <li>
                 <i class="fa fa-envelope"></i>
-                <a href="mailto:needhelp@packageName__.com">needhelp@assimox.com</a>
+                <a href="mailto:needhelp@packageName__.com">needhelp@newbrick.com</a>
             </li>
             <li>
                 <i class="fa fa-phone-alt"></i>
@@ -205,7 +205,7 @@
 </div>
 <!-- /.search-popup -->
 
-<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top" style="margin-bottom: 48px;"><i class="fa fa-angle-up "></i></a>
 
 
 <script src="{% static 'assets/vendors/jquery/jquery-3.6.0.min.js' %}"></script>
@@ -236,7 +236,7 @@
 <script src="{% static 'assets/vendors/tweenmax/TweenMax.min.js' %}"></script>
 
 
-<!-- JavaScript for scroll to form after press -->
+<!-- JavaScript for scroll to form after press button -->
 <script src="{% static 'assets/js/scroll_to_form.js' %}"></script> 
 
 <!-- template js -->
@@ -244,7 +244,7 @@
 
 
 <!--Site Footer Start-->
-<footer class="site-footer">
+<footer class="site-footer mb-5">
     <div class="site-footer__top">
         <div class="container">
             <div class="site-footer__inner">
@@ -351,7 +351,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
-                        <p class="site-footer__bottom-text">© Copyright <a href="#">Assimox</a> 2022 . All
+                        <p class="site-footer__bottom-text">© Copyright <a href="#">NewBrick</a> 2024 . All
                             right reserved.</p>
                         <div class="site-footer__bottom-text-two">
                             <p>Created by <a href="#">DesignArc</a></p>
@@ -364,5 +364,12 @@
 </footer>
 <!--Site Footer End-->
 
+<!-- fixed footer -->
+<div class="fixed-footer">
+    <p class="main-menu__call-sub-title">Need help? Talk to an expert</p>
+    <h4 class="main-menu__call-number"><a href="tel:18003660089">+1 800 ( 366) 0089</a></h4>
+</div>
+<link rel="stylesheet" href="{% static 'assets/css/footer.css' %}">
 
+  
 </html>
