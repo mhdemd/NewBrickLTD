@@ -1,0 +1,39 @@
+body {
+    overflow-x: hidden;
+    direction: rtl;
+  }
+  
+  .owl-carousel {
+    direction: ltr;
+  }
+  
+  .owl-carousel .owl-nav,
+  .owl-carousel .owl-dots,
+  .owl-carousel .owl-item {
+    direction: rtl;
+  }
+  
+  .list-unstyled {
+    padding-right: 0;
+  }
+
+  /*-- Custome css --*/
+
+  .why-choose-one__img-1{
+    clip-path: polygon(0% 0, 78% 0%, 100% 100%, 0% 100%);
+  }
+  .experience-and-rating__experience-year h2{
+    font-size: 70px;
+  }
+  .why-choose-one__points li .icon span{
+    font-size: 45px;
+  }
+  .why-choose-one__points li .text p{
+    font-size: 16px;
+  }
+  .services-one__title{
+    font-size: 20px;
+  }
+
+
+
