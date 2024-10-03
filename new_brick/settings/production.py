@@ -4,11 +4,6 @@ DEBUG = False
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
-STATIC_URL = "/public/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "public", "static")
-
-MEDIA_URL = "/public/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "public", "media")
 
 STORAGES = {
     "default": {
