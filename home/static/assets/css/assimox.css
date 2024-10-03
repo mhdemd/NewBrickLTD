@@ -4398,6 +4398,14 @@ ul {
   line-height: 22px;
 }
 
+/* تنظیمات برای حالت موبایل */
+@media (max-width: 768px) {
+  .team-one__name {
+    font-size: 24px; /* اندازه بزرگ‌تر فونت در حالت موبایل */
+    line-height: 26px; /* خط ارتفاع برای موبایل */
+  }
+}
+
 .team-one__name a {
   color: var(--assimox-white);
   -webkit-transition: all 500ms ease;
