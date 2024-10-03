@@ -78,9 +78,6 @@ class ServiceMemberBlock(blocks.StructBlock):
     name = blocks.CharBlock(
         required=True, max_length=100, help_text="Name of the team member"
     )
-    job_title = blocks.CharBlock(
-        required=True, max_length=100, help_text="Job title of the team member"
-    )
     image = ImageChooserBlock(required=True, help_text="Image of the team member")
     profile_link = blocks.URLBlock(
         required=False, help_text="Link to team member's profile"
@@ -93,7 +90,7 @@ class ServiceMemberBlock(blocks.StructBlock):
 
 class ServiceGroupBlock(blocks.StructBlock):
     members = blocks.ListBlock(
-        ServiceMemberBlock(), max_num=4, help_text="Maximum 4 members per service group"
+        ServiceMemberBlock(), max_num=3, help_text="Maximum 3 members per service group"
     )
 
     class Meta:

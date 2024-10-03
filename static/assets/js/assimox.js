@@ -13,7 +13,9 @@
     });
   }
 
-
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(handlePreloader, 1000); 
+  });
 
   function thmSwiperInit() {
     // swiper slider
@@ -870,7 +872,7 @@
     thmOwlInit();
     projectMasonaryLayout();
     priceFilter();
-    handlePreloader();
+    // handlePreloader();
 
 
     if ($(".curved-circle--item").length) {

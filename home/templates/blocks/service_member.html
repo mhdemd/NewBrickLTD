@@ -4,14 +4,13 @@
     <div class="team-one__single">
         <div class="team-one__img-box">
             <div class="team-one__img">
-                <img class="team-one__image" src="{% image value.image fill-270x384 as member_img_url %}{{ member_img_url.url }}" alt="{{ value.name }}">
+                <img class="team-one__image" src="{% image value.image fill-350x350 as member_img_url %}{{ member_img_url.url }}" alt="{{ value.name }}">
                 <div class="team-one__shape-1">
                     <img src="{% static 'assets/images/shapes/team-one-shape-1.png' %}" alt="">
                 </div>
             </div>
             <div class="team-one__content">
                 <h3 class="team-one__name"><a href="{{ value.profile_link }}">{{ value.name }}</a></h3>
-                <p class="team-one__subtitle">{{ value.job_title }}</p>
             </div>
         </div>
     </div>

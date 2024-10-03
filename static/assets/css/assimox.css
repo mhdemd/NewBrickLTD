@@ -35,6 +35,7 @@
 
 .row {
   --bs-gutter-x: 30px;
+
 }
 
 .gutter-y-30 {
@@ -412,12 +413,20 @@ ul {
   font-family: var(--assimox-font);
   font-weight: 700;
   letter-spacing: 15px;
-  font-size: 50px;
+  font-size: 30px;
   line-height: 70px;
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgba(0, 0, 0, 0.30);
+}
+
+@media (max-width: 768px) {
+  .handle-preloader .animation-preloader .txt-loading .letters-loading {
+    font-size: 20px; 
+    letter-spacing: 10px; 
+    line-height: 50px; 
+  }
 }
 
 .handle-preloader .animation-preloader .txt-loading .letters-loading:before {
@@ -459,6 +468,18 @@ ul {
 
 .handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(9):before {
   animation-delay: 0.8s;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(10):before {
+  animation-delay: 0.9s;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(11):before {
+  animation-delay: 1s;
+}
+
+.handle-preloader .animation-preloader .txt-loading .letters-loading:nth-child(12):before {
+  animation-delay: 1.1s;
 }
 
 .handle-preloader .loader-section {
@@ -4342,9 +4363,10 @@ ul {
 }
 
 .team-one__name {
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 31px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  margin-left: 0px !important;
 }
 
 .team-one__name a {
