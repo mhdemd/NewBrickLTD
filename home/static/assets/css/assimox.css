@@ -4232,41 +4232,9 @@ ul {
   margin-bottom: 30px;
 }
 
-/* .team-one__img-box {
-  position: relative;
-  display: block;
-} */
-
-/* تنظیمات کلی */
 .team-one__img-box {
   position: relative;
   display: block;
-  width: 270px; /* عرض ثابت */
-  height: 384px; /* ارتفاع ثابت */
-  margin: 0 auto; /* مرکز چین کردن */
-}
-
-/* اطمینان از مرکز‌چین بودن در حالت موبایل */
-@media (max-width: 768px) {
-  .team-one__single {
-    text-align: center; /* مرکز‌چین کردن محتوا */
-  }
-}
-
-
-/* تنظیمات برای تصویر */
-.team-one__img>img {
-  width: 100%; /* تطابق عرض تصویر با عرض جعبه */
-  height: 100%; /* تطابق ارتفاع تصویر با ارتفاع جعبه */
-  object-fit: cover; /* برش تصویر به صورت متناسب */
-  border-radius: 5px;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
-}
-
-/* غیرفعال کردن تغییر اندازه در حالت هاور */
-.team-one__single:hover .team-one__img>img {
-  transform: none; /* جلوگیری از تغییر اندازه تصویر در حالت هاور */
 }
 
 .team-one__img {
@@ -4414,9 +4382,9 @@ ul {
 }
 
 .team-one__name {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 21px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 31px;
 }
 
 .team-one__name a {
