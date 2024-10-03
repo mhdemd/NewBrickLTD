@@ -4305,6 +4305,17 @@ ul {
   object-fit: cover; /* متناسب کردن تصویر با ابعاد بخش */
 }
 
+/* تنظیمات برای حالت موبایل */
+@media (max-width: 768px) {
+  .team-one__shape-1 {
+    height: 80px; /* کاهش ارتفاع نوار آبی در موبایل */
+  }
+
+  .team-one__shape-1 > img {
+    height: 80px; /* کاهش ارتفاع تصویر داخل نوار در موبایل */
+  }
+}
+
 .team-one__icon {
   position: absolute;
   top: 25px;
@@ -4382,9 +4393,9 @@ ul {
 }
 
 .team-one__name {
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 31px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 22px;
 }
 
 .team-one__name a {
