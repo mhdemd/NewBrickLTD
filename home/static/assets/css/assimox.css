@@ -4388,8 +4388,9 @@ ul {
 .team-one__content {
   position: absolute;
   bottom: 16px;
-  left: 40px;
+  left: 20px;
   z-index: 2;
+
 }
 
 .team-one__name {
