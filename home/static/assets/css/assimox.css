@@ -4275,15 +4275,32 @@ ul {
   transform: scale(1.05);
 }
 
+/* .team-one__shape-1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  
+}
+
+.team-one__shape-1>img {
+  width: auto;
+} */
+
 .team-one__shape-1 {
   position: absolute;
   bottom: 0;
   left: 0;
   z-index: 2;
+  width: 100%; /* عرض کل تصویر */
+  height: 100px; /* افزایش ارتفاع نوار آبی */
+  overflow: hidden; /* اطمینان از اینکه هیچ قسمتی از تصویر بیرون از محدوده قرار نگیرد */
 }
 
-.team-one__shape-1>img {
-  width: auto;
+.team-one__shape-1 > img {
+  width: 100%; /* عرض کامل تصویر */
+  height: 100%; /* ارتفاع کامل نوار */
+  object-fit: cover; /* متناسب کردن تصویر با ابعاد بخش */
 }
 
 .team-one__icon {
