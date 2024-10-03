@@ -5,6 +5,7 @@ from django.template.response import TemplateResponse
 from modelcluster.fields import ParentalKey
 from wagtail import blocks
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
+from wagtail.blocks import RichTextBlock
 from wagtail.fields import RichTextField, StreamField
 from wagtail.images import get_image_model_string
 from wagtail.images.blocks import ImageChooserBlock
@@ -75,13 +76,9 @@ class HomePageSlide(Orderable):
 
 
 class ServiceMemberBlock(blocks.StructBlock):
-    name = blocks.CharBlock(
-        required=True, max_length=100, help_text="Name of the team member"
-    )
-    image = ImageChooserBlock(required=True, help_text="Image of the team member")
-    profile_link = blocks.URLBlock(
-        required=False, help_text="Link to team member's profile"
-    )
+    name = RichTextBlock(required=True, help_text="Name of the service")
+    image = ImageChooserBlock(required=True, help_text="Image of the service")
+    profile_link = blocks.URLBlock(required=False, help_text="Link to service")
 
     class Meta:
         template = "blocks/service_member.html"
