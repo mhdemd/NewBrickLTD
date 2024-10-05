@@ -5014,6 +5014,20 @@ ul {
   display: block;
   background-color: #0a1222;
   z-index: 1;
+  margin-bottom: 0;
+}
+
+/* سپس برای تبلت و موبایل از media queries استفاده می‌کنیم */
+@media (max-width: 1024px) { /* برای تبلت و پایین‌تر */
+  .site-footer {
+      margin-bottom: 60px; /* یا هر مقدار دیگری که می‌خواهید */
+  }
+}
+
+@media (max-width: 768px) { /* برای موبایل */
+  .site-footer {
+      margin-bottom: 60px; /* یا هر مقدار دیگری که می‌خواهید */
+  }
 }
 
 .site-footer__top {
