@@ -68,44 +68,30 @@
                         </div>
                         <div class="main-menu__main-menu-box">
                             <!-- Home About Us Services Projects Pages Contact Us -->
+
+                            
                             <div class="main-menu__main-menu-box-inner">
                                 <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 <ul class="main-menu__list">
-                                    <li class="dropdown current">
-                                        <a href="/">Home </a>
+                                    <li class="dropdown">
+                                        <a href="/">Home</a>
                                     </li>
                                     <li class="dropdown">
                                         <a href="{% url 'about_us' %}">About Us</a>
                                     </li>
                                     <li class="dropdown">
                                         <a href="#">Services</a>
-                                        <ul>
-                                            <li><a href="services.html">Services</a></li>
-                                            <li><a href="single-service.html">Single Service</a></li>
-                                        </ul>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#">Projects</a>
-                                        <ul>
-                                            <li><a href="projects.html">Projects</a></li>
-                                            <li><a href="project-details.html">Project Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#">Pages</a>
-                                        <ul>
-                                            <li><a href="appointment.html">Appointment</a></li>
-                                            <li><a href="coupons-and-offers.html">Coupons Offer</a></li>
-                                            <li><a href="finance.html">Finance</a></li>
-                                            <li><a href="prices.html">Prices</a></li>
-                                            <li><a href="faq.html">FAQs</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
                                         <a href="{% url 'contact_us' %}">Contact Us</a>
                                     </li>
                                 </ul>
                             </div>
+                            
+                            
+                            
+                            
+                                                                              
 
                             <div class="main-menu__search-nav-sidebar">
                                 <!-- magnifying -->
@@ -137,7 +123,7 @@
         <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
     </div><!-- /.stricky-header -->
 
-    <!-- preloader -->
+    {% comment %} <!-- preloader -->
     <div class="loader-wrap">
         <div class="preloader">
             <div id="handle-preloader" class="handle-preloader">
@@ -188,7 +174,7 @@
             </div>
         </div>
     </div>
-    <!-- preloader end -->
+    <!-- preloader end --> {% endcomment %}
 
     <!-- Main Content Block -->
     <main>

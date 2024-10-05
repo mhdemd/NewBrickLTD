@@ -1337,7 +1337,7 @@ ul {
   }
 }
 .main-header--dark .main-menu .main-menu__list > li > a, 
-.main-header--dark.stricky-header .main-menu__list > li > a{
+.main-header--dark.stricky-header .main-menu__list > li > a {
   color: #0f0f0f;
 }
 .main-header--dark .main-menu .main-menu__list > li.current > a, 
@@ -1346,6 +1346,8 @@ ul {
 .main-header--dark.stricky-header .main-menu__list > li:hover > a {
   color: #11aded;
 }
+
+
 .main-header--dark .main-menu .main-menu__list>li>ul>li:hover>a, 
 .main-header--dark .main-menu .main-menu__list>li>ul>li>ul>li:hover>a, 
 .main-header--dark.stricky-header .main-menu__list>li>ul>li:hover>a, 

@@ -437,25 +437,28 @@
   }
 
   function dynamicCurrentMenuClass(selector) {
-    let FileName = window.location.href.split("/").reverse()[0];
-
+    let currentURL = window.location.pathname;
+  
     selector.find("li").each(function () {
       let anchor = $(this).find("a");
-      if ($(anchor).attr("href") == FileName) {
+      if ($(anchor).attr("href") == currentURL) {
         $(this).addClass("current");
       }
     });
-    // if any li has .current elmnt add class
+  
+    // if any li has .current element, add class to parent li
     selector.children("li").each(function () {
       if ($(this).find(".current").length) {
         $(this).addClass("current");
       }
     });
-    // if no file name return
-    if ("" == FileName) {
+  
+    // If on the homepage, set the first li as current
+    if (currentURL == "/") {
       selector.find("li").eq(0).addClass("current");
     }
   }
+  
 
   if ($(".main-menu__list").length) {
     // dynamic current class
