@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 <body class="custom-cursor">
 
@@ -100,8 +101,8 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header__bg"
-                style="background-image: url(assets/images/backgrounds/page-header-bg-img.jpg);"></div>
+            <div class="page-header__bg" style="background-image: url({% static 'assets/images/backgrounds/top-img.jpg' %});"></div>
+
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
