@@ -61,8 +61,10 @@
                                         <!-- Call to Action (CTA) button, only if both CTA text and link are present -->
                                         {% if slide.hero_cta and slide.hero_cta_link %}
                                         <div class="main-slider__btn-box">
-                                            <a href="{{ slide.hero_cta_link.url }}" class="thm-btn main-slider__btn">{{ slide.hero_cta }}</a>
+                                            <a href="javascript:void(0)" class="thm-btn main-slider__btn" onclick="smoothScrollToForm()">{{ slide.hero_cta }}</a>
                                         </div>
+                                        
+                                        
                                         {% endif %}
 
                                         <!-- Badge image, optional -->
@@ -271,6 +273,9 @@
                                     Thank you! Your message has been successfully sent.
                                 </div>
                                 
+                                <!-- JavaScript for scroll to form after press button -->
+                                <script src="{% static 'assets/js/scroll_to_form.js' %}"></script> 
+
                             </div>
                         </div>
                     </div>
