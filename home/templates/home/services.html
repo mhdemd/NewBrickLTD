@@ -135,11 +135,11 @@
                         to further the overall value proposition. Organically grow the holistic world view of disruptive
                         innovation via workplace.</p>
                 </div>
-                {% for block in page.body %}
+                {% comment %} {% for block in page.body %}
                     {% if block.block_type == "service_group" %}
                         {% include_block block %}
                     {% endif %}
-                {% endfor %}
+                {% endfor %} {% endcomment %}
                 <div class="services-page__bottom">
                 </div>
             </div>
