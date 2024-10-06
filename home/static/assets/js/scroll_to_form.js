@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contactForm');
+    const form = document.getElementById('contactForm section');
     const successMessage = document.getElementById('successMessage');
     
     if (window.location.hash === '#form') {
-        const formPosition = form.getBoundingClientRect().top + window.pageYOffset - 200; // تغییر به -50 یا 0
+        const formPosition = form.getBoundingClientRect().top;
         window.scrollTo({ top: formPosition, behavior: 'instant' });
 
         const formErrors = document.querySelectorAll('.error');
@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function smoothScrollToForm() {
-    const targetElement = document.getElementById('contactForm');
-    const targetPosition = targetElement.getBoundingClientRect().top;
+    const targetElement = document.getElementById('contactForm section');
+    const targetPosition = targetElement.getBoundingClientRect().top ;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - 0;  // کمی فاصله برای فضای بالای فرم
     const duration = 120;  // مدت زمان اسکرول (میلی‌ثانیه)
