@@ -135,54 +135,19 @@
                         to further the overall value proposition. Organically grow the holistic world view of disruptive
                         innovation via workplace.</p>
                 </div>
-                {% comment %} {% for block in page.body %}
+                {% for block in page.body %}
                     {% if block.block_type == "service_group" %}
                         {% include_block block %}
                     {% endif %}
-                {% endfor %} {% endcomment %}
+                {% endfor %} 
                 <div class="services-page__bottom">
                 </div>
             </div>
         </section>
         </div>
-
         <!--Services Page End-->
 
-        <!--Contact Bar Start-->
-        {% comment %} <section class="contact-bar contact-bar-three">
-            <div class="container">
-                <div class="contact-bar__inne">
-                    <div class="contact-bar__bg"
-                        style="background-image: url(assets/images/backgrounds/contact-bar-bg.jpg);"></div>
-                    <div class="contact-bar__left">
-                        <div class="contact-bar__left-icon">
-                            <span class="icon-diagnostic"></span>
-                        </div>
-                        <div class="contact-bar__left-content">
-                            <h3 class="contact-bar__title">Do You Want Free Diagnostics ?</h3>
-                            <p class="contact-bar__text">Get free diagnostics when ording online from our website</p>
-                        </div>
-                    </div>
-                    <div class="contact-bar__right">
-                        <div class="contact-bar__call">
-                            <div class="contact-bar__call-icon">
-                                <img src="{% static 'assets/images/icon/contact-bar-call-icon.png' %}" alt="">
-                            </div>
-                            <div class="contact-bar__call-content">
-                                <h4 class="contact-bar__call-number"><a href="tel:18004567890">+1800 456 7890</a></h4>
-                                <p class="contact-bar__call-time">Monday - Saturday : 9.30 am - 6.00 pm</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> {% endcomment %}
-        <!--Contact Bar End-->
-
-
     </div><!-- /.page-wrapper -->
-
-
 
 </body>
 
