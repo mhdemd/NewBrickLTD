@@ -8,7 +8,8 @@ def about_us(request):
 
 
 def contact_us(request):
-    return render(request, "home/contact_us.html")
+    homepage = get_object_or_404(HomePage, slug="home")
+    return homepage.serve(request, template_name="home/contact_us.html")
 
 
 def services(request):

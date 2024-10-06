@@ -130,45 +130,67 @@
                         share. </p>
                 </div>
                 <div class="row">
-                    <div class="col-xl-8 col-lg-7">
-                        <div class="contact-page__left">
-                            <form action="assets/inc/sendemail.php" class="contact-page__form contact-form-validated"
-                                novalidate="novalidate">
-                                <div class="row">
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="contact-page__input-box">
-                                            <input type="text" placeholder="Your name" name="name">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="contact-page__input-box">
-                                            <input type="text" placeholder="Your name" name="last-name">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="contact-page__input-box">
-                                            <input type="text" placeholder="Phone Number" name="number">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="contact-page__input-box">
-                                            <input type="email" placeholder="Subject" name="email">
-                                        </div>
+
+
+
+
+                    <div class="col-xl-8 col-lg-7 faq-one__form-box wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
+                        <form id="contactForm" class="faq-one__form comment-form-2-validated" method="post" novalidate="novalidate">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="faq-one__form-input-box">
+                                        <input type="text" name="name" placeholder="Your Name" class="form-control" id="id_name" value="{{ form.name.value|default:'' }}">
+                                        {% if form.name.errors %}
+                                            <div class="error">{{ form.name.errors }}</div>
+                                        {% endif %}
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-xl-12">
-                                        <div class="contact-page__input-box text-message-box">
-                                            <textarea name="message" placeholder="Phone Number"></textarea>
-                                        </div>
-                                        <div class="contact-page__btn-box">
-                                            <button type="submit" class="thm-btn contact-page__btn">Hire us now</button>
-                                        </div>
+                                <div class="col-xl-12">
+                                    <div class="faq-one__form-input-box">
+                                        <input type="text" name="phone" placeholder="Phone No." class="form-control" id="id_phone" value="{{ form.phone.value|default:'' }}">
+                                        {% if form.phone.errors %}
+                                            <div class="error">{{ form.phone.errors }}</div>
+                                        {% endif %}
                                     </div>
                                 </div>
-                            </form>
+                                <div class="col-xl-12">
+                                    <div class="faq-one__form-input-box">
+                                        <input type="email" name="email" placeholder="Email Address" class="form-control" id="id_email" value="{{ form.email.value|default:'' }}">
+                                        {% if form.email.errors %}
+                                            <div class="error">{{ form.email.errors }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="faq-one__form-input-box text-message-box">
+                                        <textarea name="message" placeholder="Message" class="form-control" id="id_message">{{ form.message.value|default:'' }}</textarea>
+                                        {% if form.message.errors %}
+                                            <div class="error">{{ form.message.errors }}</div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="faq-one__form-btn-box mt-5">
+                                        <button type="submit" class="thm-btn faq-one__form-btn">Send Request</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    
+                        <!-- Success message -->
+                        <div id="successMessage" class="alert alert-success mt-4" style="display:none;">
+                            Thank you! Your message has been successfully sent.
                         </div>
+                    
                     </div>
+
+
+
+
+
+
+
                     <div class="col-xl-4 col-lg-5">
                         <div class="contact-page__right">
                             <div class="contact-page__content">

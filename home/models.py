@@ -104,33 +104,32 @@ class HomePage(Page):
         verbose_name="Services",
     )
 
-    def serve(self, request):
+    def serve(self, request, template_name="home/home_page.html"):
         form = ContactForm(request.POST or None)
         context = self.get_context(request)
 
-        if request.method == "POST":
-            if form.is_valid():
-                send_mail(
-                    subject=f"New Contact: {form.cleaned_data['name']}",
-                    message=form.cleaned_data["message"],
-                    from_email=form.cleaned_data["email"],
-                    recipient_list=["mahdi.emadi@yahoo.com"],
-                )
-                context["form"] = form
-                return TemplateResponse(request, "home/home_page.html", context)
+        if request.method == "POST" and form.is_valid():
+            send_mail(
+                subject=f"New Contact: {form.cleaned_data['name']}",
+                message=form.cleaned_data["message"],
+                from_email=form.cleaned_data["email"],
+                recipient_list=["mahdi.emadi@yahoo.com"],
+            )
+            context["form"] = form
+            return TemplateResponse(request, template_name, context)
 
         context["form"] = form
-        return TemplateResponse(request, "home/home_page.html", context)
+        return TemplateResponse(request, template_name, context)
 
     def serve_services(self, request):
         context = self.get_context(request)
         context["page"] = self
         if hasattr(self, "body"):
-            print("Body exists")  # بررسی اینکه آیا body وجود دارد
+            print("Body exists")
             for block in self.body:
-                print(block.block_type)  # نوع هر بلوک را چاپ می‌کند
+                print(block.block_type)
         else:
-            print("No body found")  # اگر body وجود ندارد
+            print("No body found")
         return TemplateResponse(request, "home/services.html", context)
 
     content_panels = Page.content_panels + [
