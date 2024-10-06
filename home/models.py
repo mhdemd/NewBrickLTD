@@ -87,7 +87,7 @@ class ServiceMemberBlock(blocks.StructBlock):
 
 class ServiceGroupBlock(blocks.StructBlock):
     members = blocks.ListBlock(
-        ServiceMemberBlock(), max_num=3, help_text="Maximum 3 members per service group"
+        ServiceMemberBlock(), max_num=4, help_text="Maximum 3 members per service group"
     )
 
     class Meta:
@@ -121,6 +121,17 @@ class HomePage(Page):
 
         context["form"] = form
         return TemplateResponse(request, "home/home_page.html", context)
+
+    def serve_services(self, request):
+        context = self.get_context(request)
+        context["page"] = self
+        if hasattr(self, "body"):
+            print("Body exists")  # بررسی اینکه آیا body وجود دارد
+            for block in self.body:
+                print(block.block_type)  # نوع هر بلوک را چاپ می‌کند
+        else:
+            print("No body found")  # اگر body وجود ندارد
+        return TemplateResponse(request, "home/services.html", context)
 
     content_panels = Page.content_panels + [
         MultiFieldPanel(
