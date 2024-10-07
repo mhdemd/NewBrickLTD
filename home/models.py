@@ -152,10 +152,21 @@ class HomePage(Page):
                         else str(member.get("name"))
                     )
 
-                    # حذف تگ‌های HTML از نام سرویس
+                    # حذف تگ‌های HTML از نام سرویس، جایگزینی <br/> و &amp; با فضای مناسب
                     cleaned_service_name = bleach.clean(
                         service_name_raw, tags=[], strip=True
                     )
+                    cleaned_service_name = (
+                        cleaned_service_name.replace("&amp;", "amp-")
+                        .replace("&", "")
+                        .replace("\n", " ")
+                        .replace("\r", " ")
+                    )
+
+                    # اضافه کردن فاصله به جای <br/> و تگ‌های حذف‌شده
+                    cleaned_service_name = cleaned_service_name.replace(
+                        "  ", " "
+                    )  # حذف فاصله‌های مضاعف
 
                     # تبدیل نام سرویس به اسلاگ برای مقایسه صحیح
                     slugified_name = slugify(cleaned_service_name)
