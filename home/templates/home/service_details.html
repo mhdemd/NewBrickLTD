@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
+{% load wagtailimages_tags %}
+
 {% block content %}
 <body class="custom-cursor">
+
 
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
 
     <!-- Start sidebar widget content -->
-    <div class="xs-sidebar-group info-group info-sidebar">
+    {% comment %} <div class="xs-sidebar-group info-group info-sidebar">
         <div class="xs-overlay xs-bg-black"></div>
         <div class="xs-sidebar-widget">
             <div class="sidebar-widget-container">
@@ -93,7 +96,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
     <!-- End sidebar widget content -->
 
 
@@ -109,7 +112,7 @@
                         <div class="page-header__inner">
                             <h2 class="page-header__title">Single Service</h2>
                             <ul class="thm-breadcrumb list-unstyled">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li>Single Service</li>
                             </ul>
                         </div>
@@ -126,7 +129,9 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="services-details__left">
                             <div class="services-details__img">
-                                <img src="assets/images/resources/services-details-img-1.jpg" alt="">
+                                {% comment %} <img src="assets/images/resources/services-details-img-1.jpg" alt=""> {% endcomment %}
+                                <img src="{% image service.image fill-270x384 as member_img_url %}{{ member_img_url.url }}" alt="">
+
                             </div>
                         </div>
                     </div>
@@ -134,13 +139,9 @@
                         <div class="services-details__right">
                             <div class="section-title text-left">
                                 <span class="section-title__tagline">service details</span>
-                                <h2 class="section-title__title">Cookware Stove Repairing</h2>
+                                <h2 class="section-title__title">{{ service.name }}</h2>
                             </div>
-                            <p class="services-details__text-1">There are many variations of passages of Lorem Ipsum
-                                available, but the majority have suffered alteration in some form, by injected humour,
-                                or randomised words which don't look even slightly believable. If you are going to use a
-                                passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-                                the middle of text. </p>
+                            <p class="services-details__text-1">{{ service.description }}</p>
                             <ul class="services-details__points-list list-unstyled">
                                 <li>
                                     <div class="icon">

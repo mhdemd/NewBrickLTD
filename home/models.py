@@ -82,7 +82,10 @@ class HomePageSlide(Orderable):
 class ServiceMemberBlock(blocks.StructBlock):
     name = RichTextBlock(required=True, help_text="Name of the service")
     image = ImageChooserBlock(required=True, help_text="Image of the service")
-    profile_link = blocks.URLBlock(required=False, help_text="Link to service")
+    # profile_link = blocks.URLBlock(required=False, help_text="Link to service")
+    description = blocks.TextBlock(
+        required=True, help_text="Description of the service", max_length=1000
+    )
 
     class Meta:
         template = "blocks/service_member.html"
