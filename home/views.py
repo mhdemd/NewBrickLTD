@@ -15,3 +15,8 @@ def contact_us(request):
 def services(request):
     homepage = get_object_or_404(HomePage, slug="home")
     return homepage.serve_services(request)
+
+
+def service_detail(request, service_name):
+    homepage = get_object_or_404(HomePage, slug="home")
+    return homepage.serve_service_detail(request, service_name)

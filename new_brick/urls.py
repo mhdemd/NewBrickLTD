@@ -16,6 +16,9 @@ urlpatterns = [
     path("about-us/", home_views.about_us, name="about_us"),
     path("contact-us/", home_views.contact_us, name="contact_us"),
     path("services/", home_views.services, name="services"),
+    path(
+        "service/<str:service_name>/", home_views.service_detail, name="service_detail"
+    ),
 ]
 
 

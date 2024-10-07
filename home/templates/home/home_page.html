@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load custom_tags %}
 {% load wagtailimages_tags wagtailcore_tags %}
 
 {% block content %}
@@ -55,7 +56,6 @@
                                         <h4 class="main-slider__text">{{ slide.text_3 }}</h4>
 
                                         <!-- Rich text content (text_4 and text_5) -->
-                                        {% load custom_tags %}
                                         {{ slide.text_4|add_class_to_paragraphs|safe }}<br>{{ slide.text_5|add_class_to_paragraphs|safe }}
 
                                         <!-- Call to Action (CTA) button, only if both CTA text and link are present -->

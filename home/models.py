@@ -1,7 +1,11 @@
+import re
+
+import bleach
 from django.core.mail import send_mail
 from django.db import models
-from django.http import JsonResponse
+from django.http import Http404
 from django.template.response import TemplateResponse
+from django.utils.text import slugify
 from modelcluster.fields import ParentalKey
 from wagtail import blocks
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
@@ -104,6 +108,11 @@ class HomePage(Page):
         verbose_name="Services",
     )
 
+    # Change the service name to slug-friendly format
+    def slugify(self, text):
+        return re.sub(r"[\W_]+", "-", text).lower()
+
+    # Form service and email sending
     def serve(self, request, template_name="home/home_page.html"):
         form = ContactForm(request.POST or None)
         context = self.get_context(request)
@@ -121,16 +130,55 @@ class HomePage(Page):
         context["form"] = form
         return TemplateResponse(request, template_name, context)
 
+    # Service to display the services page
     def serve_services(self, request):
         context = self.get_context(request)
         context["page"] = self
-        if hasattr(self, "body"):
-            print("Body exists")
-            for block in self.body:
-                print(block.block_type)
-        else:
-            print("No body found")
+
         return TemplateResponse(request, "home/services.html", context)
+
+    # Service Show details of each service
+    def serve_service_detail(self, request, service_name):
+        service_group = None
+
+        # جستجو در block برای پیدا کردن سرویس
+        for block in self.body:
+            if block.block_type == "service_group":
+                for member in block.value.get("members", []):
+                    # اگر نام سرویس RichText است، از source آن استفاده کنید
+                    service_name_raw = (
+                        member.get("name").source
+                        if hasattr(member.get("name"), "source")
+                        else str(member.get("name"))
+                    )
+
+                    # حذف تگ‌های HTML از نام سرویس
+                    cleaned_service_name = bleach.clean(
+                        service_name_raw, tags=[], strip=True
+                    )
+
+                    # تبدیل نام سرویس به اسلاگ برای مقایسه صحیح
+                    slugified_name = slugify(cleaned_service_name)
+
+                    # چاپ مقادیر برای دیباگ
+                    print(
+                        f"Original name: {service_name_raw}, Cleaned name: {cleaned_service_name}, Slugified name: {slugified_name}"
+                    )
+                    print(f"Requested service name: {service_name}")
+
+                    # بررسی تطابق
+                    if slugified_name == service_name:
+                        service_group = member
+                        break
+
+        # اگر سرویس پیدا نشد
+        if not service_group:
+            raise Http404("Service not found")
+
+        context = self.get_context(request)
+        context["service"] = service_group
+
+        return TemplateResponse(request, "home/service_details.html", context)
 
     content_panels = Page.content_panels + [
         MultiFieldPanel(
