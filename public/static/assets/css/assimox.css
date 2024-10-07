@@ -7464,7 +7464,7 @@ ul {
   display: block;
   padding-right: 14px;
   margin-right: 13px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .thm-breadcrumb li:before {
@@ -7488,7 +7488,7 @@ ul {
 }
 
 .thm-breadcrumb li a {
-  color: #ffffff;
+  color: #000000;
   transition: all 200ms linear;
   transition-delay: 0.1s;
 }
