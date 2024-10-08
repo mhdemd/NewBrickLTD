@@ -3695,11 +3695,6 @@ ul {
 /*--------------------------------------------------------------
 # About Three
 --------------------------------------------------------------*/
-.about-three {
-  position: relative;
-  display: block;
-  padding: 120px 0 115px;
-}
 
 .about-three__left {
   position: relative;
