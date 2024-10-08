@@ -17,57 +17,41 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="preload" as="style" onload="this.rel='stylesheet'">
+        rel="stylesheet">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="preload" as="style" onload="this.rel='stylesheet'">
-
-    <!-- Critical CSS -->
-    <style>
-        /* اضافه کردن CSS حیاتی که باعث رندر سریع‌تر صفحه می‌شود */
-        /* مثال: استایل‌های header، main، footer */
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-        }
-        header, main, footer {
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
+        rel="stylesheet">
 
     <!-- Vendor styles -->
-    <link rel="preload" href="{% static 'assets/css/newbrick.css' %}" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}" as="style" onload="this.rel='stylesheet'">
-
-    <!-- Load the remaining stylesheets lazily -->
-    <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/animate/custom-animate.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/jarallax/jarallax.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.min.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.pips.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/odometer/odometer.min.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/swiper/swiper.min.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/assimox-icons/style.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/tiny-slider/tiny-slider.min.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/reey-font/stylesheet.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/bxslider/jquery.bxslider.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/css/bootstrap-select.min.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/vegas/vegas.min.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-ui/jquery-ui.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/timepicker/timePicker.css' %}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/animate/custom-animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/jarallax/jarallax.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.pips.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/odometer/odometer.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/swiper/swiper.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/assimox-icons/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/tiny-slider/tiny-slider.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/reey-font/stylesheet.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/bxslider/jquery.bxslider.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/css/bootstrap-select.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/vegas/vegas.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-ui/jquery-ui.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/timepicker/timePicker.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}" />
 
     <!-- Template styles -->
-    <link rel="stylesheet" href="{% static 'assets/css/newbrick-responsive.css' %}" media="print" onload="this.media='all'">
-
+    <link rel="stylesheet" href="{% static 'assets/css/newbrick.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/newbrick-responsive.css' %}" />
 </head>
 
 <body>
@@ -80,7 +64,7 @@
                     <!-- main-menu__left -->
                     <div class="main-menu__left">
                         <div class="main-menu__logo">
-                            <a href="/"><img src="{% static 'assets/images/resources/logo-3.webp' %}" alt="New Brick LTD company logo" loading="lazy"></a>
+                            <a href="/"><img src="{% static 'assets/images/resources/logo-3.webp' %}" alt="New Brick LTD company logo"></a>
                         </div>
                         <div class="main-menu__main-menu-box">
                             <!-- Home About Us Services Projects Pages Contact Us -->
@@ -133,7 +117,7 @@
     <div class="stricky-header stricked-menu main-menu main-header--dark">
         <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
     </div><!-- /.stricky-header -->
-    
+
     <!-- preloader -->
     {% comment %} <div class="loader-wrap">
         <div class="preloader">
@@ -251,6 +235,39 @@
 <!-- /.search-popup -->
 
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top" style="margin-bottom: 48px;"><i class="fa fa-angle-up "></i></a>
+
+
+<script src="{% static 'assets/vendors/jquery/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendors/jarallax/jarallax.min.js' %}"></script>
+<script src="{% static 'assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'assets/vendors/jquery-appear/jquery.appear.min.js' %}"></script>
+<script src="{% static 'assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js' %}"></script>
+<script src="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'assets/vendors/jquery-validate/jquery.validate.min.js' %}"></script>
+<script src="{% static 'assets/vendors/nouislider/nouislider.min.js' %}"></script>
+<script src="{% static 'assets/vendors/odometer/odometer.min.js' %}"></script>
+<script src="{% static 'assets/vendors/swiper/swiper.min.js' %}"></script>
+<script src="{% static 'assets/vendors/tiny-slider/tiny-slider.min.js' %}"></script>
+<script src="{% static 'assets/vendors/wnumb/wNumb.min.js' %}"></script>
+<script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
+<script src="{% static 'assets/vendors/isotope/isotope.js' %}"></script>
+<script src="{% static 'assets/vendors/countdown/countdown.min.js' %}"></script>
+<script src="{% static 'assets/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bxslider/jquery.bxslider.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+<script src="{% static 'assets/vendors/vegas/vegas.min.js' %}"></script>
+<script src="{% static 'assets/vendors/jquery-ui/jquery-ui.js' %}"></script>
+<script src="{% static 'assets/vendors/timepicker/timePicker.js' %}"></script>
+<script src="{% static 'assets/vendors/circleType/jquery.circleType.js' %}"></script>
+<script src="{% static 'assets/vendors/circleType/jquery.lettering.min.js' %}"></script>
+<script src="{% static 'assets/vendors/sidebar-content/jquery-sidebar-content.js' %}"></script>
+<script src="{% static 'assets/vendors/tweenmax/TweenMax.min.js' %}"></script>
+
+
+<!-- template js -->
+<script src="{% static 'assets/js/newbrick.js' %}"></script>
+
 
 <!--Site Footer Start-->
 <footer class="site-footer">
@@ -372,6 +389,7 @@
     </div>
 </footer>
 <!--Site Footer End-->
+
 <!-- fixed footer -->
 <div class="fixed-footer" style="text-align: center;">
     <p class="main-menu__call-sub-title" style="margin-bottom: 10px;">Need help?</p>
@@ -386,38 +404,7 @@
     </h4>
 </div>
 
-<!-- Load JS files at the bottom to prevent render-blocking -->
-<script src="{% static 'assets/vendors/jquery/jquery-3.6.0.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/jarallax/jarallax.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/jquery-appear/jquery.appear.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/jquery-validate/jquery.validate.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/nouislider/nouislider.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/odometer/odometer.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/swiper/swiper.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/tiny-slider/tiny-slider.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/wnumb/wNumb.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/wow/wow.js' %}" defer></script>
-<script src="{% static 'assets/vendors/isotope/isotope.js' %}" defer></script>
-<script src="{% static 'assets/vendors/countdown/countdown.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/owl-carousel/owl.carousel.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/bxslider/jquery.bxslider.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/bootstrap-select/js/bootstrap-select.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/vegas/vegas.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/jquery-ui/jquery-ui.js' %}" defer></script>
-<script src="{% static 'assets/vendors/timepicker/timePicker.js' %}" defer></script>
-<script src="{% static 'assets/vendors/circleType/jquery.circleType.js' %}" defer></script>
-<script src="{% static 'assets/vendors/circleType/jquery.lettering.min.js' %}" defer></script>
-<script src="{% static 'assets/vendors/sidebar-content/jquery-sidebar-content.js' %}" defer></script>
-<script src="{% static 'assets/vendors/tweenmax/TweenMax.min.js' %}" defer></script>
-
-<!-- template js -->
-<script src="{% static 'assets/js/newbrick.js' %}" defer></script>
-
-<link rel="stylesheet" href="{% static 'assets/css/footer.css' %}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{% static 'assets/css/footer.css' %}">
 
   
 </html>
