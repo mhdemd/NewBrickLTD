@@ -26,7 +26,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # Application definition
 
 INSTALLED_APPS = [
-    "compressor",
     "home",
     "search",
     "wagtail.contrib.forms",
@@ -133,11 +132,7 @@ USE_TZ = True
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-    "compressor.finders.CompressorFinder",
 ]
-
-COMPRESS_ENABLED = True  # فشرده‌سازی را فعال می‌کند
-COMPRESS_OFFLINE = True  # فشرده‌سازی آفلاین را فعال می‌کند
 
 
 STATICFILES_DIRS = [
