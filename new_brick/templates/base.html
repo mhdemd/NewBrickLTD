@@ -34,6 +34,7 @@
 
 
     <!-- Vendor styles -->
+    {% compress css %}
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/animate/custom-animate.css' %}" />
@@ -55,6 +56,8 @@
     <link rel="stylesheet" href="{% static 'assets/vendors/jquery-ui/jquery-ui.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/timepicker/timePicker.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}" />
+    {% endcompress %}
+
 
     <!-- Template styles -->
     {% compress css %}
@@ -63,6 +66,10 @@
 
     {% compress css %}
     <link rel="stylesheet" href="{% static 'assets/css/newbrick-responsive.css' %}" />
+    {% endcompress %}
+
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'assets/css/footer.css' %}">
     {% endcompress %}
 
 </head>
@@ -385,8 +392,7 @@
     </h4>
 </div>
 
-<link rel="stylesheet" href="{% static 'assets/css/footer.css' %}">
-
+{% compress js %}
 <script src="{% static 'assets/vendors/jquery/jquery-3.6.0.min.js' %}"></script>
 <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'assets/vendors/jarallax/jarallax.min.js' %}"></script>
@@ -413,7 +419,7 @@
 <script src="{% static 'assets/vendors/circleType/jquery.lettering.min.js' %}"></script>
 <script src="{% static 'assets/vendors/sidebar-content/jquery-sidebar-content.js' %}"></script>
 <script src="{% static 'assets/vendors/tweenmax/TweenMax.min.js' %}"></script>
-
+{% endcompress %}
 
 <!-- template js -->
 {% compress js %}
