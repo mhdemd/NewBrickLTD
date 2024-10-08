@@ -38,8 +38,11 @@
                     <div class="swiper-slide">
                         <!-- Background image of the slide -->
                         <div class="main-slider__image" 
-                            style="background-image: url({% image slide.image fill-1920x914 as img_url %}{{ img_url.url }});"></div>
-                        
+                        style="
+                        background-image: url({% image slide.image fill-1920x914 format-webp as img_webp_url %}{{ img_webp_url.url }}); 
+                        ">
+                        </div>
+                                           
                         <!-- Slide content section -->
                         <div class="container">
                             <div class="row">
@@ -69,7 +72,7 @@
                                         <!-- Badge image, optional -->
                                         {% if slide.badge_image %}
                                         <img class="main-slider__badge" 
-                                            src="{% image slide.badge_image fill-130x130 as badge_img_url %}{{ badge_img_url.url }}" 
+                                            src="{% image slide.badge_image  fill-130x130 format-webp as badge_img_url %}{{ badge_img_url.url }}" 
                                             alt="Badge Image">
                                         {% endif %}
                                     </div>

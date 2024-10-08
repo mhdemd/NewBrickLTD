@@ -5,7 +5,7 @@
     <div class="team-one__single">
         <div class="team-one__img-box">
             <div class="team-one__img">
-                <img src="{% image value.image fill-270x384 as member_img_url %}{{ member_img_url.url }}" alt="">
+                <img src="{% image value.image fill-270x384 format-webp as member_img_url %}{{ member_img_url.url }}" alt="">
 
                 <div class="team-one__shape-1">
                     <img src="{% static 'assets/images/shapes/team-one-shape-1.png' %}" alt="">
