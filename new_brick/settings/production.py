@@ -10,9 +10,10 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",  # تغییر به این مقدار
+        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
     },
 }
+
 
 ALLOWED_HOSTS = ["newbrick.runflare.run", "www.newbrick.runflare.run"]
 CSRF_TRUSTED_ORIGINS = ["https://newbrick.runflare.run"]
