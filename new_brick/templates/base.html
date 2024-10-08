@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load compress %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +57,10 @@
     <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}" />
 
     <!-- Template styles -->
+    {% compress css %}
     <link rel="stylesheet" href="{% static 'assets/css/newbrick.css' %}" />
+    {% endcompress %}
+
     <link rel="stylesheet" href="{% static 'assets/css/newbrick-responsive.css' %}" />
 </head>
 
