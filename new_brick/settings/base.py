@@ -141,7 +141,7 @@ COMPRESS_OFFLINE = True  # فشرده‌سازی آفلاین را فعال می
 
 
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, "static"),
+    os.path.join(PROJECT_DIR, "home", "static"),
 ]
 
 
