@@ -199,7 +199,7 @@
     -webkit-appearance: none;
     outline: none !important;
     font-size: 14px;
-    color: var(--assimox-white);
+    color: var(--assimox-black-rgb);
     font-weight: 700;
     padding: 14px 45px 12px;
     font-family: var(--assimox-font-two);
@@ -1913,12 +1913,10 @@
   .main-slider__btn-box {
     position: relative;
     display: block;
-    opacity: 1; /* پنهان نکنید یا این مقدار را بعداً تغییر دهید */
-    visibility: visible; /* این مقدار دیگر به hidden نیاز ندارد */
-    -webkit-transform: translateY(30px); /* مقدار translate را کم کنید */
-    transform: translateY(30px); /* بهینه‌سازی شده */
-    -webkit-transition: opacity 500ms ease, -webkit-transform 500ms ease; /* زمان کمتر برای انیمیشن */
-    transition: opacity 500ms ease, transform 500ms ease;
+    opacity: 1; /* دکمه به‌طور فوری قابل مشاهده باشد */
+    visibility: visible; /* دکمه به‌طور فوری نمایش داده شود */
+    transform: none; /* دکمه جابجا نشود */
+    transition: none; /* هیچ انیمیشنی وجود نداشته باشد */
 }
 
   
