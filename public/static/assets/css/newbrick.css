@@ -1911,19 +1911,16 @@
   }
   
   .main-slider__btn-box {
-      position: relative;
-      display: block;
-      opacity: 0;
-      visibility: hidden;
-      -webkit-transform: translateY(120px);
-      transform: translateY(120px);
-      -webkit-transition-delay: 1000ms;
-      transition-delay: 1000ms;
-      -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
-      transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
-      transition: transform 2000ms ease, opacity 2000ms ease;
-      transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
-  }
+    position: relative;
+    display: block;
+    opacity: 1; /* پنهان نکنید یا این مقدار را بعداً تغییر دهید */
+    visibility: visible; /* این مقدار دیگر به hidden نیاز ندارد */
+    -webkit-transform: translateY(30px); /* مقدار translate را کم کنید */
+    transform: translateY(30px); /* بهینه‌سازی شده */
+    -webkit-transition: opacity 500ms ease, -webkit-transform 500ms ease; /* زمان کمتر برای انیمیشن */
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
   
   .main-slider__btn {
       color: var(--assimox-white);

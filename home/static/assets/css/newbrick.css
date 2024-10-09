@@ -1911,19 +1911,14 @@
   }
   
   .main-slider__btn-box {
-      position: relative;
-      display: block;
-      opacity: 0;
-      visibility: hidden;
-      -webkit-transform: translateY(120px);
-      transform: translateY(120px);
-      -webkit-transition-delay: 1000ms;
-      transition-delay: 1000ms;
-      -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
-      transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
-      transition: transform 2000ms ease, opacity 2000ms ease;
-      transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
-  }
+    position: relative;
+    display: block;
+    opacity: 1; /* دکمه به‌طور فوری قابل مشاهده باشد */
+    visibility: visible; /* دکمه به‌طور فوری نمایش داده شود */
+    transform: none; /* دکمه جابجا نشود */
+    transition: none; /* هیچ انیمیشنی وجود نداشته باشد */
+}
+
   
   .main-slider__btn {
       color: var(--assimox-white);
