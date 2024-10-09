@@ -39,7 +39,7 @@
                         <div class="main-slider__image"
                         style="
                         background-image: url({% image slide.image fill-1920x914 format-webp as img_webp_url %}{{ img_webp_url.url }}); 
-                        background-image: url({% image slide.image fill-768x400 format-webp as img_mobile_webp_url %}{{ img_mobile_webp_url.url }}) no-repeat;
+                        background-image: url({% image slide.image fill-400x700 format-webp as img_mobile_webp_url %}{{ img_mobile_webp_url.url }}) no-repeat;
                         ">
                         </div>
                     
@@ -64,7 +64,7 @@
                                         <!-- Call to Action (CTA) button, only if both CTA text and link are present -->
                                         {% if slide.hero_cta and slide.hero_cta_link %}
                                         <div class="main-slider__btn-box">
-                                            <a href="javascript:void(0)" class="thm-btn main-slider__btn" >{{ slide.hero_cta }}</a>
+                                            <a href="javascript:void(0)" class="thm-btn main-slider__btn" onclick="smoothScrollToForm()">{{ slide.hero_cta }}</a>
                                         </div>
                                         {% endif %}
 
