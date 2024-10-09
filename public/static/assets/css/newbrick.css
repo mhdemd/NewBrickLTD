@@ -1804,25 +1804,24 @@
       z-index: 30;
   }
   
-  /* Media Query اصلاح‌شده برای عرض کمتر از 767px */
-  @media (max-width: 767px){
-      .main-slider .container {
-          padding-top: 195px;
-          padding-bottom: 150px;
-      }
-  }
   
-  .main-slider__image {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      z-index: 1;
-  }
+  .main-slider__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* کنترل تطبیق تصویر با ناحیه مورد نظر */
+}
+
+.main-slider__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
   
   .main-slider__content {
       position: relative;
