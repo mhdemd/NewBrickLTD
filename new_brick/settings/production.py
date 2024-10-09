@@ -14,6 +14,16 @@ STORAGES = {
     },
 }
 
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_DIR, "static"),
+]
+
+STATIC_URL = "/public/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "public", "static")
+
+MEDIA_URL = "/public/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "public", "media")
+
 
 ALLOWED_HOSTS = ["newbrick.runflare.run", "www.newbrick.runflare.run"]
 CSRF_TRUSTED_ORIGINS = ["https://newbrick.runflare.run"]
