@@ -3,21 +3,27 @@
     font-family: 'Barlow';
     font-style: normal;
     font-weight: 400;
-    src: url('/static/assets/fonts/Barlow-Regular.ttf') format('truetype');
+    src: url('/static/assets/fonts/Barlow-Regular.woff2') format('woff2'),
+         url('/static/assets/fonts/Barlow-Regular.woff') format('woff'),
+         url('/static/assets/fonts/Barlow-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Barlow';
     font-style: italic;
     font-weight: 400;
-    src: url('/static/assets/fonts/Barlow-Italic.ttf') format('truetype');
+    src: url('/static/assets/fonts/Barlow-Italic.woff2') format('woff2'),
+         url('/static/assets/fonts/Barlow-Italic.woff') format('woff'),
+         url('/static/assets/fonts/Barlow-Italic.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Barlow';
     font-style: normal;
     font-weight: 700;
-    src: url('/static/assets/fonts/Barlow-Bold.ttf') format('truetype');
+    src: url('/static/assets/fonts/Barlow-Bold.woff2') format('woff2'),
+         url('/static/assets/fonts/Barlow-Bold.woff') format('woff'),
+         url('/static/assets/fonts/Barlow-Bold.ttf') format('truetype');
 }
 
 /* Roboto Font Faces */
@@ -25,19 +31,25 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    src: url('/static/assets/fonts/Roboto-Regular.ttf') format('truetype');
+    src: url('/static/assets/fonts/Roboto-Regular.woff2') format('woff2'),
+         url('/static/assets/fonts/Roboto-Regular.woff') format('woff'),
+         url('/static/assets/fonts/Roboto-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Roboto';
     font-style: italic;
     font-weight: 400;
-    src: url('/static/assets/fonts/Roboto-Italic.ttf') format('truetype');
+    src: url('/static/assets/fonts/Roboto-Italic.woff2') format('woff2'),
+         url('/static/assets/fonts/Roboto-Italic.woff') format('woff'),
+         url('/static/assets/fonts/Roboto-Italic.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    src: url('/static/assets/fonts/Roboto-Bold.ttf') format('truetype');
+    src: url('/static/assets/fonts/Roboto-Bold.woff2') format('woff2'),
+         url('/static/assets/fonts/Roboto-Bold.woff') format('woff'),
+         url('/static/assets/fonts/Roboto-Bold.ttf') format('truetype');
 }

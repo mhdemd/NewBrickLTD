@@ -859,8 +859,8 @@
 
     thmSwiperInit();
     thmOwlInit();
-    projectMasonaryLayout();
-    priceFilter();
+    // projectMasonaryLayout();
+    // priceFilter();
     // handlePreloader();
 
 
