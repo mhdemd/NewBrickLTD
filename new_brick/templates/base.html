@@ -373,7 +373,7 @@
 <!--Site Footer End-->
 
 <!-- fixed footer -->
-<div class="fixed-footer" style="text-align: center;">
+<div class="fixed-footer" style="text-align: center; display: none;">
     <p class="main-menu__call-sub-title" style="margin-bottom: 10px;">Need help?</p>
     <h4 class="main-menu__call-number" style="display: flex; justify-content: center; align-items: center; width: 100%; margin: 0 auto;">
         <a href="tel:18003660089" class="btn-call" style="flex: 1; display: flex; justify-content: center; align-items: center; text-decoration: none; color: #000000;">
@@ -385,6 +385,21 @@
         </a>
     </h4>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const footer = document.querySelector('.fixed-footer');
+
+    // رویداد اسکرول را فقط یکبار تنظیم می‌کنیم
+    const onScroll = () => {
+        footer.style.display = 'block'; // نمایش نوار
+        window.removeEventListener('scroll', onScroll); // پس از اولین اسکرول، رویداد اسکرول حذف می‌شود
+    };
+
+    window.addEventListener('scroll', onScroll); // وقتی کاربر اسکرول می‌کند، نوار نمایش داده می‌شود
+});
+</script>
+
 
 
 <!-- JS -->
