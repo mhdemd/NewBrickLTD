@@ -21,10 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function smoothScrollToForm() {
     const targetElement = document.getElementById('contactForm section');
-    const targetPosition = targetElement.getBoundingClientRect().top ;
+    if (!targetElement) return; // اگر عنصر وجود ندارد اسکرول متوقف شود
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset; // محاسبه موقعیت نهایی
     const startPosition = window.pageYOffset;
-    const distance = targetPosition - 0;  // کمی فاصله برای فضای بالای فرم
-    const duration = 120;  // مدت زمان اسکرول (میلی‌ثانیه)
+    const distance = targetPosition - startPosition - 0; // کمی فاصله برای فضای بالای فرم
+    const duration = 120; // مدت زمان اسکرول (میلی‌ثانیه)
     let start = null;
 
     function step(timestamp) {
@@ -39,9 +40,13 @@ function smoothScrollToForm() {
 
         if (progress < duration) {
             window.requestAnimationFrame(step);
+        } else {
+            window.scrollTo(0, targetPosition); // اطمینان از اینکه دقیقاً به هدف رسیده است
         }
     }
 
-    window.requestAnimationFrame(step);
+    if (Math.abs(distance) > 5) { // جلوگیری از اسکرول‌های بسیار کوچک که ممکن است ضروری نباشد
+        window.requestAnimationFrame(step);
+    }
 }
 
