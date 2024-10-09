@@ -199,7 +199,7 @@
     -webkit-appearance: none;
     outline: none !important;
     font-size: 14px;
-    color: var(--assimox-black-rgb);
+    color: var(--assimox-white);
     font-weight: 700;
     padding: 14px 45px 12px;
     font-family: var(--assimox-font-two);
@@ -1921,7 +1921,7 @@
 
   
   .main-slider__btn {
-      color: var(--assimox-white);
+      color: var(--assimox-black);
       border-radius: 30px;
       overflow: hidden;
       letter-spacing: 1.5px;
