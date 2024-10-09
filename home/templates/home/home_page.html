@@ -36,11 +36,15 @@
                     {% for slide in page.slides.all %}
                     <div class="swiper-slide">
                         <!-- Background image of the slide -->
-                        <div class="main-slider__image"
-                        style="
-                        background-image: url({% image slide.image fill-1344x640 format-webp as img_webp_url %}{{ img_webp_url.url }}); 
-                        background-image: url({% image slide.image fill-400x700 format-webp as img_mobile_webp_url %}{{ img_mobile_webp_url.url }}) no-repeat;
-                        ">
+                        <div class="main-slider__image">
+                            <!-- تصویر دسکتاپ -->
+                            <picture >
+                                <source media="(min-width: 768px)" srcset="{% image slide.image fill-2500x1500 format-webp as img_webp_url %}{{ img_webp_url.url }}">
+                                <!-- تصویر موبایل -->
+                                <source media="(max-width: 767px)" srcset="{% image slide.image fill-625x900 format-webp as img_mobile_webp_url %}{{ img_mobile_webp_url.url }}">
+                                <!-- تصویر پیش‌فرض برای مرورگرهایی که از <picture> پشتیبانی نمی‌کنند -->
+                                <img src="{% image slide.image fill-1500x959 format-webp as fallback_img_webp_url %}{{ fallback_img_webp_url.url }}" alt="slider image">
+                            </picture>
                         </div>
                     
                                            
