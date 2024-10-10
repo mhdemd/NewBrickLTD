@@ -132,8 +132,14 @@ document.addEventListener('DOMContentLoaded', function() {
             "{% static 'assets/vendors/bxslider/jquery.bxslider.css' %}",
             "{% static 'assets/vendors/vegas/vegas.min.css' %}",
             "{% static 'assets/vendors/timepicker/timePicker.css' %}",
+
             "{% static 'assets/vendors/bootstrap-select/css/bootstrap-select.min.css' %}",
             "{% static 'assets/vendors/jquery-ui/jquery-ui.css' %}",
+            "{% static 'assets/vendors/free-hand-font/stylesheet.css' %}",
+
+            "{% static 'assets/vendors/reey-font/stylesheet.css' %}",
+            "{% static 'assets/vendors/tiny-slider/tiny-slider.min.css' %}",
+            "{% static 'assets/vendors/assimox-icons/style.css' %}",
             
         ];
 
