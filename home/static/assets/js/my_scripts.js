@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contactForm section');
+    const form = document.getElementById('contactForm'); // تغییر انتخابگر
     const successMessage = document.getElementById('successMessage');
     
     if (window.location.hash === '#form') {
@@ -12,20 +12,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    form.addEventListener('submit', function () {
-        window.location.hash = '#form';  
-    });
+    if (form) { // بررسی اینکه فرم وجود دارد
+        form.addEventListener('submit', function () {
+            window.location.hash = '#form';  
+        });
+    }
 });
+
 
 
 // When click slide botton -> scroll to form
 function smoothScrollToForm() {
-    const targetElement = document.getElementById('contactForm section');
-    if (!targetElement) return; // اگر عنصر وجود ندارد اسکرول متوقف شود
-    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset; // محاسبه موقعیت نهایی
+    const targetElement = document.getElementById('contactForm'); // Correctly referencing the section by its ID
+    if (!targetElement) return; // Stop if the element doesn't exist
+
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset; // Calculate target position
     const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition - 0; // کمی فاصله برای فضای بالای فرم
-    const duration = 120; // مدت زمان اسکرول (میلی‌ثانیه)
+    const distance = targetPosition - startPosition - 0; // Adjust for any spacing above the form
+    const duration = 120; // Scroll duration in milliseconds
     let start = null;
 
     function step(timestamp) {
@@ -33,7 +37,7 @@ function smoothScrollToForm() {
         const progress = timestamp - start;
         const percentage = Math.min(progress / duration, 1);
         
-        // تابع easeInQuad برای شروع سریع‌تر و کند شدن تدریجی
+        // Ease-in quadratic function for smooth scroll
         const easeInQuad = percentage * percentage;
 
         window.scrollTo(0, startPosition + distance * easeInQuad);
@@ -41,14 +45,15 @@ function smoothScrollToForm() {
         if (progress < duration) {
             window.requestAnimationFrame(step);
         } else {
-            window.scrollTo(0, targetPosition); // اطمینان از اینکه دقیقاً به هدف رسیده است
+            window.scrollTo(0, targetPosition); // Ensure it reaches the exact target
         }
     }
 
-    if (Math.abs(distance) > 5) { // جلوگیری از اسکرول‌های بسیار کوچک که ممکن است ضروری نباشد
+    if (Math.abs(distance) > 5) { // Prevent very small scrolls
         window.requestAnimationFrame(step);
     }
 }
+
 
 // show fixed footer after scrolling
 document.addEventListener('DOMContentLoaded', function() {

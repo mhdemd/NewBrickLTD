@@ -208,7 +208,7 @@
 
 
         <!--FAQ One Start-->
-        <section class="faq-one lazy-section" style="opacity: 0; transition: opacity 1s ease-in-out;">
+        <section id="contactForm" class="faq-one " >
 
             <div class="faq-one__bg" style="background-image: url({% static 'assets/images/backgrounds/FAQ.webp' %});"></div>
 
@@ -229,7 +229,7 @@
                                 <h2>Send Your Message to Us</h2>
                                 <p>Please feel free to get in touch using the form below. We’d love to hear for you..
                                 </p>
-                                <form id="contactForm" class="faq-one__form comment-form-2-validated" method="post" novalidate="novalidate">
+                                <form  class="faq-one__form comment-form-2-validated" method="post" novalidate="novalidate">
                                     {% csrf_token %}
                                     <div class="row">
                                         <div class="col-xl-12">
