@@ -141,6 +141,10 @@ document.addEventListener('DOMContentLoaded', function() {
             "{% static 'assets/vendors/tiny-slider/tiny-slider.min.css' %}",
             "{% static 'assets/vendors/assimox-icons/style.css' %}",
             
+            "{% static 'assets/vendors/nouislider/nouislider.min.css' %}",
+            "{% static 'assets/vendors/animate/animate.min.css' %}",
+            "{% static 'assets/vendors/nouislider/nouislider.pips.css' %}",
+        
         ];
 
         stylesheets.forEach(function(href) {
