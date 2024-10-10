@@ -140,7 +140,7 @@
 
 
         <!--Why Choose One Start-->
-        <section class="why-choose-one lazy-section" >
+        <section class="why-choose-one lazy-section" style="opacity: 0; transition: opacity 1s ease-in-out;">
 
             <!-- right -->
             <div class="why-choose-one__img-1">
@@ -208,7 +208,8 @@
 
 
         <!--FAQ One Start-->
-        <section id="contactForm section" class="faq-one lazy-section">
+        <section class="faq-one lazy-section" style="opacity: 0; transition: opacity 1s ease-in-out;">
+
             <div class="faq-one__bg" style="background-image: url({% static 'assets/images/backgrounds/FAQ.webp' %});"></div>
 
             <div class="container">
@@ -287,7 +288,29 @@
 
     </div><!-- /.page-wrapper -->
 
-
+<script>
+    // Lazy load HTML
+    document.addEventListener("DOMContentLoaded", function() {
+        let lazySections = document.querySelectorAll(".lazy-section");
+        
+        let observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    let section = entry.target;
+                    section.style.opacity = "1"; // تنظیم مقدار opacity برای نمایش بخش
+                    observer.unobserve(section);
+                }
+            });
+        }, {
+            rootMargin: "0px 0px 200px 0px"
+        });
+    
+        lazySections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+    
+</script>
 </body>
 
 {% endblock %}  
