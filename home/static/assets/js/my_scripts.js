@@ -66,5 +66,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Lazy load HTML
+document.addEventListener("DOMContentLoaded", function() {
+    let lazySections = document.querySelectorAll(".lazy-section");
+    
+    let observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                let section = entry.target;
+                section.style.opacity = "1"; // تنظیم مقدار opacity برای نمایش بخش
+                observer.unobserve(section);
+            }
+        });
+    }, {
+        rootMargin: "0px 0px 200px 0px"
+    });
+
+    lazySections.forEach(section => {
+        observer.observe(section);
+    });
+});
 
 
