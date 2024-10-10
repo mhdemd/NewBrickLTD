@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "{% static 'assets/vendors/timepicker/timePicker.css' %}",
             "{% static 'assets/vendors/bootstrap-select/css/bootstrap-select.min.css' %}",
             "{% static 'assets/vendors/jquery-ui/jquery-ui.css' %}",
-            "{% static 'assets/vendors/free-hand-font/stylesheet.css' %}",
+            
         ];
 
         stylesheets.forEach(function(href) {
