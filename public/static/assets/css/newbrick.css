@@ -25,8 +25,8 @@
     --assimox-gray-rgb: 68, 68, 68;
     --assimox-white: #ffffff;
     --assimox-white-rgb: 255, 255, 255;
-    --assimox-base: #f1d551;
-    --assimox-base-rgb: 241, 213, 81;
+    --assimox-base: #00a7eb;
+    --assimox-base-rgb: 0, 167, 235;
     --assimox-black: #0b1a3a;
     --assimox-black-rgb: 11, 26, 58;
     --assimox-primary: #005b80;
@@ -231,7 +231,7 @@
   }
   
   .thm-btn:hover {
-    color: var(--assimox-white);
+    color: var(--assimox-black);
   }
   
   .thm-btn:hover:before {
@@ -975,7 +975,7 @@
   
   .main-menu__call-sub-title {
     font-size: 16px;
-    color: #000000;
+    color: var(--assimox-white);
     line-height: 20px;
   }
   
@@ -1921,7 +1921,7 @@
 
   
   .main-slider__btn {
-      color: var(--assimox-black);
+      color: var(--assimox-white);
       border-radius: 30px;
       overflow: hidden;
       letter-spacing: 1.5px;
