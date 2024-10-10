@@ -146,6 +146,7 @@
     }
   }
   
+
   ::-webkit-input-placeholder {
     color: inherit;
     opacity: 1;
@@ -252,7 +253,7 @@
     display: inline-block;
     font-size: 14px;
     line-height: 18px;
-    color: var(--assimox-primary);
+    color: var(--assimox-black);
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -2330,7 +2331,7 @@
   .why-choose-one {
     position: relative;
     display: block;
-    background-color: #013e7e;
+    background-color: #ffffff;
     padding: 120px 0 120px;
     z-index: 1;
   }
@@ -2381,7 +2382,7 @@
   }
   
   .why-choose-one__text {
-    color: var(--assimox-white);
+    color: var(--assimox-black);
     padding-bottom: 37px;
   }
   
