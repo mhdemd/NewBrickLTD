@@ -19,11 +19,12 @@
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="{% static 'assets/vendors/swiper/swiper.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" /> -->
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/assimox-icons/style.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}" />
     
+    <!-- Lazy load CSS -->
     <script>
         // Lazy load CSS
         document.addEventListener('DOMContentLoaded', function() {
@@ -34,6 +35,7 @@
                 lazyLoaded = true;
         
                 const stylesheets = [
+                    "{% static 'assets/vendors/fontawesome/css/all.min.css' %}",
                     "{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}",
                     "{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}",
                     "{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}",
@@ -97,7 +99,13 @@
                             <!-- Home About Us Services Projects Pages Contact Us -->
 
                             <div class="main-menu__main-menu-box-inner">
-                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                <a href="#" class="mobile-nav__toggler">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24">
+                                        <path d="M0 88C0 74.7 10.7 64 24 64H424C437.3 64 448 74.7 448 88C448 101.3 437.3 112 424 112H24C10.7 112 0 101.3 0 88zM424 240C437.3 240 448 250.7 448 264C448 277.3 437.3 288 424 288H24C10.7 288 0 277.3 0 264C0 250.7 10.7 240 24 240H424zM424 416H24C10.7 416 0 426.7 0 440C0 453.3 10.7 464 24 464H424C437.3 464 448 453.3 448 440C448 426.7 437.3 416 424 416z"/>
+                                    </svg>
+                                </a>
+                                
+
                                 <ul class="main-menu__list">
                                     <li class="dropdown">
                                         <a href="/">Home</a>
@@ -409,6 +417,7 @@
 <script src="{% static 'assets/vendors/wow/wow.js' %}" defer></script>
 <script src="{% static 'assets/vendors/swiper/swiper.min.js' %}" defer></script>
 
+<!-- Lazy load js -->
 <script>
     // Lazy load js
     document.addEventListener('DOMContentLoaded', function() {
