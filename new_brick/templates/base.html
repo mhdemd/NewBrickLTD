@@ -19,44 +19,59 @@
 
     <!-- Vendor styles -->
 
-    <!-- Dont use CDN -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> -->
-    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}" />
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"> -->
-    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}" />
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.css"> -->
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}" /> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}" /> {% endcomment %}
     <link rel="stylesheet" href="{% static 'assets/vendors/swiper/swiper.min.css' %}" />
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" />
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
     <link rel="stylesheet" href="{% static 'assets/vendors/animate/custom-animate.css' %}" />
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}" />
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css"> -->
     <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.min.css' %}" />
-
     <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/vendors/jarallax/jarallax.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/jarallax/jarallax.css' %}" /> {% endcomment %}
     <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.pips.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/vendors/odometer/odometer.min.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/odometer/odometer.min.css' %}" /> {% endcomment %}
     <link rel="stylesheet" href="{% static 'assets/vendors/assimox-icons/style.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/tiny-slider/tiny-slider.min.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/reey-font/stylesheet.css' %}" />
-
-    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/vendors/bxslider/jquery.bxslider.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}" /> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/bxslider/jquery.bxslider.css' %}" /> {% endcomment %}
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/css/bootstrap-select.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/vendors/vegas/vegas.min.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/vegas/vegas.min.css' %}" /> {% endcomment %}
     <link rel="stylesheet" href="{% static 'assets/vendors/jquery-ui/jquery-ui.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/vendors/timepicker/timePicker.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/timepicker/timePicker.css' %}" /> {% endcomment %}
     <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}" />
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let lazyLoaded = false;
+        
+            const loadLazyCSS = () => {
+                if (lazyLoaded) return;
+                lazyLoaded = true;
+        
+                const stylesheets = [
+                    "{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}",
+                    "{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}",
+                    "{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}",
+                    "{% static 'assets/vendors/jarallax/jarallax.css' %}",
+                    "{% static 'assets/vendors/odometer/odometer.min.css' %}",
+                    "{% static 'assets/vendors/bxslider/jquery.bxslider.css' %}",
+                    "{% static 'assets/vendors/vegas/vegas.min.css' %}",
+                    "{% static 'assets/vendors/timepicker/timePicker.css' %}",
+                ];
+        
+                stylesheets.forEach(function(href) {
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = href;
+                    document.head.appendChild(link);
+                });
+            };
+        
+            // بارگذاری CSSها بعد از اولین اسکرول
+            window.addEventListener('scroll', loadLazyCSS);
+        });
+    </script>
+        
 
     <!-- Template styles -->
     <link rel="stylesheet" href="{% static 'assets/css/newbrick.css' %}" />
@@ -452,6 +467,6 @@
 <script src="{% static 'assets/js/newbrick.js' %}" defer></script>
   
 <!-- JavaScript for scroll to form after press button -->
-<script src="{% static 'assets/js/scroll_to_form.js' %}" defer></script> 
+<script src="{% static 'assets/js/my_scripts.js' %}" defer></script> 
 
 </html>
