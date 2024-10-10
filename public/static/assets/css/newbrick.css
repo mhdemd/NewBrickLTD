@@ -2340,12 +2340,13 @@
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
-    clip-path: polygon(22% 0, 100% 0%, 100% 100%, 0% 100%);
+    bottom: 12;
+    clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
   }
   
   .why-choose-one__img-1 img {
     width: auto;
+    height: auto;
   }
   
   .why-choose-one__img-1:before {
@@ -2378,7 +2379,7 @@
   }
   
   .why-choose-one__content .section-title__title {
-    color: var(--assimox-white);
+    color: var(--assimox-black);
   }
   
   .why-choose-one__text {
@@ -2451,8 +2452,8 @@
   
   .why-choose-one__points li .text p {
     font-size: 19px;
-    color: var(--assimox-white);
-    font-weight: 500;
+    color: var(--assimox-black);
+    font-weight: 600;
     line-height: 24px;
   }
   

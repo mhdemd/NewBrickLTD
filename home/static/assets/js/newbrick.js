@@ -1032,15 +1032,5 @@
 })(jQuery);
 
 
-// show fixed footer after scrolling
-document.addEventListener('DOMContentLoaded', function() {
-    const footer = document.querySelector('.fixed-footer');
 
-    // رویداد اسکرول را فقط یکبار تنظیم می‌کنیم
-    const onScroll = () => {
-        footer.style.display = 'block'; // نمایش نوار
-        window.removeEventListener('scroll', onScroll); // پس از اولین اسکرول، رویداد اسکرول حذف می‌شود
-    };
 
-    window.addEventListener('scroll', onScroll); // وقتی کاربر اسکرول می‌کند، نوار نمایش داده می‌شود
-});

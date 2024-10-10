@@ -2340,12 +2340,13 @@
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
-    clip-path: polygon(22% 0, 100% 0%, 100% 100%, 0% 100%);
+    bottom: 12;
+    clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
   }
   
   .why-choose-one__img-1 img {
     width: auto;
+    height: auto;
   }
   
   .why-choose-one__img-1:before {
