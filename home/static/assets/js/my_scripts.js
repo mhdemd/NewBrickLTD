@@ -24,18 +24,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // When click slide botton -> scroll to form
 function smoothScrollToForm() {
-    const isMobile = window.innerWidth < 768;
+    const isMobile = window.innerWidth < 768; // تشخیص حالت موبایل یا دسکتاپ
     const targetElement = isMobile
-        ? document.getElementById('contactForm_Form') // Mobile target
-        : document.getElementById('contactForm'); // Desktop target
+        ? document.getElementById('contactForm_Form') // هدف در موبایل
+        : document.getElementById('contactForm'); // هدف در دسکتاپ
 
-    if (!targetElement) return; // Stop if the element doesn't exist
+    if (!targetElement) return; // اگر عنصر وجود ندارد، متوقف شود
 
-    const headerOffset = 220; // Adjust this value as needed for the space above the form
-    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset; // Adjust for any spacing above the form
+    const headerOffset = isMobile ? 220 : 0; // در موبایل فاصله از بالا، در دسکتاپ بدون فاصله
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset; 
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
-    const duration = 120; // Scroll duration in milliseconds
+    const duration = 120; // مدت زمان اسکرول نرم
     let start = null;
 
     function step(timestamp) {
@@ -43,20 +43,21 @@ function smoothScrollToForm() {
         const progress = timestamp - start;
         const percentage = Math.min(progress / duration, 1);
         
-        const easeInQuad = percentage * percentage;
+        const easeInQuad = percentage * percentage; // تابع ease-in برای حرکت نرم‌تر
         window.scrollTo(0, startPosition + distance * easeInQuad);
 
         if (progress < duration) {
             window.requestAnimationFrame(step);
         } else {
-            window.scrollTo(0, targetPosition); // Ensure it reaches the exact target
+            window.scrollTo(0, targetPosition); // اطمینان حاصل کنید که دقیقا به هدف می‌رسد
         }
     }
 
-    if (Math.abs(distance) > 5) { // Prevent very small scrolls
+    if (Math.abs(distance) > 5) { // جلوگیری از اسکرول‌های بسیار کوچک
         window.requestAnimationFrame(step);
     }
 }
+
 
 // show fixed footer after scrolling
 document.addEventListener('DOMContentLoaded', function() {
