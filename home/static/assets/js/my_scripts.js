@@ -31,7 +31,7 @@ function smoothScrollToForm() {
 
     if (!targetElement) return; // Stop if the element doesn't exist
 
-    const headerOffset = 200; // Adjust this value as needed for the space above the form
+    const headerOffset = 220; // Adjust this value as needed for the space above the form
     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset; // Adjust for any spacing above the form
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
