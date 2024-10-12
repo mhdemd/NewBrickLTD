@@ -38,28 +38,31 @@
                         <!-- Background image of the slide -->
                         <div class="main-slider__image">
                             <picture>
-                                <source media="(min-width: 768px)" srcset="{% image slide.image fill-1920x914 format-webp as img_webp_url %}{{ img_webp_url.url }}">
-                                <source media="(max-width: 767px)" srcset="{% image slide.image fill-340x800 format-webp as img_mobile_webp_url %}{{ img_mobile_webp_url.url }}">
-                                <img src="{% image slide.image fill-1500x959 format-webp as fallback_img_webp_url %}{{ fallback_img_webp_url.url }}" alt="slider image">
+                                <!-- برای دسکتاپ -->
+                                <source media="(min-width: 768px)" srcset="{% image slide.image_desktop fill-1920x914 format-webp as desktop_img_webp_url %}{{ desktop_img_webp_url.url }}">
+                                <!-- برای موبایل -->
+                                <source media="(max-width: 767px)" srcset="{% image slide.image_mobile fill-340x800 format-webp as mobile_img_webp_url %}{{ mobile_img_webp_url.url }}">
+                                <!-- عکس پیش‌فرض در صورتی که هیچ کدام لود نشد -->
+                                <img src="{% image slide.image_desktop fill-1500x959 format-webp as fallback_img_webp_url %}{{ fallback_img_webp_url.url }}" alt="slider image">
                             </picture>
                         </div>
-                                     
+            
                         <!-- Slide content section -->
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-7 col-lg-9">
                                     <div class="main-slider__content">
-                                        <!-- Sub-title (text_1) -->
-                                        <p class="main-slider__sub-title">{{ slide.text_1 }}</p>
+                                        <!-- Sub-title (text_slide_1) -->
+                                        <p class="main-slider__sub-title">{{ slide.text_slide_1 }}</p>
 
-                                        <!-- Main title (text_2), applying line breaks if necessary -->
-                                        <h2 class="main-slider__title">{{ slide.text_2|linebreaksbr }}</h2>
+                                        <!-- Main title (text_slide_2), applying line breaks if necessary -->
+                                        <h2 class="main-slider__title">{{ slide.text_slide_2|linebreaksbr }}</h2>
 
-                                        <!-- Additional text (text_3) -->
-                                        <h4 class="main-slider__text">{{ slide.text_3 }}</h4>
+                                        <!-- Additional text (text_slide_3) -->
+                                        <h4 class="main-slider__text">{{ slide.text_slide_3 }}</h4>
 
-                                        <!-- Rich text content (text_4 and text_5) -->
-                                        {{ slide.text_4|add_class_to_paragraphs|safe }}<br>{{ slide.text_5|add_class_to_paragraphs|safe }}
+                                        <!-- Rich text content (text_slide_4 and text_slide_5) -->
+                                        {{ slide.text_slide_4|add_class_to_paragraphs|safe }}<br>{{ slide.text_slide_5|add_class_to_paragraphs|safe }}
 
                                         <!-- Call to Action (CTA) button, only if both CTA text and link are present -->
                                         {% if slide.hero_cta and slide.hero_cta_link %}
@@ -157,11 +160,8 @@
                                 <span class="section-title__tagline">why choose us</span>
                                 <h2 class="section-title__title">Our Advantages</h2>
                             </div>
-                            <p class="why-choose-one__text">If you need to repair or replace your Plumbing system, call
-                                today and <br> talk to one of our Plumbing specialists. <br> They’ll answer all your questions and
-                                arrange an appointment at your convenience. If you need to repair or replace your
-                                Plumbing system <br> call today and talk to one.</p>
-                            <div class="why-choose-one__points-box">
+                            <p class="why-choose-one__text">{{ page.why_choose_us|richtext }} </p>
+                            <div class="why-choose-one__points-box mt-5">
                                 <ul class="list-unstyled why-choose-one__points">
                                     <li>
                                         <div class="icon">
