@@ -3675,161 +3675,178 @@
   /*--------------------------------------------------------------
   # About Three
   --------------------------------------------------------------*/
-  
-  .about-three__left {
-    position: relative;
-    display: block;
-    margin-right: 63px;
-  }
-  
-  .about-three__left .section-title {
-    margin-bottom: 24px;
-  }
-  
-  .about-three__text-1 {
-    font-size: 21px;
-    font-weight: 600;
-  }
-  
-  .about-three__text-2 {
-    position: relative;
-    display: block;
-    margin-top: 27px;
-    margin-bottom: 26px;
-  }
-  
-  .about-three__text-3 {
-    position: relative;
-    display: block;
-  }
-  
-  .about-three__points-box {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-top: 29px;
-  }
-  
-  .about-three__points {
-    position: relative;
-    display: block;
-  }
-  
-  .about-three__points+.about-three__points {
-    margin-left: 104px;
-  }
-  
-  .about-three__points li {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  
-  .about-three__points li+li {
-    margin-top: 6px;
-  }
-  
-  .about-three__points li .icon {
-    position: relative;
-    display: inline-block;
-    top: 2px;
-  }
-  
-  .about-three__points li .icon span {
-    position: relative;
-    display: inline-block;
-    font-size: 20px;
-    color: #057def;
-  }
-  
-  .about-three__points li .text {
-    position: relative;
-    display: block;
-    margin-left: 12px;
-  }
-  
-  .about-three__points li .text p {
-    font-weight: 500;
-    color: #000000;
-  }
-  
-  .about-three__right {
-    position: relative;
-    display: block;
-  }
-  
-  .about-three__img-box {
-    position: relative;
-    display: block;
-  }
-  
-  .about-three__img-2 {
-    position: absolute;
-    bottom: -189px;
-    right: 60px;
-  }
-  
-  .about-three__img-2 img {
-    width: auto;
-  }
-  
-  .about-three__img {
-    position: relative;
-    display: block;
-  }
-  
-  .about-three__img img {
-    width: 100%;
-  }
-  
-  .about-three__count-box {
-    position: absolute;
-    left: -33px;
-    bottom: -127px;
-    background-color: var(--assimox-primary);
-    max-width: 240px;
-    border-radius: 8px;
-    width: 100%;
-    text-align: center;
-    padding-bottom: 26px;
-  }
-  
-  .about-three__count-box h3 {
-    font-size: 62px;
-    font-weight: 700;
-    line-height: 62px !important;
-    font-family: var(--assimox-font) !important;
-    color: var(--assimox-white);
-    text-transform: uppercase;
-  }
-  
-  .about-three__letter {
-    font-size: 62px;
-    font-weight: 700;
-    line-height: 72px !important;
-    font-family: var(--assimox-font) !important;
-    color: var(--assimox-white);
-    text-transform: uppercase;
-    top: 18px;
-    position: relative;
-  }
-  
-  .about-three__plus {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 46px !important;
-    font-family: var(--assimox-font) !important;
-    color: var(--assimox-white);
-    position: relative;
-    top: -1px;
-  }
-  
-  .about-three__count-text {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 24px;
-    color: var(--assimox-white);
-  }
+/*--------------------------------------------------------------
+# About Three
+--------------------------------------------------------------*/
+.about-three {
+  position: relative;
+  display: block;
+  padding: 120px 0 115px;
+}
+
+.about-three__left {
+  position: relative;
+  display: block;
+  margin-right: 63px;
+}
+
+.about-three__left .section-title {
+  margin-bottom: 24px;
+}
+
+.about-three__text-1 {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.about-three__text-2 {
+  position: relative;
+  display: block;
+  margin-top: 27px;
+  margin-bottom: 26px;
+}
+
+.about-three__text-3 {
+  position: relative;
+  display: block;
+}
+
+.about-three__points-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 29px;
+}
+
+.about-three__points {
+  position: relative;
+  display: block;
+}
+
+.about-three__points+.about-three__points {
+  margin-left: 104px;
+}
+
+.about-three__points li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.about-three__points li+li {
+  margin-top: 6px;
+}
+
+.about-three__points li .icon {
+  position: relative;
+  display: inline-block;
+  top: 2px;
+}
+
+.about-three__points li .icon span {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  color: #057def;
+}
+
+.about-three__points li .text {
+  position: relative;
+  display: block;
+  margin-left: 12px;
+}
+
+.about-three__points li .text p {
+  font-weight: 550;
+  color: #000000;
+}
+
+.about-three__right {
+  position: relative;
+  display: block;
+}
+
+.about-three__img-box {
+  position: relative;
+  display: block;
+}
+
+.about-three__img-2 {
+  position: absolute;
+  bottom: -189px;
+  right: 60px;
+}
+
+.about-three__img-2 img {
+  width: auto;
+}
+
+.about-three__img {
+  position: relative;
+  display: block;
+}
+
+.about-three__img img {
+  width: 100%;
+}
+
+.about-three__count-box {
+  position: absolute;
+  left: -33px;
+  bottom: -127px;
+  background-color: #11aded;
+  max-width: 240px;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 26px;
+}
+
+.about-three__count-box h3 {
+  font-size: 62px;
+  font-weight: 700;
+  line-height: 62px !important;
+  font-family: var(--assimox-font) !important;
+  color: var(--assimox-white);
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.about-three__letter {
+  font-size: 62px;
+  font-weight: 700;
+  font-family: var(--assimox-font) !important;
+  color: var(--assimox-white);
+  text-transform: uppercase;
+  vertical-align: top; /* هم‌راستا کردن با عدد */
+  position: relative;
+  top: 0px;
+}
+
+.about-three__plus {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 46px !important;
+  font-family: var(--assimox-font) !important;
+  color: var(--assimox-white);
+  position: relative;
+  top: -15px; /* افزایش مقدار منفی برای بالا بردن علامت + */
+}
+
+.about-three__count-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--assimox-white);
+  margin-top: 20px;
+}
+
+.about-three__count-text {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--assimox-white);
+}
   
   /*--------------------------------------------------------------
   # Services Three
