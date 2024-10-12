@@ -1,3 +1,4 @@
+// When click on form botton scroll to form again
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactForm'); // تغییر انتخابگر
     const successMessage = document.getElementById('successMessage');
@@ -23,12 +24,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // When click slide botton -> scroll to form
 function smoothScrollToForm() {
-    const targetElement = document.getElementById('contactForm'); // Correctly referencing the section by its ID
+    const isMobile = window.innerWidth < 768;
+    const targetElement = isMobile
+        ? document.getElementById('contactForm_Form') // Mobile target
+        : document.getElementById('contactForm'); // Desktop target
+
     if (!targetElement) return; // Stop if the element doesn't exist
 
-    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset; // Calculate target position
+    const headerOffset = 150; // Adjust this value as needed for the space above the form
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset; // Adjust for any spacing above the form
     const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition - 0; // Adjust for any spacing above the form
+    const distance = targetPosition - startPosition;
     const duration = 120; // Scroll duration in milliseconds
     let start = null;
 
@@ -37,9 +43,7 @@ function smoothScrollToForm() {
         const progress = timestamp - start;
         const percentage = Math.min(progress / duration, 1);
         
-        // Ease-in quadratic function for smooth scroll
         const easeInQuad = percentage * percentage;
-
         window.scrollTo(0, startPosition + distance * easeInQuad);
 
         if (progress < duration) {
@@ -53,6 +57,8 @@ function smoothScrollToForm() {
         window.requestAnimationFrame(step);
     }
 }
+
+
 
 
 // show fixed footer after scrolling

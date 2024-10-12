@@ -2760,7 +2760,7 @@
   }
   
   .team-one__single:hover .team-one__name a {
-    color: var(--assimox-base);
+    color: var(--assimox-primary);
   }
   
   .team-one__subtitle {
