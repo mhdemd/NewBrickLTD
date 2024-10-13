@@ -40,7 +40,7 @@ EMAIL_HOST = "smtp-de-01.runflare.com"
 EMAIL_PORT = 465  # if use ssl
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = "info@newbrickltd.co.uk"
-EMAIL_HOST_PASSWORD = "newbrickltd@7477"
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = "info@newbrickltd.co.uk"
 
 
