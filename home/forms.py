@@ -29,6 +29,11 @@ class ContactForm(forms.Form):
         label="Message",
         required=True,
         widget=forms.Textarea(
-            attrs={"placeholder": "Message", "class": "form-control"}
+            attrs={
+                "placeholder": "Message",
+                "class": "form-control",
+                "maxlength": "500",
+            }
         ),
+        max_length=800,
     )

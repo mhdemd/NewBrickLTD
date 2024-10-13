@@ -25,10 +25,24 @@ MEDIA_URL = "/public/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "public", "media")
 
 
-ALLOWED_HOSTS = ["newbrick.runflare.run", "www.newbrick.runflare.run"]
+ALLOWED_HOSTS = [
+    "newbrick.runflare.run",
+    "www.newbrick.runflare.run",
+    "newbrickltd.co.uk",
+    "www.newbrickltd.co.uk",
+]
 CSRF_TRUSTED_ORIGINS = ["https://newbrick.runflare.run"]
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp-de-01.runflare.com"
+EMAIL_PORT = 465  # if use ssl
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = "info@newbrickltd.co.uk"
+EMAIL_HOST_PASSWORD = "newbrickltd@7477"
+DEFAULT_FROM_EMAIL = "info@newbrickltd.co.uk"
+
 
 try:
     from .local import *
