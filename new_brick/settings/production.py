@@ -31,7 +31,7 @@ ALLOWED_HOSTS = [
     "newbrickltd.co.uk",
     "www.newbrickltd.co.uk",
 ]
-CSRF_TRUSTED_ORIGINS = ["https://newbrick.runflare.run"]
+CSRF_TRUSTED_ORIGINS = ["https://newbrick.runflare.run", "https://newbrickltd.co.uk"]
 
 # EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
