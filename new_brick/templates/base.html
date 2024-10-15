@@ -140,7 +140,7 @@
                             </div>
                             <div class="main-menu__call-content">
                                 <p class="main-menu__call-sub-title">Need help? Talk to an expert</p>
-                                <h4 class="main-menu__call-number"><a href="tel:{{ company_info.phone }}">+ {{ company_info.phone }}</a></h4>
+                                <h4 class="main-menu__call-number"><a href="tel:{{ company_info.phone }}">{{ company_info.phone }}</a></h4>
                             </div>
                         </div>
                     </div>
@@ -240,7 +240,7 @@
             </li>
             <li>
                 <i class="fa fa-phone-alt"></i>
-                <a href="tel:{{ company_info.phone }}">+ {{ company_info.phone }}</a>
+                <a href="tel:{{ company_info.phone }}">{{ company_info.phone }}</a>
             </li>
         </ul><!-- /.mobile-nav__contact -->
         <div class="mobile-nav__top">
@@ -307,7 +307,7 @@
                             </div>
                             <div class="content">
                                 <h4>Call us on :</h4>
-                                <a href="tel:+{{ company_info.phone }}">+ {{ company_info.phone }}</a>
+                                <a href="tel:+{{ company_info.phone }}">{{ company_info.phone }}</a>
                             </div>
                         </li>
                     </ul>
@@ -406,7 +406,7 @@
             <i class="fas fa-phone-alt" style="margin-right: 5px;"></i> Call
         </a>
         <span class="separator" style="margin: 0 20px; color: #666;">|</span>
-        <a href="https://wa.me/{{ company_info.phone }}" target="_blank" class="btn-whatsapp" style="flex: 1; display: flex; justify-content: center; align-items: center; text-decoration: none; color: var(--assimox-white);">
+        <a href="https://wa.me/{{ company_info.whatsapp }}" target="_blank" class="btn-whatsapp" style="flex: 1; display: flex; justify-content: center; align-items: center; text-decoration: none; color: var(--assimox-white);">
             <i class="fab fa-whatsapp" style="margin-right: 5px;"></i> WhatsApp
         </a>
     </h4>
