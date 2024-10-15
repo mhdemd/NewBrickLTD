@@ -1,6 +1,9 @@
 from bs4 import BeautifulSoup
 from wagtail import hooks
 from wagtail.rich_text import expand_db_html
+from wagtail_modeladmin.options import ModelAdmin, modeladmin_register
+
+from .models import ContactMessage
 
 
 class CustomRichTextRenderer:
@@ -25,3 +28,15 @@ class CustomRichTextRenderer:
 def register_custom_richtext_renderer(features):
     # تعریف ویژگی سفارشی richtext
     features.default_features.append("custom_richtext")
+
+
+# Add form's message to wagtail admin
+class ContactMessageAdmin(ModelAdmin):
+    model = ContactMessage
+    menu_label = "Contact Messages"  # عنوان در منو
+    menu_icon = "mail"  # آیکون برای منو
+    list_display = ("name", "email", "phone", "submitted_at")  # ستون‌های نمایش داده شده
+    search_fields = ("name", "email", "message")  # فیلدهای قابل جستجو
+
+
+modeladmin_register(ContactMessageAdmin)

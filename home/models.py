@@ -136,24 +136,6 @@ class HomePage(Page):
         return re.sub(r"[\W_]+", "-", text).lower()
 
     # Form service and email sending
-
-    # def serve(self, request, template_name="home/home_page.html"):
-    #     form = ContactForm(request.POST or None)
-    #     context = self.get_context(request)
-
-    #     if request.method == "POST" and form.is_valid():
-    #         send_mail(
-    #             subject=f"New Contact: {form.cleaned_data['name']}",
-    #             message=form.cleaned_data["message"],
-    #             from_email=form.cleaned_data["email"],
-    #             recipient_list=["mahdi.emadi@yahoo.com"],
-    #         )
-    #         context["form"] = form
-    #         return TemplateResponse(request, template_name, context)
-
-    #     context["form"] = form
-    #     return TemplateResponse(request, template_name, context)
-
     def serve(self, request, template_name="home/home_page.html"):
         form = ContactForm(request.POST or None)
         context = self.get_context(request)
@@ -182,6 +164,11 @@ class HomePage(Page):
                 message=email_message,
                 from_email="info@newbrickltd.co.uk",
                 recipient_list=["mahdi.emadi@yahoo.com"],
+            )
+
+            # ذخیره پیام در دیتابیس
+            ContactMessage.objects.create(
+                name=user_name, email=user_email, phone=user_phone, message=user_message
             )
 
             context["form"] = form
@@ -259,3 +246,15 @@ class HomePage(Page):
         FieldPanel("body", heading="Services"),
         FieldPanel("why_choose_us", heading="Why choose us"),
     ]
+
+
+################################## Model form store messages
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20, blank=True, null=True)
+    message = models.TextField()
+    submitted_at = models.DateTimeField(auto_now_add=True)  # زمان ارسال پیام
+
+    def __str__(self):
+        return f"Message from {self.name} ({self.email})"

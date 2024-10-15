@@ -28,6 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 INSTALLED_APPS = [
     "home",
     "search",
+    "wagtail_modeladmin",
+    ###
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
