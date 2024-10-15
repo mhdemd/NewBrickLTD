@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -139,7 +140,7 @@
                             </div>
                             <div class="main-menu__call-content">
                                 <p class="main-menu__call-sub-title">Need help? Talk to an expert</p>
-                                <h4 class="main-menu__call-number"><a href="tel:18003660089">+1 800 ( 366) 0089</a></h4>
+                                <h4 class="main-menu__call-number"><a href="tel:18003660089">+ {{ company_info.phone }}</a></h4>
                             </div>
                         </div>
                     </div>
@@ -274,6 +275,7 @@
 
 <!--Site Footer Start-->
 <footer class="site-footer">
+
     <div class="site-footer__top">
         <div class="container">
             <div class="site-footer__inner">
@@ -284,8 +286,8 @@
                                 <img src="{% static 'assets/images/icon/footer-icon-1.png' %}" alt="">
                             </div>
                             <div class="content">
-                                <h4>54B, Tailstoi Town 5238 MT,</h4>
-                                <p>La city, IA 522364</p>
+                                <h4>{{ company_info.address }}</h4>
+                                <p>{{ company_info.postal_code }}</p>
                             </div>
                         </li>
                         <li>
@@ -294,7 +296,7 @@
                             </div>
                             <div class="content">
                                 <h4>Email us :</h4>
-                                <a href="mailto:contact@assimox.com">contact@assimox.com</a>
+                                <a href="mailto:contact@assimox.com">{{ company_info.email }}</a>
                             </div>
                         </li>
                         <li>
@@ -303,7 +305,7 @@
                             </div>
                             <div class="content">
                                 <h4>Call us on :</h4>
-                                <a href="tel:+18004567890">+ 1800 456 7890</a>
+                                <a href="tel:+18004567890">+ {{ company_info.phone }}</a>
                             </div>
                         </li>
                     </ul>
@@ -365,10 +367,10 @@
                             </div>
                         </form>
                         <div class="site-footer__social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="{{ company_info.facebook }}"><i class="fab fa-facebook-f"></i></a>
+                            <a href="{{ company_info.linkedin }}"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="{{ company_info.twitter }}"><i class="fab fa-twitter"></i></a>
+                            <a href="{{ company_info.instagram }}"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>

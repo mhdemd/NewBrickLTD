@@ -14,10 +14,12 @@ from wagtail.fields import RichTextField, StreamField
 from wagtail.images import get_image_model_string
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.models import Orderable, Page
+from wagtail.snippets.models import register_snippet
 
 from .forms import ContactForm
 
 
+################################## Wagtail's Models
 class HomePageSlide(Orderable):
     id = models.BigAutoField(primary_key=True)
     page = ParentalKey("HomePage", related_name="slides", on_delete=models.CASCADE)
@@ -248,7 +250,7 @@ class HomePage(Page):
     ]
 
 
-################################## Model form store messages
+################################## Form's Model to store messages in database
 class ContactMessage(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()
@@ -258,3 +260,21 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"Message from {self.name} ({self.email})"
+
+
+################################## Contact's models
+@register_snippet  # این دکوریتور مدل را به‌عنوان Snippet ثبت می‌کند
+class CompanyInfo(models.Model):
+    phone = models.CharField(max_length=20, help_text="Company phone number")
+    whatsapp = models.CharField(max_length=20, blank=True, help_text="WhatsApp number")
+    address = models.TextField(help_text="Company address")
+    postal_code = models.CharField(max_length=10, help_text="Postal code")
+    email = models.EmailField(help_text="Company email address")
+    facebook = models.URLField(blank=True, help_text="Facebook link")
+    twitter = models.URLField(blank=True, help_text="Twitter link")
+    linkedin = models.URLField(blank=True, help_text="LinkedIn link")
+    instagram = models.URLField(blank=True, help_text="Instagram link")
+    telegram = models.URLField(blank=True, help_text="Telegram link")
+
+    def __str__(self):
+        return f"Company Info ({self.email})"
