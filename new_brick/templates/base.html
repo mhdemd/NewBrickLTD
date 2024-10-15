@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/assimox-icons/style.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}" />
-    
+    <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" />
+
     <!-- Lazy load CSS -->
     <script>
         // Lazy load CSS
@@ -35,7 +36,6 @@
                 lazyLoaded = true;
         
                 const stylesheets = [
-                    "{% static 'assets/vendors/fontawesome/css/all.min.css' %}",
                     "{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}",
                     "{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}",
                     "{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}",
@@ -228,6 +228,7 @@
             <a href="/" aria-label="logo image"><img src="{% static 'assets/images/resources/logo-1.png' %}" width="200"
                     alt="New Brick LTD company logo" loading="lazy" /></a>
         </div> {% endcomment %}
+
         <!-- /.logo-box -->
         <div class="mobile-nav__container"></div>
         <!-- /.mobile-nav__container -->
@@ -244,10 +245,9 @@
         </ul><!-- /.mobile-nav__contact -->
         <div class="mobile-nav__top">
             <div class="mobile-nav__social">
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-facebook-square"></a>
-                <a href="#" class="fab fa-pinterest-p"></a>
-                <a href="#" class="fab fa-instagram"></a>
+                <a href="{{ company_info.twitter }}" class="fab fa-twitter"></a>
+                <a href="{{ company_info.facebook }}" class="fab fa-facebook-square"></a>
+                <a href="{{ company_info.instagram }}" class="fab fa-instagram"></a>
             </div><!-- /.mobile-nav__social -->
         </div><!-- /.mobile-nav__top -->
 

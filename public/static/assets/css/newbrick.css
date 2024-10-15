@@ -3757,7 +3757,7 @@
 }
 
 .about-three__points li .text p {
-  font-weight: 500;
+  font-weight: 550;
   color: #000000;
 }
 
@@ -3809,17 +3809,18 @@
   font-family: var(--assimox-font) !important;
   color: var(--assimox-white);
   text-transform: uppercase;
+  display: inline-block;
 }
 
 .about-three__letter {
   font-size: 62px;
   font-weight: 700;
-  line-height: 72px !important;
   font-family: var(--assimox-font) !important;
   color: var(--assimox-white);
   text-transform: uppercase;
-  top: 18px;
+  vertical-align: top; /* هم‌راستا کردن با عدد */
   position: relative;
+  top: 0px;
 }
 
 .about-three__plus {
@@ -3829,7 +3830,15 @@
   font-family: var(--assimox-font) !important;
   color: var(--assimox-white);
   position: relative;
-  top: -1px;
+  top: -15px; /* افزایش مقدار منفی برای بالا بردن علامت + */
+}
+
+.about-three__count-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--assimox-white);
+  margin-top: 20px;
 }
 
 .about-three__count-text {
