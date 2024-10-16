@@ -38,12 +38,12 @@
                         <!-- Background image of the slide -->
                         <div class="main-slider__image">
                             <picture>
-                                <!-- برای دسکتاپ -->
+                                {% comment %} <!-- برای دسکتاپ -->
                                 <source media="(min-width: 768px)" srcset="{% image slide.image_desktop fill-1500x960 format-webp as desktop_img_webp_url %}{{ desktop_img_webp_url.url }}">
                                 <!-- برای موبایل -->
-                                <source media="(max-width: 767px)" srcset="{% image slide.image_mobile fill-340x800 format-webp as mobile_img_webp_url %}{{ mobile_img_webp_url.url }}">
+                                <source media="(max-width: 767px)" srcset="{% image slide.image_mobile fill-340x800 format-webp as mobile_img_webp_url %}{{ mobile_img_webp_url.url }}"> {% endcomment %}
                                 <!-- عکس پیش‌فرض در صورتی که هیچ کدام لود نشد -->
-                                <img src="{% image slide.image_desktop fill-1500x960 format-webp as fallback_img_webp_url %}{{ fallback_img_webp_url.url }}" alt="slider image">
+                                <img src="{% image slide.image_desktop fill-1500x960 format-webp as fallback_img_webp_url %}{{ fallback_img_webp_url.url }}" alt="New Brick LTD logo" loading="lazy">
                             </picture>
                         </div>
             
