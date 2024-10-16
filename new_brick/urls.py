@@ -10,7 +10,7 @@ from search import views as search_views
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
-    path("admin/", include(wagtailadmin_urls)),
+    path("new-admin-brick/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
     path("about-us/", home_views.about_us, name="about_us"),
