@@ -148,7 +148,7 @@
 
             <!-- right -->
             <div class="why-choose-one__img-1">
-                <img src="{% static 'assets/images/resources/Our-Advantages.webp' %}" alt="" loading="lazy">
+                <img src="{% static 'assets/images/resources/Our-Advantages.webp' %}" alt="">
             </div>
 
             <!-- left -->
@@ -211,8 +211,32 @@
         <!--FAQ One Start-->
         <section id="contactForm" class="faq-one lazy-section" style="opacity: 0; transition: opacity 1s ease-in-out;">
 
-            <div class="faq-one__bg" style="background-image: url({% static 'assets/images/backgrounds/FAQ.webp' %});"></div>
-
+            {% comment %} <div class="faq-one__bg" style="background-image: url({% static 'assets/images/backgrounds/FAQ.webp' %});"></div> {% endcomment %}
+            <div class="faq-one__bg" data-bg-url="{% static 'assets/images/backgrounds/FAQ.webp' %}"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const bgElements = document.querySelectorAll(".faq-one__bg"); // انتخاب همه المان‌هایی که کلاس مربوطه دارند
+            
+                    const loadBackgroundImage = (element) => {
+                        const bgImageUrl = element.getAttribute("data-bg-url");
+                        element.style.backgroundImage = `url(${bgImageUrl})`;
+                    };
+            
+                    const observer = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                loadBackgroundImage(entry.target);
+                                observer.unobserve(entry.target); // حذف نظارت پس از لود تصویر
+                            }
+                        });
+                    });
+            
+                    bgElements.forEach(element => {
+                        observer.observe(element); // نظارت بر روی هر المان
+                    });
+                });
+            </script>
+            
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6">
