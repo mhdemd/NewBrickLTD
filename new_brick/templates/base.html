@@ -324,8 +324,7 @@
                             <h3 class="footer-widget__title">New Brick LTD</h3> 
                             {% comment %} <a href="index.html"><img src="{% static 'assets/images/resources/footer-logo.png' %}" alt=""></a> {% endcomment %}
                         </div>
-                        <p class="site-footer__text">Capitalize on low hanging fruit to identify a ballpark
-                            value added activity to beta test.</p>
+                        <p class="site-footer__text">Providing 24/7 expert maintenance solutions tailored to your property’s needs, ensuring quality and reliability.</p>
                     </div>
                 </div>
                 <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
@@ -334,11 +333,11 @@
                             <h3 class="footer-widget__title">Useful Links</h3>
                         </div>
                         <ul class="footer-widget__useful-links-list list-unstyled">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="appointment.html">Appointment</a></li>
-                            <li><a href="about.html">Testimonials</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="{% url 'about_us' %}">About Us</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -348,12 +347,12 @@
                             <h3 class="footer-widget__title">Our Services</h3>
                         </div>
                         <ul class="footer-widget__useful-links-list list-unstyled">
-                            <li><a href="single-service.html">Refregerator</a></li>
-                            <li><a href="single-service.html">Mircorwave</a></li>
-                            <li><a href="single-service.html">Washing Machine</a></li>
-                            <li><a href="single-service.html">Cookware Stove</a></li>
-                            <li><a href="single-service.html">Juicer Mixer</a></li>
-                        </ul>
+                            <li><a href="{% url 'service_detail' service_name='drainage-and-blockagesolutions' %}">Drainage and Blockage</a></li>
+                            <li><a href="{% url 'service_detail' service_name='electrical-services' %}">Electrical Services</a></li>
+                            <li><a href="{% url 'service_detail' service_name='plumbing-services' %}">Plumbing Services</a></li>
+                            <li><a href="{% url 'service_detail' service_name='cctv-installation-amp-maintenance' %}">CCTV Installation</a></li>
+                            <li><a href="{% url 'service_detail' service_name='carpentry-services' %}">Carpentry Services</a></li>
+                                                    </ul>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
