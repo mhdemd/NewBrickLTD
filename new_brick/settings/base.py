@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "home",
     "search",
     "wagtail_modeladmin",
+    "django.contrib.sitemaps",
     ###
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",

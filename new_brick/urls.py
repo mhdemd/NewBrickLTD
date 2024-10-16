@@ -1,12 +1,20 @@
 from django.conf import settings
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
+from wagtail.contrib.sitemaps.views import sitemap
 from wagtail.documents import urls as wagtaildocs_urls
 
 from home import views as home_views
+from home.sitemaps import StaticViewSitemap, WagtailSitemap
 from search import views as search_views
+
+sitemaps = {
+    "static": StaticViewSitemap,  # نقشه سایت برای view های ثابت
+    "wagtail": WagtailSitemap,  # نقشه سایت برای صفحات Wagtail
+}
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
@@ -19,6 +27,7 @@ urlpatterns = [
     path(
         "service/<str:service_name>/", home_views.service_detail, name="service_detail"
     ),
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}),
 ]
 
 
