@@ -77,7 +77,7 @@
                                         {% if slide.badge_image %}
                                         <img class="main-slider__badge" 
                                             src="{% image slide.badge_image  fill-130x130 format-webp as badge_img_url %}{{ badge_img_url.url }}" 
-                                            alt="Badge Image">
+                                            alt="" loading="lazy">
                                         {% endif %}
                                     </div>
                                 </div>
@@ -148,7 +148,7 @@
 
             <!-- right -->
             <div class="why-choose-one__img-1">
-                <img  src="{% static 'assets/images/resources/Our-Advantages.webp' %}" alt="">
+                <img src="{% static 'assets/images/resources/Our-Advantages.webp' %}" alt="" loading="lazy">
             </div>
 
             <!-- left -->
