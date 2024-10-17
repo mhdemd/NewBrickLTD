@@ -10,7 +10,7 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
+        "BACKEND": "django.contrib.staticfiles.storage.CachedStaticFilesStorage",
     },
 }
 
@@ -22,12 +22,13 @@ MEDIA_URL = "/public/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "public", "media")
 
 
-ALLOWED_HOSTS = ["*"]
-#     "newbrick.runflare.run",
-#     "www.newbrick.runflare.run",
-#     "newbrickltd.co.uk",
-#     "www.newbrickltd.co.uk",
-# ]
+ALLOWED_HOSTS = [
+    "newbrick.runflare.run",
+    "www.newbrick.runflare.run",
+    "newbrickltd.co.uk",
+    "www.newbrickltd.co.uk",
+]
+
 CSRF_TRUSTED_ORIGINS = ["https://newbrick.runflare.run", "https://newbrickltd.co.uk"]
 
 # EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
