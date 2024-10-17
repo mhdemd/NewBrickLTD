@@ -31,7 +31,7 @@ class HomePageSlide(Orderable):
         blank=False,
         on_delete=models.SET_NULL,
         related_name="+",
-        help_text="Slide image for desktop (size 1920x914)",
+        help_text="Slide image for desktop (size 1320x845)",
     )
     image_mobile = models.ForeignKey(
         get_image_model_string(),
