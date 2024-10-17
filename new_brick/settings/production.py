@@ -4,9 +4,6 @@ DEBUG = False
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, "../public/static"),
-]
 
 STORAGES = {
     "default": {
