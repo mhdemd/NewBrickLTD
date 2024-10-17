@@ -96,3 +96,31 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
+// Lazy load top-img
+document.addEventListener("DOMContentLoaded", function() {
+    const lazyBackgrounds = document.querySelectorAll('.lazy-bg');
+
+    if ("IntersectionObserver" in window) {
+        let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    let lazyBackground = entry.target;
+                    lazyBackground.style.backgroundImage = `url(${lazyBackground.dataset.bgUrl})`;
+                    lazyBackgroundObserver.unobserve(lazyBackground);
+                }
+            });
+        });
+
+        lazyBackgrounds.forEach(function(lazyBackground) {
+            lazyBackgroundObserver.observe(lazyBackground);
+        });
+    } else {
+        // Fallback for browsers that do not support IntersectionObserver
+        lazyBackgrounds.forEach(function(lazyBackground) {
+            lazyBackground.style.backgroundImage = `url(${lazyBackground.dataset.bgUrl})`;
+        });
+    }
+});
+
+

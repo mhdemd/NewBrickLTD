@@ -105,7 +105,7 @@
         <!--Page Header Start-->
         <section class="page-header">
             {% comment %} <div class="page-header__bg" style="background-image: url({% static 'assets/images/backgrounds/top-img.webp' %});"></div> {% endcomment %}
-            <div class="page-header__bg" data-bg-url="{% static 'assets/images/backgrounds/top-img.webp' %}"></div>
+            <div class="page-header__bg lazy-bg" data-bg-url="{% static 'assets/images/backgrounds/top-img.webp' %}"></div>
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
                     const bgElements = document.querySelectorAll(".page-header__bg"); // انتخاب همه المان‌هایی که کلاس مربوطه دارند
@@ -155,7 +155,7 @@
                         <div class="services-details__left">
                             <div class="services-details__img">
                                 {% comment %} <img src="assets/images/resources/services-details-img-1.jpg" alt=""> {% endcomment %}
-                                <img src="{% image service.image fill-270x384 as member_img_url %}{{ member_img_url.url }}" alt="">
+                                <img loading="lazy" src="{% image service.image fill-270x384 as member_img_url %}{{ member_img_url.url }}" alt="">
 
                             </div>
                         </div>
@@ -234,7 +234,7 @@
                     <div class="col-xl-5 col-lg-6">
                         <div class="about-quality__left">
                             <div class="about-quality__img">
-                                <img src="assets/images/resources/about-quality-img-1.jpg" alt="">
+                                <img loading="lazy" src="assets/images/resources/about-quality-img-1.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -307,17 +307,17 @@
                                 <div class="row">
                                     <div class="col-xl-4 col-lg-4 col-md-4">
                                         <div class="video-gallery__img-single">
-                                            <img src="assets/images/services/video-gallery-img-1.jpg" alt="">
+                                            <img loading="lazy" src="assets/images/services/video-gallery-img-1.jpg" alt="">
                                         </div>
                                     </div>
                                     <div class="col-xl-4 col-lg-4 col-md-4">
                                         <div class="video-gallery__img-single">
-                                            <img src="assets/images/services/video-gallery-img-2.jpg" alt="">
+                                            <img loading="lazy" src="assets/images/services/video-gallery-img-2.jpg" alt="">
                                         </div>
                                     </div>
                                     <div class="col-xl-4 col-lg-4 col-md-4">
                                         <div class="video-gallery__img-single">
-                                            <img src="assets/images/services/video-gallery-img-3.jpg" alt="">
+                                            <img loading="lazy" src="assets/images/services/video-gallery-img-3.jpg" alt="">
                                             <div class="video-gallery__video-link">
                                                 <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ"
                                                     class="video-popup">
@@ -415,7 +415,7 @@
                             <div class="video-gallery__right-sidebar">
                                 <div class="video-gallery__right-content">
                                     <div class="video-gallery__right-content-img">
-                                        <img src="assets/images/services/video-gallery-right-content-img-1.jpg" alt="">
+                                        <img loading="lazy" src="assets/images/services/video-gallery-right-content-img-1.jpg" alt="">
                                     </div>
                                     <div class="video-gallery__right-content-title">
                                         <h3>Available <br> <span>for any type of <br>

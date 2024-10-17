@@ -1797,7 +1797,7 @@
     
   .main-slider .swiper-slide {
       position: relative;
-      background-color: var(--assimox-black);
+      background-color: var(--assimox-white);
   }
   
   .main-slider .container {

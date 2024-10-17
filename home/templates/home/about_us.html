@@ -102,7 +102,7 @@
         <section class="page-header">
             
             {% comment %} <div class="page-header__bg" style="background-image: url({% static 'assets/images/backgrounds/top-img.webp' %});"></div> {% endcomment %}
-            <div class="page-header__bg" data-bg-url="{% static 'assets/images/backgrounds/top-img.webp' %}"></div>
+            <div class="page-header__bg lazy-bg" data-bg-url="{% static 'assets/images/backgrounds/top-img.webp' %}"></div>
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
                     const bgElements = document.querySelectorAll(".page-header__bg"); // انتخاب همه المان‌هایی که کلاس مربوطه دارند
