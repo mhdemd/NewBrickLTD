@@ -20,7 +20,7 @@
 :root {
     --assimox-font: 'Barlow', sans-serif;
     --assimox-font-two: 'Roboto', sans-serif;
-    --assimox-font-three: 'freehand521_btregular';
+    --assimox-font-three: 'Great Vibes', cursive;
     --assimox-gray: #444444;
     --assimox-gray-rgb: 68, 68, 68;
     --assimox-white: #ffffff;
@@ -1833,11 +1833,11 @@
   }
   
   .main-slider__sub-title {
-      font-size: 35px;
-      color: rgba(15, 15, 15, .5);
+      font-size: 65px;
+      color: red;
       font-family: var(--assimox-font-three);
-      line-height: 35px;
-      font-weight: 400;
+      line-height: 100px;
+      font-weight: 500;
       opacity: 0;
       visibility: hidden;
       -webkit-transform: translateY(-120px);
