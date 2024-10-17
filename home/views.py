@@ -8,15 +8,15 @@ def about_us(request):
 
 
 def contact_us(request):
-    homepage = get_object_or_404(HomePage, slug="home")
+    homepage = get_object_or_404(HomePage, slug="maintenance-services-london")
     return homepage.serve(request, template_name="home/contact_us.html")
 
 
 def services(request):
-    homepage = get_object_or_404(HomePage, slug="home")
+    homepage = get_object_or_404(HomePage, slug="maintenance-services-london")
     return homepage.serve_services(request)
 
 
 def service_detail(request, service_name):
-    homepage = get_object_or_404(HomePage, slug="home")
+    homepage = get_object_or_404(HomePage, slug="maintenance-services-london")
     return homepage.serve_service_detail(request, service_name)
