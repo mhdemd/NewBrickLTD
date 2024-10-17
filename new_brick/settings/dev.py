@@ -6,9 +6,6 @@ DEBUG = True
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-skke3wjt6mags4%jkqi1a*lwlv@3(031lq%$rydq=y(eb14-ve"
 
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, "static"),
-]
 
 STATIC_URL = "/public/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "public", "static")
