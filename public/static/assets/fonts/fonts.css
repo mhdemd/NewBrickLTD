@@ -1,0 +1,45 @@
+/* Barlow - Regular */
+@font-face {
+    font-family: 'Barlow';
+    src: url('/static/assets/fonts/Barlow-Regular.woff2') format('woff2'),
+         url('/static/assets/fonts/Barlow-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Barlow - Bold */
+@font-face {
+    font-family: 'Barlow';
+    src: url('/static/assets/fonts/Barlow-Bold.woff2') format('woff2'),
+         url('/static/assets/fonts/Barlow-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Roboto - Regular */
+@font-face {
+    font-family: 'Roboto';
+    src: url('/static/assets/fonts/Roboto-Regular.woff2') format('woff2'),
+         url('/static/assets/fonts/Roboto-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Roboto - Bold */
+@font-face {
+    font-family: 'Roboto';
+    src: url('/static/assets/fonts/Roboto-Bold.woff2') format('woff2'),
+         url('/static/assets/fonts/Roboto-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Great Vibes - Regular */
+@font-face {
+    font-family: 'Great Vibes';
+    src: url('/static/assets/fonts/GreatVibes-Regular.woff2') format('woff2'),
+         url('/static/assets/fonts/GreatVibes-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}

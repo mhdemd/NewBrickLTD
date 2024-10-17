@@ -268,7 +268,7 @@ class CompanyInfo(models.Model):
     phone = models.CharField(max_length=20, help_text="Company phone number")
     whatsapp = models.CharField(max_length=20, blank=True, help_text="WhatsApp number")
     address = models.TextField(help_text="Company address")
-    postal_code = models.CharField(max_length=10, help_text="Postal code")
+    postal_code = models.CharField(blank=True, max_length=10, help_text="Postal code")
     email = models.EmailField(help_text="Company email address")
     facebook = models.URLField(blank=True, help_text="Facebook link")
     twitter = models.URLField(blank=True, help_text="Twitter link")
