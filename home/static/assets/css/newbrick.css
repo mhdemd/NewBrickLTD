@@ -3319,7 +3319,7 @@
   }
   
   .site-footer__bottom-text a {
-    color: #c7c7c7;
+    color: var(--assimox-base);
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
   }
@@ -3342,7 +3342,7 @@
   }
   
   .site-footer__bottom-text-two p a {
-    color: #c7c7c7;
+    color: var(--assimox-base);
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
   }
