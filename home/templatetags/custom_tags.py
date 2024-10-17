@@ -7,7 +7,7 @@ register = template.Library()
 
 
 @register.filter
-def add_class_to_paragraphs(value):
+def add_class_to_paragraphs(value, extra_class=None):
     """to add class = "main-slider text-two" to textrich tag"""
 
     # Check if the input is a string
@@ -19,7 +19,11 @@ def add_class_to_paragraphs(value):
 
     # Add the class 'main-slider__text-two' to all <p> tags
     for p in soup.find_all("p"):
-        p["class"] = p.get("class", []) + ["main-slider__text-two"]
+        classes = p.get("class", [])
+        classes.append("main-slider__text-two")
+        if extra_class:
+            classes.append(extra_class)
+        p["class"] = classes
 
     return str(soup)
 

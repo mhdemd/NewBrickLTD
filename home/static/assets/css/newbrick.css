@@ -5403,3 +5403,7 @@
     max-width: 55%;
   }
   
+  /* my css */
+  .red-text {
+    color: red;
+  }
