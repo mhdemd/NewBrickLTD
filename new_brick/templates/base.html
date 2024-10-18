@@ -19,11 +19,12 @@
 
 
     <!-- Vendor styles -->
-    <link rel="stylesheet" href="{% static 'assets/vendors/swiper/swiper.min.css' %}" defer/>
-    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}" defer/>
-    <link rel="stylesheet" href="{% static 'assets/vendors/assimox-icons/style.css' %}" defer/>
-    <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}" defer/>
-    <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" defer/>
+    <link rel="stylesheet" href="{% static 'assets/css/optimized-style.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/vendors/swiper/swiper.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/assimox-icons/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" />
 
     <!-- Lazy load CSS -->
     <script>
@@ -36,6 +37,7 @@
                 lazyLoaded = true;
         
                 const stylesheets = [
+                    "{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}",
                     "{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}",
                     "{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}",
                     "{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}",
