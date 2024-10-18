@@ -19,15 +19,15 @@
 
 
     <!-- Vendor styles -->
-    <link rel="stylesheet" href="{% static 'assets/css/optimized-style-bootstrap-min.css' %}" />
-    
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/css/bootstrap-first-page.css' %}" /> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}"/>
     <link rel="stylesheet" href="{% static 'assets/vendors/swiper/swiper.min.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/assimox-icons/style.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" />
 
     <!-- Lazy load CSS -->
-    <script>
+    <!-- <script>
         // Lazy load CSS
         document.addEventListener('DOMContentLoaded', function() {
             let lazyLoaded = false;
@@ -37,8 +37,8 @@
                 lazyLoaded = true;
         
                 const stylesheets = [
-                    "{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}",
-                    
+                    {% comment %} "{% static 'assets/css/remaining-bootstrap.css' %}" {% endcomment %}
+
                     "{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}",
                     "{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}",
                     "{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}",
@@ -73,7 +73,9 @@
             // بارگذاری CSSها بعد از اولین اسکرول
             window.addEventListener('scroll', loadLazyCSS);
         });
-    </script>
+    </script>  -->
+    
+
 
     <!-- Template styles -->
     <link rel="stylesheet" href="{% static 'assets/css/newbrick.css' %}" />
