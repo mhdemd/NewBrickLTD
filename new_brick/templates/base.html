@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}" />
 
     <!-- Lazy load CSS -->
-    <!-- <script>
+    <script>
         // Lazy load CSS
         document.addEventListener('DOMContentLoaded', function() {
             let lazyLoaded = false;
@@ -41,8 +41,7 @@
                 lazyLoaded = true;
         
                 const stylesheets = [
-                    {% comment %} "{% static 'assets/css/remaining-bootstrap.css' %}" {% endcomment %}
-
+                    "{% static 'assets/vendors/fontawesome/css/all.min.css' %}",
                     "{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}",
                     "{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}",
                     "{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}",
@@ -77,7 +76,7 @@
             // بارگذاری CSSها بعد از اولین اسکرول
             window.addEventListener('scroll', loadLazyCSS);
         });
-    </script>  -->
+    </script>  
     
 
 
