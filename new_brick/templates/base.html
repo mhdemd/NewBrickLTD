@@ -16,18 +16,11 @@
 
     <!-- fonts preload -->
     <link rel="stylesheet" href="{% static 'assets/fonts/fonts.css' %}?v={{ STATIC_VERSION }}">
-
-    <!-- Preload fonts -->
-    {% comment %} <link rel="preload" href="{% static 'assets/fonts/Barlow-Regular.woff2' %}?v={{ STATIC_VERSION }}" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="{% static 'assets/fonts/Barlow-Bold.woff2' %}?v={{ STATIC_VERSION }}" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="{% static 'assets/fonts/Roboto-Regular.woff2' %}?v={{ STATIC_VERSION }}" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="{% static 'assets/fonts/Roboto-Bold.woff2' %}?v={{ STATIC_VERSION }}" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="{% static 'assets/fonts/GreatVibes-Regular.woff2' %}?v={{ STATIC_VERSION }}" as="font" type="font/woff2" crossorigin="anonymous"> {% endcomment %}
     
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap-cleaned.css' %}?v={{ STATIC_VERSION }}"/>
-    <link rel="stylesheet" href="{% static 'assets/css/all-cleaned.css' %}?v={{ STATIC_VERSION }}"/>
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/css/all-cleaned.css' %}?v={{ STATIC_VERSION }}"/> {% endcomment %}
     <link rel="stylesheet" href="{% static 'assets/css/swiper-cleaned.css' %}?v={{ STATIC_VERSION }}"/>
 
     {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}?v={{ STATIC_VERSION }}"/> {% endcomment %}
@@ -50,7 +43,7 @@
                 const stylesheets = [
                     "{% static 'assets/css/footer.css' %}?v={{ STATIC_VERSION }}",
                     "{% static 'assets/vendors/fontawesome/css/all.min.css' %}?v={{ STATIC_VERSION }}",
-
+                    
                     "{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}?v={{ STATIC_VERSION }}",
                     "{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}?v={{ STATIC_VERSION }}",
                     "{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}?v={{ STATIC_VERSION }}",
