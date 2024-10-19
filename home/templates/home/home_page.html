@@ -63,9 +63,9 @@
                                         <h4 class="main-slider__text">{{ slide.text_slide_3 }}</h4>
 
                                         <!-- Rich text content (text_slide_4 and text_slide_5) -->
-
-                                        {{ slide.text_slide_4|add_class_to_paragraphs|safe }}<br>
                                         {{ slide.text_slide_5|add_class_to_paragraphs:"red-text"|safe }}
+                                        {{ slide.text_slide_4|add_class_to_paragraphs|safe }}
+                                        
                                                                                 
                                         <!-- Call to Action (CTA) button, only if both CTA text and link are present -->
                                         {% if slide.hero_cta and slide.hero_cta_link %}
