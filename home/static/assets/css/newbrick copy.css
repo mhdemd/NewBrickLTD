@@ -3093,6 +3093,15 @@
     color: var(--assimox-base);
   }
   
+  @media only screen and (max-width: 768px) {
+    .site-footer__bottom-text-two p {
+        font-size: 12px; /* اندازه فونت در موبایل کوچکتر می‌شود */
+    }
+
+    .site-footer__bottom-text-two a {
+        font-size: 12px; /* اندازه لینک هم کوچکتر می‌شود */
+    }
+}
   /*--------------------------------------------------------------
   # About Two
   --------------------------------------------------------------*/
