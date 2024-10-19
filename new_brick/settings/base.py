@@ -192,3 +192,6 @@ WAGTAILDOCS_EXTENSIONS = [
     "xlsx",
     "zip",
 ]
+
+
+STATIC_VERSION = "2.0"

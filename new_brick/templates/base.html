@@ -15,20 +15,20 @@
     <meta name="description" content="New Brick LTD provides expert emergency building services, specializing in plumbing, electrical repairs, and small-scale construction tasks. Our reliable and fast-response team ensures high-quality solutions for urgent residential and commercial maintenance needs." />
 
     <!-- fonts preload -->
-    <link rel="stylesheet" href="{% static 'assets/fonts/fonts.css' %}">   
+    <link rel="stylesheet" href="{% static 'assets/fonts/fonts.css' %}?v={{ STATIC_VERSION }}">   
 
 
     <!-- Vendor styles -->
-    <link rel="stylesheet" href="{% static 'assets/css/bootstrap-cleaned.css' %}"/>
-    <link rel="stylesheet" href="{% static 'assets/css/all-cleaned.css' %}"/>
-    <link rel="stylesheet" href="{% static 'assets/css/swiper-cleaned.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap-cleaned.css' %}?v={{ STATIC_VERSION }}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/all-cleaned.css' %}?v={{ STATIC_VERSION }}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/swiper-cleaned.css' %}?v={{ STATIC_VERSION }}"/>
 
-    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}"/> {% endcomment %}
-    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/swiper/swiper.min.css' %}" /> {% endcomment %}
-    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" /> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}?v={{ STATIC_VERSION }}"/> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/swiper/swiper.min.css' %}?v={{ STATIC_VERSION }}" /> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}?v={{ STATIC_VERSION }}" /> {% endcomment %}
 
-    <link rel="stylesheet" href="{% static 'assets/vendors/assimox-icons/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/assimox-icons/style.css' %}?v={{ STATIC_VERSION }}" />
+    <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}?v={{ STATIC_VERSION }}" />
 
     <!-- Lazy load CSS -->
     <script>
@@ -41,24 +41,24 @@
                 lazyLoaded = true;
         
                 const stylesheets = [
-                    "{% static 'assets/css/footer.css' %}",
-                    "{% static 'assets/vendors/fontawesome/css/all.min.css' %}",
+                    "{% static 'assets/css/footer.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/fontawesome/css/all.min.css' %}?v={{ STATIC_VERSION }}",
 
-                    "{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}",
-                    "{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}",
-                    "{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}",
-                    "{% static 'assets/vendors/jarallax/jarallax.css' %}",
-                    "{% static 'assets/vendors/odometer/odometer.min.css' %}",
-                    "{% static 'assets/vendors/bxslider/jquery.bxslider.css' %}",
-                    "{% static 'assets/vendors/vegas/vegas.min.css' %}",
-                    "{% static 'assets/vendors/timepicker/timePicker.css' %}",
-                    "{% static 'assets/vendors/bootstrap-select/css/bootstrap-select.min.css' %}",
-                    "{% static 'assets/vendors/jquery-ui/jquery-ui.css' %}",
-                    "{% static 'assets/vendors/reey-font/stylesheet.css' %}",
-                    "{% static 'assets/vendors/tiny-slider/tiny-slider.min.css' %}",
-                    "{% static 'assets/vendors/nouislider/nouislider.min.css' %}",
-                    "{% static 'assets/vendors/animate/animate.min.css' %}",
-                    "{% static 'assets/vendors/nouislider/nouislider.pips.css' %}",
+                    "{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/jarallax/jarallax.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/odometer/odometer.min.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/bxslider/jquery.bxslider.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/vegas/vegas.min.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/timepicker/timePicker.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/bootstrap-select/css/bootstrap-select.min.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/jquery-ui/jquery-ui.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/reey-font/stylesheet.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/tiny-slider/tiny-slider.min.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/nouislider/nouislider.min.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/animate/animate.min.css' %}?v={{ STATIC_VERSION }}",
+                    "{% static 'assets/vendors/nouislider/nouislider.pips.css' %}?v={{ STATIC_VERSION }}",
                 ];
         
                 stylesheets.forEach(function(href) {
@@ -77,9 +77,9 @@
 
 
     <!-- Template styles -->
-    <link rel="stylesheet" href="{% static 'assets/css/newbrick.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/newbrick.css' %}?v={{ STATIC_VERSION }}" />
 
-    <link rel="stylesheet" href="{% static 'assets/css/newbrick-responsive.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/newbrick-responsive.css' %}?v={{ STATIC_VERSION }}" />
 
 
 </head>
