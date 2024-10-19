@@ -41,6 +41,18 @@ EMAIL_HOST_USER = "info@newbrickltd.co.uk"
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = "info@newbrickltd.co.uk"
 
+# Caching
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
+        "LOCATION": os.path.join(BASE_DIR, "public", "cache"),
+    }
+}
+
+MIDDLEWARE.insert(1, "django.middleware.cache.UpdateCacheMiddleware")
+MIDDLEWARE.insert(3, "django.middleware.cache.FetchCacheMiddleware")
+
+CACHE_MIDDLEWARE_SECONDS = 26000
 
 try:
     from .local import *
