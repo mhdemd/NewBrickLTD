@@ -1,3 +1,5 @@
+from django.conf import settings
+
 from .models import CompanyInfo
 
 
@@ -9,3 +11,7 @@ def company_info(request):
     except CompanyInfo.DoesNotExist:
         company_info = None
     return {"company_info": company_info}
+
+
+def static_version(request):
+    return {"STATIC_VERSION": settings.STATIC_VERSION}
