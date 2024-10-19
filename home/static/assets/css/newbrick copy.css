@@ -1703,7 +1703,14 @@
       transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
       transition: transform 1000ms ease, opacity 1000ms ease;
       transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
-  }
+
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      width: 150px; 
+      height: 150px;
+      border-radius: 100%; 
+      text-align: center; 
+      line-height: 100px;
+    }
   
   .main-slider__badge img {
       max-width: 100%;
