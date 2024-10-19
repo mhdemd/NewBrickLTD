@@ -1657,20 +1657,28 @@
   .main-slider__btn-box {
     position: relative;
     display: block;
-    opacity: 1; /* دکمه به‌طور فوری قابل مشاهده باشد */
-    visibility: visible; /* دکمه به‌طور فوری نمایش داده شود */
-    transform: none; /* دکمه جابجا نشود */
-    transition: none; /* هیچ انیمیشنی وجود نداشته باشد */
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(120px);
+    transform: translateY(120px);
+    -webkit-transition-delay: 0ms;
+    transition-delay: 0ms;
+    -webkit-transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+    transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+    transition: transform 1000ms ease, opacity 1000ms ease;
+    transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
+    
 }
 
   
   .main-slider__btn {
       color: var(--assimox-white);
-      border-radius: 30px;
+      border-radius: 20px;
       overflow: hidden;
-      letter-spacing: 1.5px;
+      letter-spacing: .5px;
       font-size: 15px;
       background-color: var(--assimox-primary);
+      padding: 10px 15px;
   }
   
   .main-slider__btn:hover {
