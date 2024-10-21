@@ -66,11 +66,12 @@
                     <h2 class="section-title__title">What We Do For Our Customers</h2>
                     <p class="services-page__sec-title-text">At New Brick Ltd, we deliver 24/7 maintenance services designed to enhance property functionality and security. Our skilled team offers comprehensive solutions, including electrical, plumbing, drainage, CCTV, and carpentry services. We aim to provide reliable, efficient, and tailored support to meet all your property needs, ensuring a seamless experience and maintaining excellence in every service we provide.</p>
                 </div>
-                {% for block in page.body %}
-                    {% if block.block_type == "service_group" %}
-                        {% include_block block %}
-                    {% endif %}
-                {% endfor %} 
+                    {% for block in parent_body %}
+                        {% if block.block_type == "service_group" %}
+                            {% include_block block %}
+                        {% endif %}
+                    {% endfor %}
+            
                 <div class="services-page__bottom">
                 </div>
             </div>

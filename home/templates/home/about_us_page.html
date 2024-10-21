@@ -1,12 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
+{% load  wagtailcore_tags %}
 
 <body class="custom-cursor">
-
-    
-
 
     <div class="page-wrapper">
 
@@ -66,11 +63,10 @@
                         <div class="about-three__left">
                             <div class="section-title text-left">
                                 <span class="section-title__tagline">about company</span>
-                                <h2 class="section-title__title">The Repairing Experts You’ve
-                                    Trusted For Over 18 Years.</h2>
+                                <h2 class="section-title__title">{{ page.main_title }}</h2>
                             </div>
-                            <p class="about-three__text-1">24-hour repair and maintenance services across London for electrical, plumbing, CCTV, drainage, and carpentry.</p>
-                            <p class="about-three__text-2">At New Brick Ltd, we offer a comprehensive range of 24/7 maintenance services to ensure your property remains in excellent condition. Our team of highly skilled professionals is dedicated to providing top-quality solutions tailored to your specific needs. Whether it’s a routine check or an emergency repair, we are always ready to help.</p>
+                            <p class="about-three__text-1">{{ page.subtitle }}</p>
+                            <p class="about-three__text-2">{{ page.description|richtext }}</p>
                             <div class="about-three__points-box">
                                 <ul class="about-three__points list-unstyled">
                                     <li>

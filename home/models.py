@@ -19,7 +19,7 @@ from wagtail.snippets.models import register_snippet
 from .forms import ContactForm
 
 
-################################## Wagtail's Models
+################################## HomePage's Models
 class HomePageSlide(Orderable):
     id = models.BigAutoField(primary_key=True)
     page = ParentalKey("HomePage", related_name="slides", on_delete=models.CASCADE)
@@ -108,7 +108,7 @@ class ServiceMemberBlock(blocks.StructBlock):
 
 class ServiceGroupBlock(blocks.StructBlock):
     members = blocks.ListBlock(
-        ServiceMemberBlock(), max_num=4, help_text="Maximum 3 members per service group"
+        ServiceMemberBlock(), max_num=4, help_text="Maximum 4 members per service group"
     )
 
     class Meta:
@@ -179,13 +179,6 @@ class HomePage(Page):
         context["form"] = form
         return TemplateResponse(request, template_name, context)
 
-    # Service to display the services page
-    def serve_services(self, request):
-        context = self.get_context(request)
-        context["page"] = self
-
-        return TemplateResponse(request, "home/services.html", context)
-
     # Service Show details of each service
     def serve_service_detail(self, request, service_name):
         service_group = None
@@ -250,7 +243,44 @@ class HomePage(Page):
     ]
 
 
-################################## Form's Model to store messages in database
+################################## AboutUsPage's Models
+class AboutUsPage(Page):
+    main_title = models.CharField(max_length=255, blank=True)
+    subtitle = models.CharField(max_length=255, blank=True)
+    description = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("main_title"),
+        FieldPanel("subtitle"),
+        FieldPanel("description"),
+    ]
+
+
+################################## ServicesPage's Models
+class ServicesPage(Page):
+    main_title = models.CharField(max_length=255, blank=True)
+    description = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("main_title"),
+        FieldPanel("description"),
+    ]
+
+    def get_context(self, request, *args, **kwargs):
+        # دریافت کانتکست پایه
+        context = super().get_context(request, *args, **kwargs)
+
+        # دریافت صفحه والد
+        homepage = self.get_parent().specific
+
+        # اضافه کردن body والد به کانتکست
+        if hasattr(homepage, "body"):
+            context["parent_body"] = homepage.body
+
+        return context
+
+
+################################## Contact form's Model (to store messages in database)
 class ContactMessage(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()
@@ -262,8 +292,8 @@ class ContactMessage(models.Model):
         return f"Message from {self.name} ({self.email})"
 
 
-################################## Contact's models
-@register_snippet  # این دکوریتور مدل را به‌عنوان Snippet ثبت می‌کند
+################################## Company info's models
+@register_snippet  # This decorator registers the model as a Snippet
 class CompanyInfo(models.Model):
     phone = models.CharField(max_length=20, help_text="Company phone number")
     whatsapp = models.CharField(max_length=20, blank=True, help_text="WhatsApp number")

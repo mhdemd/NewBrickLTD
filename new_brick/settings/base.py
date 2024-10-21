@@ -194,5 +194,6 @@ WAGTAILDOCS_EXTENSIONS = [
     "zip",
 ]
 
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 STATIC_VERSION = "2.8"
