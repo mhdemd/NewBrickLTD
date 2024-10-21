@@ -21,7 +21,7 @@ urlpatterns = [
     path("new-admin-brick/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
-    path("contact-us/", home_views.contact_us, name="contact_us"),
+    # path("contact-us/", home_views.contact_us, name="contact_us"),
     path(
         "service/<str:service_name>/", home_views.service_detail, name="service_detail"
     ),

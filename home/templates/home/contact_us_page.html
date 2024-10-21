@@ -1,13 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+{% load  wagtailcore_tags %}
+
 <body class="custom-cursor">
-
-    
-    
-
-
-
 
     <div class="page-wrapper">
 
@@ -61,13 +57,10 @@
             <div class="container">
                 <div class="section-title text-left">
                     <span class="section-title__tagline">get in touch</span>
-                    <h2 class="section-title__title">Drop A Message to Us</h2>
-                    <p class="section-title__text">Our goal is to provide exceptional support and solutions for your property needs. <br> Reach out to us anytime for reliable, professional assistance, tailored to your specific requirements.</p>
+                    <h2 class="section-title__title">{{ page.main_title }}</h2>
+                    <p class="section-title__text">{{ page.description|richtext }}</p>
                 </div>
                 <div class="row">
-
-
-
 
                     <div class="col-xl-8 col-lg-7 faq-one__form-box wow slideInRight" data-wow-delay="100ms" data-wow-duration="2500ms">
                         <form id="contactForm" class="faq-one__form comment-form-2-validated" method="post" novalidate="novalidate">

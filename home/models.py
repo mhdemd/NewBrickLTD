@@ -243,7 +243,7 @@ class HomePage(Page):
     ]
 
 
-################################## AboutUsPage's Models
+################################## About Us's Models
 class AboutUsPage(Page):
     main_title = models.CharField(max_length=255, blank=True)
     subtitle = models.CharField(max_length=255, blank=True)
@@ -256,7 +256,7 @@ class AboutUsPage(Page):
     ]
 
 
-################################## ServicesPage's Models
+################################## Services's Models
 class ServicesPage(Page):
     main_title = models.CharField(max_length=255, blank=True)
     description = RichTextField(blank=True)
@@ -278,6 +278,17 @@ class ServicesPage(Page):
             context["parent_body"] = homepage.body
 
         return context
+
+
+################################## Contact Us's Models
+class ContactUsPage(Page):
+    main_title = models.CharField(max_length=255, blank=True)
+    description = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("main_title"),
+        FieldPanel("description"),
+    ]
 
 
 ################################## Contact form's Model (to store messages in database)
