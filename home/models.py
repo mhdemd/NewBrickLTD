@@ -290,6 +290,48 @@ class ContactUsPage(Page):
         FieldPanel("description"),
     ]
 
+    # Form service and email sending (Copied from HomePage)
+    def serve(self, request, template_name="home/contact_us_page.html"):
+        form = ContactForm(request.POST or None)
+        context = self.get_context(request)
+
+        if request.method == "POST" and form.is_valid():
+            # اطلاعات کاربر از فرم گرفته می‌شود
+            user_name = form.cleaned_data["name"]
+            user_email = form.cleaned_data["email"]
+            user_phone = form.cleaned_data["phone"]
+            user_message = form.cleaned_data["message"]
+
+            # متن ایمیل
+            email_subject = f"New Contact Request from {user_name}"
+            email_message = f"""
+            Name: {user_name}
+            Email: {user_email}
+            Phone: {user_phone}
+            
+            Message:
+            {user_message}
+            """
+
+            # ارسال ایمیل به ادمین
+            send_mail(
+                subject=email_subject,
+                message=email_message,
+                from_email="info@newbrickltd.co.uk",
+                recipient_list=["mahdi.emadi@yahoo.com"],
+            )
+
+            # ذخیره پیام در دیتابیس
+            ContactMessage.objects.create(
+                name=user_name, email=user_email, phone=user_phone, message=user_message
+            )
+
+            context["form"] = form
+            return TemplateResponse(request, template_name, context)
+
+        context["form"] = form
+        return TemplateResponse(request, template_name, context)
+
 
 ################################## Contact form's Model (to store messages in database)
 class ContactMessage(models.Model):
