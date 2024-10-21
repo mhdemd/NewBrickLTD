@@ -124,11 +124,14 @@
 
                 <!-- middle -->
                 <div class="row">
-                    {% for block in page.body.all|slice:":2" %}
-                        {% if block.block_type == "service_group" %}
-                            {% include_block block %}
-                        {% endif %}
-                    {% endfor %}
+
+                    {% with block_count=page.body|length %}
+                        {% for block in page.body|slice:":2" %}
+                            {% if block.block_type == "service_group" %}
+                                {% include_block block %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endwith %}
                 </div>
 
                 <!-- bottom -->
