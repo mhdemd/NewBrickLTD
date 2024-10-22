@@ -96,10 +96,20 @@ class HomePageSlide(Orderable):
 class ServiceMemberBlock(blocks.StructBlock):
     name = RichTextBlock(required=True, help_text="Name of the service")
     image = ImageChooserBlock(required=True, help_text="Image of the service")
-    # profile_link = blocks.URLBlock(required=False, help_text="Link to service")
+    second_image = ImageChooserBlock(required=True, help_text="Image of the service")
+
     description = blocks.TextBlock(
         required=True, help_text="Description of the service", max_length=1000
     )
+
+    second_description = blocks.TextBlock(
+        required=True, help_text="Description of the service", max_length=1000
+    )
+
+    # Three checkmark items as separate CharBlocks
+    checkmark_one = blocks.CharBlock(required=True, help_text="First checkmark item")
+    checkmark_two = blocks.CharBlock(required=True, help_text="Second checkmark item")
+    checkmark_three = blocks.CharBlock(required=True, help_text="Third checkmark item")
 
     class Meta:
         template = "blocks/service_member.html"

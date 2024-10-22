@@ -5,13 +5,6 @@
 {% block content %}
 <body class="custom-cursor">
 
-
-    
-    
-
-
-
-
     <div class="page-wrapper">
 
         <!--Page Header Start-->
@@ -85,7 +78,7 @@
                                         <span class="icon-comment"></span>
                                     </div>
                                     <div class="text">
-                                        <p>Referigetor Repairing</p>
+                                        <p>{{ service.checkmark_one }}</p>
                                     </div>
                                 </li>
                                 <li>
@@ -93,7 +86,7 @@
                                         <span class="icon-comment"></span>
                                     </div>
                                     <div class="text">
-                                        <p>Kitchen Hood Repairs</p>
+                                        <p>{{ service.checkmark_two }}</p>
                                     </div>
                                 </li>
                                 <li>
@@ -101,37 +94,11 @@
                                         <span class="icon-comment"></span>
                                     </div>
                                     <div class="text">
-                                        <p>TV Unit Repairing</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-comment"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Water Heater Problem Fixes</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-comment"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Airconditioner Breakdown</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-comment"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Boiler Breakdown</p>
+                                        <p>{{ service.checkmark_three }}</p>
                                     </div>
                                 </li>
                             </ul>
-                            <p class="services-details__text-2">Randomised words which don't look even slightly
-                                believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there
-                                isn't anything embarrassing hidden</p>
+                            <p class="services-details__text-2">{{ service.second_description }}</p>
                         </div>
                     </div>
                 </div>
@@ -204,154 +171,6 @@
         </section>
         <!--About Quality End-->
 
-        <!--Video Gallery Start-->
-        <section class="video-gallery">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-9 col-lg-8">
-                        <div class="video-gallery__left">
-                            <h3 class="video-gallery__title-one">Images & Videos</h3>
-                            <p class="video-gallery__text-1">Majority have suffered alteration in some form, by injected
-                                humour, or randomised words which don't look even slightly believable. If you are going
-                                to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
-                                hidden in the middle of text.</p>
-                            <div class="video-gallery__img-boxes">
-                                <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-4">
-                                        <div class="video-gallery__img-single">
-                                            <img loading="lazy" src="assets/images/services/video-gallery-img-1.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-4">
-                                        <div class="video-gallery__img-single">
-                                            <img loading="lazy" src="assets/images/services/video-gallery-img-2.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-4">
-                                        <div class="video-gallery__img-single">
-                                            <img loading="lazy" src="assets/images/services/video-gallery-img-3.jpg" alt="">
-                                            <div class="video-gallery__video-link">
-                                                <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ"
-                                                    class="video-popup">
-                                                    <div class="video-gallery__video-icon">
-                                                        <span class="fa fa-play"></span>
-                                                        <i class="ripple"></i>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="video-gallery__service">
-                                <h3 class="video-gallery__service-title">Benefit of Service</h3>
-                                <p class="video-gallery__service-text">Duis quis faucibus dolor. Nulla nulla justo,
-                                    posuere eu aliquam a, tristique sed nisi. Suspendisse vel erat mauris. Maecenas
-                                    maximus sed nisl imperdiet eleifend. Mauris suscipit.</p>
-                            </div>
-                            <div class="video-gallery__service-points-box">
-                                <ul class="list-unstyled video-gallery__service-points">
-                                    <li>
-                                        <div class="icon">
-                                            <i class="fa fa-check"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>Spare parts for all models of equipment</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <i class="fa fa-check"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>Free departure of the master at home</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <i class="fa fa-check"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>Branded warranty for repairs 3 years</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <i class="fa fa-check"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>Maintain your home cleaness</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <ul
-                                    class="list-unstyled video-gallery__service-points video-gallery__service-points--2">
-                                    <li>
-                                        <div class="icon">
-                                            <i class="fa fa-check"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>20% discount for online ordering services</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <i class="fa fa-check"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>Completed orders by our masters</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <i class="fa fa-check"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>Worked finished on time</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <i class="fa fa-check"></i>
-                                        </div>
-                                        <div class="text">
-                                            <p>We guarantee spare parts</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4">
-                        <div class="video-gallery__right">
-                            <div class="video-gallery__right-sidebar">
-                                <div class="video-gallery__right-content">
-                                    <div class="video-gallery__right-content-img">
-                                        <img loading="lazy" src="assets/images/services/video-gallery-right-content-img-1.jpg" alt="">
-                                    </div>
-                                    <div class="video-gallery__right-content-title">
-                                        <h3>Available <br> <span>for any type of <br>
-                                                Service</span></h3>
-                                        <h2>We can help</h2>
-                                        <div class="video-gallery__right-content-btn-box">
-                                            <a href="contact.html"
-                                                class="thm-btn video-gallery__right-content-btn">contact us<span
-                                                    class="fas fa-arrow-right"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="video-gallery__right-sidebar-download">
-                                    <h3>Download</h3>
-                                    <a href="services-2.html" class="thm-btn video-gallery__download-btn">Download
-                                        Brochure<span class="fas fa-arrow-down"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Video Gallery End-->
 
     </div><!-- /.page-wrapper -->
 
