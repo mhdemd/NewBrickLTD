@@ -513,14 +513,14 @@
     });
   }
 
-  if ($(".search-toggler").length) {
-    $(".search-toggler").on("click", function (e) {
-      e.preventDefault();
-      $(".search-popup").toggleClass("active");
-      $(".mobile-nav__wrapper").removeClass("expanded");
-      $("body").toggleClass("locked");
-    });
-  }
+  // if ($(".search-toggler").length) {
+  //   $(".search-toggler").on("click", function (e) {
+  //     e.preventDefault();
+  //     $(".search-popup").toggleClass("active");
+  //     $(".mobile-nav__wrapper").removeClass("expanded");
+  //     $("body").toggleClass("locked");
+  //   });
+  // }
 
   if ($(".odometer").length) {
     var odo = $(".odometer");
