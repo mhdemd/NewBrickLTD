@@ -11,87 +11,90 @@
 
         <!-- Main Slider Start -->
         <section class="main-slider">
-            <!-- Initialize Swiper container -->
-            <div class="swiper-container thm-swiper__slider" 
-                data-swiper-options='{
-                    "slidesPerView": 1,
-                    "loop": true,
-                    "loopedSlides": 3, // Replace 3 with your number of slides
-                    "effect": "fade",
-                    "fadeEffect": {
-                        "crossFade": true
-                    },
-                    "pagination": {
-                        "el": "#main-slider-pagination",
-                        "type": "bullets",
-                        "clickable": true
-                    },
-                    "navigation": {
-                        "nextEl": "#main-slider__swiper-button-next",
-                        "prevEl": "#main-slider__swiper-button-prev"
-                    },
-                    "autoplay": {
-                        "delay": 5000
-                    }
-                }'
-                            >
-
-                <!-- Main slider wrapper, looping through the slides -->
+            <!-- Initialize Swiper container with configuration options -->
+            <div class="swiper-container thm-swiper__slider"
+                 data-swiper-options='{
+                     "slidesPerView": 1,
+                     "loop": true,
+                     "loopedSlides": 3,
+                     "effect": "fade",
+                     "fadeEffect": {
+                         "crossFade": true
+                     },
+                     "pagination": {
+                         "el": "#main-slider-pagination",
+                         "type": "bullets",
+                         "clickable": true
+                     },
+                     "navigation": {
+                         "nextEl": "#main-slider__swiper-button-next",
+                         "prevEl": "#main-slider__swiper-button-prev"
+                     },
+                     "autoplay": {
+                         "delay": 5000
+                     }
+                 }'>
+        
+                <!-- Wrapper for slides -->
                 <div class="swiper-wrapper">
                     {% for slide in page.slides.all %}
                     <div class="swiper-slide">
-                        <!-- Background image of the slide -->
+                        <!-- Slide background image -->
                         <div class="main-slider__image">
                             <picture>
-                                <picture>
-                                    <source media="(max-width: 600px)" srcset="{% image slide.image_mobile fill-400x800 format-webp as mobile_img %}{{ mobile_img.url }}">
-                                    <source media="(min-width: 601px)" srcset="{% image slide.image_desktop fill-1320x845 format-webp as desktop_img %}{{ desktop_img.url }}">
-                                    <img src="{% image slide.image_desktop fill-1320x845 format-webp as fallback_img_webp_url %}{{ fallback_img_webp_url.url }}" alt="New Brick LTD logo" loading="lazy">
-                                </picture>
-                                
-                                {% comment %} <img src="{% image slide.image_desktop fill-1320x845 format-webp as fallback_img_webp_url %}{{ fallback_img_webp_url.url }}" alt="New Brick LTD logo" loading="lazy"> {% endcomment %}
+                                <!-- Responsive image sources -->
+                                <source media="(max-width: 600px)"
+                                        srcset="{% image slide.image_mobile fill-400x800 format-webp as mobile_img %}{{ mobile_img.url }}">
+                                <source media="(min-width: 601px)"
+                                        srcset="{% image slide.image_desktop fill-1320x845 format-webp as desktop_img %}{{ desktop_img.url }}">
+                                <!-- Fallback image for browsers that do not support <picture> -->
+                                <img src="{% image slide.image_desktop fill-1320x845 format-webp as fallback_img_webp_url %}{{ fallback_img_webp_url.url }}"
+                                     alt="Slide background image"
+                                     loading="lazy">
                             </picture>
                         </div>
-            
-                        <!-- Slide content section -->
+        
+                        <!-- Slide content -->
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-7 col-lg-9">
-                                    <div class="main-slider__content ">
-                                        <!-- Sub-title (text_slide_1) -->
+                                    <div class="main-slider__content">
+                                        <!-- Slide subtitle -->
                                         <p class="main-slider__sub-title">{{ slide.text_slide_1 }}</p>
-
-                                        <!-- Main title (text_slide_2), applying line breaks if necessary -->
+        
+                                        <!-- Slide main title with line breaks -->
                                         <h2 class="main-slider__title">{{ slide.text_slide_2|linebreaksbr }}</h2>
-
-                                        <!-- Additional text (text_slide_3) -->
+        
+                                        <!-- Additional slide text -->
                                         <h4 class="main-slider__text">{{ slide.text_slide_3 }}</h4>
-
-                                        <!-- Rich text content (text_slide_4 and text_slide_5) -->
+        
+                                        <!-- Rich text content with custom classes -->
                                         {{ slide.text_slide_5|add_class_to_paragraphs:"red-text"|safe }}
                                         {{ slide.text_slide_4|add_class_to_paragraphs|safe }}
-                                        
-                                        <!-- Call to Action (CTA) button, only if both CTA text and link are present -->
+        
+                                        <!-- Call to Action button -->
                                         <div class="main-slider__btn-box">
-                                            <a class="thm-btn main-slider__btn" data-target="#contactForm" onclick="smoothScrollToForm(event)">{{ slide.hero_cta }}</a>
-                                            {% comment %} <a href="#contactForm" class="thm-btn main-slider__btn" onclick="smoothScrollToForm()">{{ slide.hero_cta }}</a> {% endcomment %}
+                                            <a class="thm-btn main-slider__btn"
+                                               data-target="#contactForm"
+                                               onclick="smoothScrollToForm(event)">
+                                                {{ slide.hero_cta }}
+                                            </a>
                                         </div>
-                                        
-                                        <!-- Badge image, optional -->
+        
+                                        <!-- Optional badge image -->
                                         {% if slide.badge_image %}
-                                        <img class="main-slider__badge" 
-                                            src="{% image slide.badge_image  fill-130x130 format-webp as badge_img_url %}{{ badge_img_url.url }}" 
-                                            alt="" loading="lazy">
+                                        <img class="main-slider__badge"
+                                             src="{% image slide.badge_image fill-130x130 format-webp as badge_img_url %}{{ badge_img_url.url }}"
+                                             alt="Badge"
+                                             loading="lazy">
                                         {% endif %}
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     {% endfor %}
                 </div>
-
             </div>
         </section>
         <!-- Main Slider End -->
