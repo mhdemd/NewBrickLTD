@@ -12,22 +12,29 @@
         <!-- Main Slider Start -->
         <section class="main-slider">
             <!-- Initialize Swiper container -->
-            <div class="swiper-container thm-swiper__slider" data-swiper-options='{
-                "slidesPerView": 1,
-                "loop": true,
-                "effect": "fade",
-                "pagination": {
-                    "el": "#main-slider-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                },
-                "navigation": {
-                    "nextEl": "#main-slider__swiper-button-next",
-                    "prevEl": "#main-slider__swiper-button-prev"
-                },
-                "autoplay": {
-                    "delay": 5000
-                }}'>
+            <div class="swiper-container thm-swiper__slider" 
+                data-swiper-options='{
+                    "slidesPerView": 1,
+                    "loop": true,
+                    "loopedSlides": 3, // Replace 3 with your number of slides
+                    "effect": "fade",
+                    "fadeEffect": {
+                        "crossFade": true
+                    },
+                    "pagination": {
+                        "el": "#main-slider-pagination",
+                        "type": "bullets",
+                        "clickable": true
+                    },
+                    "navigation": {
+                        "nextEl": "#main-slider__swiper-button-next",
+                        "prevEl": "#main-slider__swiper-button-prev"
+                    },
+                    "autoplay": {
+                        "delay": 5000
+                    }
+                }'
+                            >
 
                 <!-- Main slider wrapper, looping through the slides -->
                 <div class="swiper-wrapper">

@@ -1428,6 +1428,8 @@
   .main-slider .swiper-slide {
       position: relative;
       background-color: var(--assimox-white);
+      pointer-events: none;
+      z-index: 1;
   }
   
   .main-slider .container {
@@ -1545,6 +1547,7 @@
   
   .main-slider__btn-box {
     position: relative;
+    z-index: 3;
     display: block;
     opacity: 0;
     visibility: hidden;
@@ -1567,6 +1570,7 @@
       font-size: 15px;
       background-color: var(--assimox-primary);
       padding: 10px 15px;
+      z-index: 11;
   }
   
   .main-slider__btn:hover {
@@ -1614,6 +1618,8 @@
       opacity: 1;
       -webkit-transform: translateY(0) translateX(0);
       transform: translateY(0) translateX(0);
+      pointer-events: auto;
+      z-index: 2;
   }
   
   .main-slider__nav {
