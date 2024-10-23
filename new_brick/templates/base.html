@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> New Brick LTD </title>
 
-
-
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/apple-touch-icon.png' %}" />
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/favicon-32x32.png' %}" />
@@ -19,25 +17,16 @@
 
     <!-- fonts preload -->
     <link rel="stylesheet" href="{% static 'assets/fonts/fonts.css' %}?v={{ STATIC_VERSION }}">
-    
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap-cleaned.css' %}?v={{ STATIC_VERSION }}"/>
-    {% comment %} <link rel="stylesheet" href="{% static 'assets/css/all-cleaned.css' %}?v={{ STATIC_VERSION }}"/> {% endcomment %}
     <link rel="stylesheet" href="{% static 'assets/css/swiper-cleaned.css' %}?v={{ STATIC_VERSION }}"/>
-
-    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}?v={{ STATIC_VERSION }}"/> {% endcomment %}
-    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/swiper/swiper.min.css' %}?v={{ STATIC_VERSION }}" /> {% endcomment %}
-    {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}?v={{ STATIC_VERSION }}" /> {% endcomment %}
-
     <link rel="stylesheet" href="{% static 'assets/vendors/assimox-icons/style.css' %}?v={{ STATIC_VERSION }}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}?v={{ STATIC_VERSION }}" />
     
     <!-- Template styles -->
     <link rel="stylesheet" href="{% static 'assets/css/newbrick.css' %}?v={{ STATIC_VERSION }}" />
-
     <link rel="stylesheet" href="{% static 'assets/css/newbrick-responsive.css' %}?v={{ STATIC_VERSION }}" />
-
 
 </head>
 
@@ -115,7 +104,7 @@
     </div><!-- /.stricky-header -->
 
     <!-- preloader -->
-    {% comment %} <div class="loader-wrap">
+    <div class="loader-wrap">
         <div class="preloader">
             <div id="handle-preloader" class="handle-preloader">
                 <div class="layer layer-one"><span class="overlay"></span></div>
@@ -164,7 +153,7 @@
                 </div>
             </div>
         </div>
-    </div> {% endcomment %}
+    </div> 
     <!-- preloader end --> 
 
     <!-- Main Content Block -->
@@ -250,24 +239,7 @@
 </div>
 <!-- /.mobile-nav__wrapper -->
 
-{% comment %} <div class="search-popup">
-    <div class="search-popup__overlay search-toggler"></div>
-    <!-- /.search-popup__overlay -->
-    <div class="search-popup__content">
-        <form action="#">
-            <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
-            <input type="text" id="search" placeholder="Search Here..." />
-            <button type="submit" aria-label="search submit" class="thm-btn">
-                <i class="icon-magnifying-glass"></i>
-            </button>
-        </form>
-    </div>
-    <!-- /.search-popup__content -->
-</div> {% endcomment %}
-<!-- /.search-popup -->
-
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top" style="margin-bottom: 48px;"><i class="fa fa-angle-up "></i></a>
-
 
 <!--Site Footer Start-->
 <footer class="site-footer">
@@ -407,7 +379,6 @@
         </a>
     </h4>
 </div>
-
 
 <!-- JS -->
 <!-- فایل‌های ضروری که در ابتدا لود می‌شوند -->
