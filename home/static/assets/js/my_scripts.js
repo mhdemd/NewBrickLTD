@@ -133,23 +133,23 @@ document.addEventListener('DOMContentLoaded', function() {
         lazyLoaded = true;
 
         const stylesheets = [
-            '../css/footer.css',
-            '../vendors/fontawesome/css/all.min.css',
-            '../vendors/owl-carousel/owl.carousel.min.css',
-            '../vendors/owl-carousel/owl.theme.default.min.css',
-            '../vendors/jquery-magnific-popup/jquery.magnific-popup.css',
-            '../vendors/jarallax/jarallax.css',
-            '../vendors/odometer/odometer.min.css',
-            '../vendors/bxslider/jquery.bxslider.css',
-            '../vendors/vegas/vegas.min.css',
-            '../vendors/timepicker/timePicker.css',
-            '../vendors/bootstrap-select/css/bootstrap-select.min.css',
-            '../vendors/jquery-ui/jquery-ui.css',
-            '../vendors/reey-font/stylesheet.css',
-            '../vendors/tiny-slider/tiny-slider.min.css',
-            '../vendors/nouislider/nouislider.min.css',
-            '../vendors/animate/animate.min.css',
-            '../vendors/nouislider/nouislider.pips.css'
+            '/public/static/assets/css/footer.css',
+            '/public/static/assets/vendors/fontawesome/css/all.min.css',
+            '/public/static/assets/vendors/owl-carousel/owl.carousel.min.css',
+            '/public/static/assets/vendors/owl-carousel/owl.theme.default.min.css',
+            '/public/static/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css',
+            '/public/static/assets/vendors/jarallax/jarallax.css',
+            '/public/static/assets/vendors/odometer/odometer.min.css',
+            '/public/static/assets/vendors/bxslider/jquery.bxslider.css',
+            '/public/static/assets/vendors/vegas/vegas.min.css',
+            '/public/static/assets/vendors/timepicker/timePicker.css',
+            '/public/static/assets/vendors/bootstrap-select/css/bootstrap-select.min.css',
+            '/public/static/assets/vendors/jquery-ui/jquery-ui.css',
+            '/public/static/assets/vendors/reey-font/stylesheet.css',
+            '/public/static/assets/vendors/tiny-slider/tiny-slider.min.css',
+            '/public/static/assets/vendors/nouislider/nouislider.min.css',
+            '/public/static/assets/vendors/animate/animate.min.css',
+            '/public/static/assets/vendors/nouislider/nouislider.pips.css'
         ];
 
         stylesheets.forEach(function(href) {
