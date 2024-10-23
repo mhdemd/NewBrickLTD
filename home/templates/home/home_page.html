@@ -50,7 +50,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-7 col-lg-9">
-                                    <div class="main-slider__content">
+                                    <div class="main-slider__content ">
                                         <!-- Sub-title (text_slide_1) -->
                                         <p class="main-slider__sub-title">{{ slide.text_slide_1 }}</p>
 
@@ -64,16 +64,12 @@
                                         {{ slide.text_slide_5|add_class_to_paragraphs:"red-text"|safe }}
                                         {{ slide.text_slide_4|add_class_to_paragraphs|safe }}
                                         
-                                                                                
                                         <!-- Call to Action (CTA) button, only if both CTA text and link are present -->
-                                        {% if slide.hero_cta and slide.hero_cta_link %}
                                         <div class="main-slider__btn-box">
-                                            <a href="#contactForm" class="thm-btn main-slider__btn" onclick="smoothScrollToForm()">{{ slide.hero_cta }}</a>
+                                            <a class="thm-btn main-slider__btn" data-target="#contactForm" onclick="smoothScrollToForm(event)">{{ slide.hero_cta }}</a>
+                                            {% comment %} <a href="#contactForm" class="thm-btn main-slider__btn" onclick="smoothScrollToForm()">{{ slide.hero_cta }}</a> {% endcomment %}
                                         </div>
-                                        {% endif %}
                                         
-
-
                                         <!-- Badge image, optional -->
                                         {% if slide.badge_image %}
                                         <img class="main-slider__badge" 
@@ -84,6 +80,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     {% endfor %}
                 </div>

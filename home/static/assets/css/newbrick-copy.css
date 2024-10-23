@@ -208,7 +208,8 @@
     border-radius: 6px;
     transition: all 0.5s linear;
     overflow: hidden;
-    z-index: 1;
+    z-index: 100;
+    pointer-events: auto;
   }
   
   .thm-btn::before {
@@ -218,7 +219,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
     opacity: 0;
     background-color: var(--assimox-base);
     -webkit-transition: all 0.4s;
@@ -226,6 +226,7 @@
     -webkit-transform: scale(0.5, 1);
     transform: scale(0.5, 1);
     z-index: -1;
+
   }
   
   .thm-btn:hover {
@@ -1459,6 +1460,7 @@
       position: relative;
       display: block;
       z-index: 1;
+      
   }
   
   .main-slider__sub-title {
@@ -1473,10 +1475,10 @@
       transform: translateY(-120px);
       -webkit-transition-delay: 0ms;
       transition-delay: 0ms;
-      -webkit-transition: opacity 2500ms ease, -webkit-transform 2500ms ease;
-      transition: opacity 2500ms ease, -webkit-transform 2500ms ease;
-      transition: transform 2500ms ease, opacity 2500ms ease;
-      transition: transform 2500ms ease, opacity 2500ms ease, -webkit-transform 2500ms ease;
+      -webkit-transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+      transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+      transition: transform 1000ms ease, opacity 1000ms ease;
+      transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
   }
   
   .main-slider__title {
@@ -1493,10 +1495,10 @@
       transform: translateY(-120px);
       -webkit-transition-delay: 0ms;
       transition-delay: 0ms;
-      -webkit-transition: opacity 2500ms ease, -webkit-transform 2500ms ease;
-      transition: opacity 2500ms ease, -webkit-transform 2500ms ease;
-      transition: transform 2500ms ease, opacity 2500ms ease;
-      transition: transform 2500ms ease, opacity 2500ms ease, -webkit-transform 2500ms ease;
+      -webkit-transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+      transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+      transition: transform 1000ms ease, opacity 1000ms ease;
+      transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
   }
   
   .main-slider__text {
@@ -1511,10 +1513,10 @@
       transform: translateY(120px);
       -webkit-transition-delay: 0ms;
       transition-delay: 0ms;
-      -webkit-transition: opacity 2500ms ease, -webkit-transform 2500ms ease;
-      transition: opacity 2500ms ease, -webkit-transform 2500ms ease;
-      transition: transform 2500ms ease, opacity 2500ms ease;
-      transition: transform 2500ms ease, opacity 2500ms ease, -webkit-transform 2500ms ease;
+      -webkit-transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+      transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+      transition: transform 1000ms ease, opacity 1000ms ease;
+      transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
   }
   
   .main-slider__text-two {
@@ -1530,10 +1532,10 @@
       transform: translateY(120px);
       -webkit-transition-delay: 0ms;
       transition-delay: 0ms;
-      -webkit-transition: opacity 2500ms ease, -webkit-transform 2500ms ease;
-      transition: opacity 2500ms ease, -webkit-transform 2500ms ease;
-      transition: transform 2500ms ease, opacity 2500ms ease;
-      transition: transform 2500ms ease, opacity 2500ms ease, -webkit-transform 2500ms ease;
+      -webkit-transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+      transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+      transition: transform 1000ms ease, opacity 1000ms ease;
+      transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
   }
   
   .main-slider__text-two span {
@@ -1550,11 +1552,10 @@
     transform: translateY(120px);
     -webkit-transition-delay: 0ms;
     transition-delay: 0ms;
-    -webkit-transition: opacity 2500ms ease, -webkit-transform 2500ms ease;
-    transition: opacity 2500ms ease, -webkit-transform 2500ms ease;
-    transition: transform 2500ms ease, opacity 2500ms ease;
-    transition: transform 2500ms ease, opacity 2500ms ease, -webkit-transform 2500ms ease;
-    
+    -webkit-transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+    transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+    transition: transform 1000ms ease, opacity 1000ms ease;
+    transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
 }
 
   
@@ -1586,10 +1587,10 @@
       transform: translateX(120px);
       -webkit-transition-delay: 0ms;
       transition-delay: 0ms;
-      -webkit-transition: opacity 2500ms ease, -webkit-transform 2500ms ease;
-      transition: opacity 2500ms ease, -webkit-transform 2500ms ease;
-      transition: transform 2500ms ease, opacity 2500ms ease;
-      transition: transform 2500ms ease, opacity 2500ms ease, -webkit-transform 2500ms ease;
+      -webkit-transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+      transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
+      transition: transform 1000ms ease, opacity 1000ms ease;
+      transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
 
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
       width: 150px; 

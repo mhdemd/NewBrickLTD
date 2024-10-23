@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}?v={{ STATIC_VERSION }}" />
     
     <!-- Template styles -->
-    <link rel="stylesheet" href="{% static 'assets/css/newbrick.css' %}?v={{ STATIC_VERSION }}" />
+    <link rel="stylesheet" href="{% static 'assets/css/newbrick-copy.css' %}?v={{ STATIC_VERSION }}" />
     <link rel="stylesheet" href="{% static 'assets/css/newbrick-responsive.css' %}?v={{ STATIC_VERSION }}" />
 
 </head>
@@ -283,7 +283,7 @@
     <div class="site-footer__middle">
         <div class="container">
             <div class="row">
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__about">
                         <div class="footer-widget__logo">
                             <h4 class="footer-widget__title">New Brick LTD</h4> 
@@ -320,7 +320,7 @@
                                                     </ul>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                {% comment %} <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                     <div class="footer-widget__column footer-widget__newsletter">
                         <div class="footer-widget__title-box">
                             <h4 class="footer-widget__title">Newsletter</h4>
@@ -340,7 +340,7 @@
                             <a href="{{ company_info.instagram }}"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> {% endcomment %}
             </div>
         </div>
     </div>
@@ -382,8 +382,8 @@
 
 <!-- JS -->
 <!-- فایل‌های ضروری که در ابتدا لود می‌شوند -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js" defer></script>
+<script src="{% static 'assets/vendors/jquery/jquery-3.6.0.min.js' %}" defer></script>
+<script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}" defer></script>
 <script src="{% static 'assets/vendors/tweenmax/TweenMax.min.js' %}" defer></script>
 <script src="{% static 'assets/vendors/wow/wow.js' %}" defer></script>
 <script src="{% static 'assets/vendors/swiper/swiper.min.js' %}" defer></script>
