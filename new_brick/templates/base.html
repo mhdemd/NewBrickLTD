@@ -32,50 +32,6 @@
 
     <link rel="stylesheet" href="{% static 'assets/vendors/assimox-icons/style.css' %}?v={{ STATIC_VERSION }}" />
     <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}?v={{ STATIC_VERSION }}" />
-
-    <!-- Lazy load CSS -->
-    <script>
-        // Lazy load CSS
-        document.addEventListener('DOMContentLoaded', function() {
-            let lazyLoaded = false;
-        
-            const loadLazyCSS = () => {
-                if (lazyLoaded) return;
-                lazyLoaded = true;
-        
-                const stylesheets = [
-                    "{% static 'assets/css/footer.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/fontawesome/css/all.min.css' %}?v={{ STATIC_VERSION }}",
-                    
-                    "{% static 'assets/vendors/owl-carousel/owl.carousel.min.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/owl-carousel/owl.theme.default.min.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/jarallax/jarallax.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/odometer/odometer.min.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/bxslider/jquery.bxslider.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/vegas/vegas.min.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/timepicker/timePicker.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/bootstrap-select/css/bootstrap-select.min.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/jquery-ui/jquery-ui.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/reey-font/stylesheet.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/tiny-slider/tiny-slider.min.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/nouislider/nouislider.min.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/animate/animate.min.css' %}?v={{ STATIC_VERSION }}",
-                    "{% static 'assets/vendors/nouislider/nouislider.pips.css' %}?v={{ STATIC_VERSION }}",
-                ];
-        
-                stylesheets.forEach(function(href) {
-                    const link = document.createElement('link');
-                    link.rel = 'stylesheet';
-                    link.href = href;
-                    document.head.appendChild(link);
-                });
-            };
-        
-            // بارگذاری CSSها بعد از اولین اسکرول
-            window.addEventListener('scroll', loadLazyCSS);
-        });
-    </script>  
     
     <!-- Template styles -->
     <link rel="stylesheet" href="{% static 'assets/css/newbrick.css' %}?v={{ STATIC_VERSION }}" />

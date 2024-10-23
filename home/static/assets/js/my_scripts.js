@@ -124,3 +124,42 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// Lazy load CSS
+document.addEventListener('DOMContentLoaded', function() {
+    let lazyLoaded = false;
+
+    const loadLazyCSS = () => {
+        if (lazyLoaded) return;
+        lazyLoaded = true;
+
+        const stylesheets = [
+            '../css/footer.css',
+            '../vendors/fontawesome/css/all.min.css',
+            '../vendors/owl-carousel/owl.carousel.min.css',
+            '../vendors/owl-carousel/owl.theme.default.min.css',
+            '../vendors/jquery-magnific-popup/jquery.magnific-popup.css',
+            '../vendors/jarallax/jarallax.css',
+            '../vendors/odometer/odometer.min.css',
+            '../vendors/bxslider/jquery.bxslider.css',
+            '../vendors/vegas/vegas.min.css',
+            '../vendors/timepicker/timePicker.css',
+            '../vendors/bootstrap-select/css/bootstrap-select.min.css',
+            '../vendors/jquery-ui/jquery-ui.css',
+            '../vendors/reey-font/stylesheet.css',
+            '../vendors/tiny-slider/tiny-slider.min.css',
+            '../vendors/nouislider/nouislider.min.css',
+            '../vendors/animate/animate.min.css',
+            '../vendors/nouislider/nouislider.pips.css'
+        ];
+
+        stylesheets.forEach(function(href) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            document.head.appendChild(link);
+        });
+    };
+
+    // بارگذاری CSSها بعد از اولین اسکرول
+    window.addEventListener('scroll', loadLazyCSS);
+});
