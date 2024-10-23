@@ -26,7 +26,6 @@ function loadAllLazyResources() {
     loadLazyCSS(); // Load CSS
     loadLazyJS();  // Load JS
     lazyLoadHTMLSections(); // Load HTML sections
-    lazyLoadBackgroundImages(); // Load background images
     lazyLoadFAQImages(); // Load FAQ background images
     showFooterAfterScroll(); // Show footer after scroll
 }
@@ -112,34 +111,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     };
 
-    // Lazy load background images (for About Us, Contact Us, Services)
-    const lazyLoadBackgroundImages = () => {
-        const elementsToLazyLoad = document.querySelectorAll('.lazy-bg, .page-header__bg');
-        if (!elementsToLazyLoad.length) return;
-
-        if ("IntersectionObserver" in window) {
-            let observer = new IntersectionObserver(function (entries, observer) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        let element = entry.target;
-                        let bgUrl = element.getAttribute("data-bg-url");
-                        element.style.backgroundImage = `url(${bgUrl})`;
-                        observer.unobserve(element); // Stop observing after image load
-                    }
-                });
-            });
-
-            elementsToLazyLoad.forEach(function (element) {
-                observer.observe(element); // Observe each element
-            });
-        } else {
-            // Fallback for older browsers without IntersectionObserver support
-            elementsToLazyLoad.forEach(function (element) {
-                let bgUrl = element.getAttribute("data-bg-url");
-                element.style.backgroundImage = `url(${bgUrl})`;
-            });
-        }
-    };
 
     // Lazy load CSS after scroll
     const loadLazyCSS = () => {
@@ -241,7 +212,6 @@ document.addEventListener('DOMContentLoaded', function () {
         loadLazyCSS(); // Load CSS
         loadLazyJS();  // Load JS
         lazyLoadHTMLSections(); // Load HTML sections
-        lazyLoadBackgroundImages(); // Load background images
         lazyLoadFAQImages(); // Load FAQ background images
         showFooterAfterScroll(); // Show footer after scroll
     };
@@ -289,3 +259,35 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 });
+
+// Lazy load background images (for About Us, Contact Us, Services)
+const lazyLoadBackgroundImages = () => {
+    const elementsToLazyLoad = document.querySelectorAll('.lazy-bg, .page-header__bg');
+    if (!elementsToLazyLoad.length) return;
+
+    if ("IntersectionObserver" in window) {
+        let observer = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    let element = entry.target;
+                    let bgUrl = element.getAttribute("data-bg-url");
+                    element.style.backgroundImage = `url(${bgUrl})`;
+                    observer.unobserve(element); // Stop observing after image load
+                }
+            });
+        });
+
+        elementsToLazyLoad.forEach(function (element) {
+            observer.observe(element); // Observe each element
+        });
+    } else {
+        // Fallback for older browsers without IntersectionObserver support
+        elementsToLazyLoad.forEach(function (element) {
+            let bgUrl = element.getAttribute("data-bg-url");
+            element.style.backgroundImage = `url(${bgUrl})`;
+        });
+    }
+};
+
+// Execute the function after DOM is fully loaded
+document.addEventListener("DOMContentLoaded", lazyLoadBackgroundImages);
