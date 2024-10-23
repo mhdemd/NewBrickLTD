@@ -1472,10 +1472,10 @@
       transform: translateY(-120px);
       -webkit-transition-delay: 0ms;
       transition-delay: 0ms;
-      -webkit-transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
-      transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
-      transition: transform 1000ms ease, opacity 1000ms ease;
-      transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
+      -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
   }
   
   .main-slider__title {
@@ -1492,10 +1492,10 @@
       transform: translateY(-120px);
       -webkit-transition-delay: 0ms;
       transition-delay: 0ms;
-      -webkit-transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
-      transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
-      transition: transform 1000ms ease, opacity 1000ms ease;
-      transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
+      -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
   }
   
   .main-slider__text {
@@ -1510,10 +1510,10 @@
       transform: translateY(120px);
       -webkit-transition-delay: 0ms;
       transition-delay: 0ms;
-      -webkit-transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
-      transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
-      transition: transform 1000ms ease, opacity 1000ms ease;
-      transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
+      -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
   }
   
   .main-slider__text-two {
@@ -1529,10 +1529,10 @@
       transform: translateY(120px);
       -webkit-transition-delay: 0ms;
       transition-delay: 0ms;
-      -webkit-transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
-      transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
-      transition: transform 1000ms ease, opacity 1000ms ease;
-      transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
+      -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
   }
   
   .main-slider__text-two span {
@@ -1549,10 +1549,10 @@
     transform: translateY(120px);
     -webkit-transition-delay: 0ms;
     transition-delay: 0ms;
-    -webkit-transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
-    transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
-    transition: transform 1000ms ease, opacity 1000ms ease;
-    transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
+    -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+    transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+    transition: transform 2000ms ease, opacity 2000ms ease;
+    transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
     
 }
 
@@ -1585,10 +1585,10 @@
       transform: translateX(120px);
       -webkit-transition-delay: 0ms;
       transition-delay: 0ms;
-      -webkit-transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
-      transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
-      transition: transform 1000ms ease, opacity 1000ms ease;
-      transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
+      -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease;
+      transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
 
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
       width: 150px; 
