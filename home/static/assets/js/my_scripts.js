@@ -97,28 +97,30 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// Lazy load top-img
+// Lazy load top-img (in about us, contact us, services)
 document.addEventListener("DOMContentLoaded", function() {
-    const lazyBackgrounds = document.querySelectorAll('.lazy-bg');
+    const elementsToLazyLoad = document.querySelectorAll('.lazy-bg, .page-header__bg'); // انتخاب المان‌ها با هر دو کلاس
 
     if ("IntersectionObserver" in window) {
-        let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+        let observer = new IntersectionObserver(function(entries, observer) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
-                    let lazyBackground = entry.target;
-                    lazyBackground.style.backgroundImage = `url(${lazyBackground.dataset.bgUrl})`;
-                    lazyBackgroundObserver.unobserve(lazyBackground);
+                    let element = entry.target;
+                    let bgUrl = element.getAttribute("data-bg-url");
+                    element.style.backgroundImage = `url(${bgUrl})`;
+                    observer.unobserve(element); // حذف نظارت پس از لود تصویر
                 }
             });
         });
 
-        lazyBackgrounds.forEach(function(lazyBackground) {
-            lazyBackgroundObserver.observe(lazyBackground);
+        elementsToLazyLoad.forEach(function(element) {
+            observer.observe(element); // نظارت بر روی هر المان
         });
     } else {
-        // Fallback for browsers that do not support IntersectionObserver
-        lazyBackgrounds.forEach(function(lazyBackground) {
-            lazyBackground.style.backgroundImage = `url(${lazyBackground.dataset.bgUrl})`;
+        // Fallback برای مرورگرهایی که IntersectionObserver را پشتیبانی نمی‌کنند
+        elementsToLazyLoad.forEach(function(element) {
+            let bgUrl = element.getAttribute("data-bg-url");
+            element.style.backgroundImage = `url(${bgUrl})`;
         });
     }
 });
@@ -206,5 +208,31 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     window.addEventListener('scroll', loadLazyScripts); // لود اسکریپت‌ها بعد از اولین اسکرول
+});
+
+
+// Lazy load FAQ's image (in home)
+document.addEventListener("DOMContentLoaded", function() {
+    const bgElements = document.querySelectorAll(".faq-one__bg");
+
+    if (bgElements.length > 0) { // فقط اگر المان‌های faq-one__bg وجود داشته باشند
+        const loadBackgroundImage = (element) => {
+            const bgImageUrl = element.getAttribute("data-bg-url");
+            element.style.backgroundImage = `url(${bgImageUrl})`;
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    loadBackgroundImage(entry.target);
+                    observer.unobserve(entry.target); // حذف نظارت پس از لود تصویر
+                }
+            });
+        });
+
+        bgElements.forEach(element => {
+            observer.observe(element); // نظارت بر روی هر المان
+        });
+    }
 });
 

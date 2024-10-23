@@ -12,31 +12,6 @@
                    
             {% comment %} <div class="page-header__bg" style="background-image: url({% static 'assets/images/backgrounds/top-img.webp' %});"></div> {% endcomment %}
             <div class="page-header__bg lazy-bg" data-bg-url="{% static 'assets/images/backgrounds/top-img.webp' %}"></div>
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    const bgElements = document.querySelectorAll(".page-header__bg"); // انتخاب همه المان‌هایی که کلاس مربوطه دارند
-                
-                    const loadBackgroundImage = (element) => {
-                        const bgImageUrl = element.getAttribute("data-bg-url");
-                        element.style.backgroundImage = `url(${bgImageUrl})`;
-                    };
-                
-                    const observer = new IntersectionObserver((entries, observer) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                loadBackgroundImage(entry.target);
-                                observer.unobserve(entry.target); // حذف نظارت پس از لود تصویر
-                            }
-                        });
-                    });
-                
-                    bgElements.forEach(element => {
-                        observer.observe(element); // نظارت بر روی هر المان
-                    });
-                });
-                
-            </script>
-
 
             <div class="container">
                 <div class="row">
@@ -127,10 +102,7 @@
         </section>
         <!--About Three End-->
         
-
-
     </div><!-- /.page-wrapper -->
-
 
 </body>
 
