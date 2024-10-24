@@ -42,7 +42,7 @@ class HomePageSlide(Orderable):
         help_text="Slide image for mobile (size 340x800)",
     )
     text_slide_1 = models.CharField(blank=True, max_length=255, help_text="Line 1")
-    text_slide_2 = models.CharField(blank=True, max_length=255, help_text="Line 2 & 3")
+    text_slide_2 = RichTextField(blank=True, max_length=255, help_text="Line 2 & 3")
     text_slide_3 = models.CharField(blank=True, max_length=255, help_text="Line 4")
     text_slide_4 = RichTextField(
         blank=True,
