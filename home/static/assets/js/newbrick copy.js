@@ -323,7 +323,7 @@
       $("html, body").animate({
           scrollTop: $(target).offset().top
         },
-        1000
+        500
       );
 
       return false;
@@ -986,7 +986,7 @@
       }
     }
     if ($(".scroll-to-top").length) {
-      var strickyScrollPos = 100;
+      var strickyScrollPos = 600;
       if ($(window).scrollTop() > strickyScrollPos) {
         $(".scroll-to-top").fadeIn(500);
       } else if ($(this).scrollTop() <= strickyScrollPos) {
