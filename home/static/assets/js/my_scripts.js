@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-
+////////////////////////////////////////////////////////// Lazy loading
 // Main function to load all lazy resources after scroll
 function loadAllLazyResources() {
     loadLazyCSS(); // Load CSS
@@ -80,15 +80,27 @@ document.addEventListener('DOMContentLoaded', function () {
     let lazyJSLoaded = false;
 
     // Show fixed footer after first scroll
+    // const showFooterAfterScroll = () => {
+    //     const footer = document.querySelector('.fixed-footer');
+    //     if (!footer) return;
+
+    //     if (window.innerWidth <= 991) { // Check if screen width is less than 991px
+    //         footer.style.display = 'block'; // Show footer
+    //     }
+    // };
+ 
     const showFooterAfterScroll = () => {
         const footer = document.querySelector('.fixed-footer');
         if (!footer) return;
-
-        if (window.innerWidth <= 991) { // Check if screen width is less than 991px
-            footer.style.display = 'block'; // Show footer
+    
+        if (window.innerWidth <= 991) { // بررسی عرض صفحه
+            footer.style.display = 'block'; // نمایش footer
+            setTimeout(() => {
+                footer.classList.add('show'); // اضافه کردن کلاس برای کم‌رنگ به پر‌رنگ
+            }, 100); // تاخیر کوتاه برای ایجاد انیمیشن روان
         }
     };
-
+    
     // Lazy load HTML sections using IntersectionObserver
     const lazyLoadHTMLSections = () => {
         let lazySections = document.querySelectorAll(".lazy-section");
@@ -118,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
         lazyCSSLoaded = true;
 
         const stylesheets = [
-            '/public/static/assets/css/footer.css',
+            // '/public/static/assets/css/footer.css',
             '/public/static/assets/vendors/fontawesome/css/all.min.css',
             '/public/static/assets/vendors/owl-carousel/owl.carousel.min.css',
             '/public/static/assets/vendors/owl-carousel/owl.theme.default.min.css',
@@ -259,6 +271,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 });
+
+////////////////////////////////////////////////////////// Exeption loading
+
 
 // Lazy load background images (for About Us, Contact Us, Services)
 const lazyLoadBackgroundImages = () => {
