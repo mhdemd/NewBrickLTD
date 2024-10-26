@@ -1,10 +1,12 @@
 import re
+from datetime import timedelta
 
 import bleach
 from django.core.mail import send_mail
 from django.db import models
 from django.http import Http404
 from django.template.response import TemplateResponse
+from django.utils import timezone
 from django.utils.text import slugify
 from modelcluster.fields import ParentalKey
 from wagtail import blocks
@@ -153,36 +155,48 @@ class HomePage(Page):
         context = self.get_context(request)
 
         if request.method == "POST" and form.is_valid():
-            # اطلاعات کاربر از فرم گرفته می‌شود
+            # Get user information from the form
             user_name = form.cleaned_data["name"]
             user_email = form.cleaned_data["email"]
             user_phone = form.cleaned_data["phone"]
             user_message = form.cleaned_data["message"]
 
-            # متن ایمیل
-            email_subject = f"New Contact Request from {user_name}"
-            email_message = f"""
-            Name: {user_name}
-            Email: {user_email}
-            Phone: {user_phone}
-            
-            Message:
-            {user_message}
-            """
+            # Check if there are already 3 or more messages from this email in the last 24 hours
+            last_24_hours = timezone.now() - timedelta(hours=24)
+            recent_messages_count = ContactMessage.objects.filter(
+                email=user_email, created_at__gte=last_24_hours
+            ).count()
 
-            # ارسال ایمیل به ادمین
-            send_mail(
-                subject=email_subject,
-                message=email_message,
-                from_email="info@newbrickltd.co.uk",
-                recipient_list=["mahdi.emadi@yahoo.com"],
-            )
+            # If less than 3 messages, proceed with saving and sending the email
+            if recent_messages_count < 3:
+                # Email subject and message body
+                email_subject = f"New Contact Request from {user_name}"
+                email_message = f"""
+                Name: {user_name}
+                Email: {user_email}
+                Phone: {user_phone}
+                
+                Message:
+                {user_message}
+                """
 
-            # ذخیره پیام در دیتابیس
-            ContactMessage.objects.create(
-                name=user_name, email=user_email, phone=user_phone, message=user_message
-            )
+                # Send email to admin
+                send_mail(
+                    subject=email_subject,
+                    message=email_message,
+                    from_email="info@newbrickltd.co.uk",
+                    recipient_list=["mahdi.emadi@yahoo.com"],
+                )
 
+                # Save message to the database
+                ContactMessage.objects.create(
+                    name=user_name,
+                    email=user_email,
+                    phone=user_phone,
+                    message=user_message,
+                )
+
+            # Add form to context regardless of message count
             context["form"] = form
             return TemplateResponse(request, template_name, context)
 
