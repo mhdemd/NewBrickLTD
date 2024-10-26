@@ -5,16 +5,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const limitMessage = document.getElementById('limitMessage');
     
     if (window.location.hash === '#form') {
-        const formPosition = form.getBoundingClientRect().top;
-        window.scrollTo({ top: formPosition, behavior: 'instant' });
+        const isMobile = window.innerWidth < 768;
+        const targetElement = isMobile
+            ? document.getElementById('contactForm_Form') // موبایل
+            : form; // دسکتاپ
 
-        const formErrors = document.querySelectorAll('.error');
-        if (formErrors.length === 0) {
-            // Check if the message limit was reached using data attribute
-            if (limitMessage.getAttribute('data-limit-reached') === 'True') {
-                limitMessage.style.display = 'block';
-            } else {
-                successMessage.style.display = 'block';
+        if (targetElement) {
+            const formPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({ top: formPosition, behavior: 'instant' });
+
+            const formErrors = document.querySelectorAll('.error');
+            if (formErrors.length === 0) {
+                // بررسی محدودیت ارسال پیام
+                if (limitMessage.getAttribute('data-limit-reached') === 'True') {
+                    limitMessage.style.display = 'block';
+                } else {
+                    successMessage.style.display = 'block';
+                }
             }
         }
     }
@@ -86,16 +93,6 @@ function smoothScrollToForm(event) {
 document.addEventListener('DOMContentLoaded', function () {
     let lazyCSSLoaded = false;
     let lazyJSLoaded = false;
-
-    // Show fixed footer after first scroll
-    // const showFooterAfterScroll = () => {
-    //     const footer = document.querySelector('.fixed-footer');
-    //     if (!footer) return;
-
-    //     if (window.innerWidth <= 991) { // Check if screen width is less than 991px
-    //         footer.style.display = 'block'; // Show footer
-    //     }
-    // };
  
     const showFooterAfterScroll = () => {
         const footer = document.querySelector('.fixed-footer');
