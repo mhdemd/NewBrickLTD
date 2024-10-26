@@ -74,11 +74,19 @@
         
                                         <!-- Call to Action button -->
                                         <div class="main-slider__btn-box">
-                                            <a class="thm-btn main-slider__btn"
+                                            {% comment %} <a class="thm-btn main-slider__btn"
                                                data-target="#contactForm"
                                                onclick="smoothScrollToForm(event)">
                                                 {{ slide.hero_cta }}
-                                            </a>
+                                            </a> {% endcomment %}
+                                            <span class="thm-btn main-slider__btn"
+                                                role="button"
+                                                tabindex="0"
+                                                data-target="#contactForm"
+                                                onclick="smoothScrollToForm(event)">
+                                                {{ slide.hero_cta }}
+                                            </span>
+                                      
                                         </div>
         
                                         <!-- Optional badge image -->
