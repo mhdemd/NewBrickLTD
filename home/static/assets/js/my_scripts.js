@@ -1,7 +1,8 @@
 // When click on form botton scroll to form again
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contactForm'); // تغییر انتخابگر
+    const form = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
+    const limitMessage = document.getElementById('limitMessage');
     
     if (window.location.hash === '#form') {
         const formPosition = form.getBoundingClientRect().top;
@@ -9,16 +10,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const formErrors = document.querySelectorAll('.error');
         if (formErrors.length === 0) {
-            successMessage.style.display = 'block';  
+            // Check if the message limit was reached using data attribute
+            if (limitMessage.getAttribute('data-limit-reached') === 'True') {
+                limitMessage.style.display = 'block';
+            } else {
+                successMessage.style.display = 'block';
+            }
         }
     }
 
-    if (form) { // بررسی اینکه فرم وجود دارد
+    if (form) {
         form.addEventListener('submit', function () {
-            window.location.hash = '#form';  
+            window.location.hash = '#form';
         });
     }
 });
+
+
 
 ////////////////////////////////////////////////////////// Lazy loading
 // Main function to load all lazy resources after scroll

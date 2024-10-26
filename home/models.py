@@ -153,6 +153,7 @@ class HomePage(Page):
     def serve(self, request, template_name="home/home_page.html"):
         form = ContactForm(request.POST or None)
         context = self.get_context(request)
+        context["message_limit_reached"] = False  # Add a flag for message limit
 
         if request.method == "POST" and form.is_valid():
             # Get user information from the form
@@ -161,15 +162,20 @@ class HomePage(Page):
             user_phone = form.cleaned_data["phone"]
             user_message = form.cleaned_data["message"]
 
-            # Check if there are already 3 or more messages from this email in the last 24 hours
+            # Get the IP address of the user
+            user_ip = request.META.get("REMOTE_ADDR")
+
+            # Check if there are already 3 or more messages from this IP in the last 24 hours
             last_24_hours = timezone.now() - timedelta(hours=24)
             recent_messages_count = ContactMessage.objects.filter(
-                email=user_email, created_at__gte=last_24_hours
+                ip_address=user_ip, submitted_at__gte=last_24_hours
             ).count()
 
-            # If less than 3 messages, proceed with saving and sending the email
-            if recent_messages_count < 3:
-                # Email subject and message body
+            # If the message limit has been reached, set the flag to True
+            if recent_messages_count >= 3:
+                context["message_limit_reached"] = True
+            else:
+                # Proceed with saving and sending the email
                 email_subject = f"New Contact Request from {user_name}"
                 email_message = f"""
                 Name: {user_name}
@@ -180,7 +186,6 @@ class HomePage(Page):
                 {user_message}
                 """
 
-                # Send email to admin
                 send_mail(
                     subject=email_subject,
                     message=email_message,
@@ -194,9 +199,9 @@ class HomePage(Page):
                     email=user_email,
                     phone=user_phone,
                     message=user_message,
+                    ip_address=user_ip,  # Store IP address
                 )
 
-            # Add form to context regardless of message count
             context["form"] = form
             return TemplateResponse(request, template_name, context)
 
@@ -318,37 +323,54 @@ class ContactUsPage(Page):
     def serve(self, request, template_name="home/contact_us_page.html"):
         form = ContactForm(request.POST or None)
         context = self.get_context(request)
+        context["message_limit_reached"] = False  # Add a flag for message limit
 
         if request.method == "POST" and form.is_valid():
-            # اطلاعات کاربر از فرم گرفته می‌شود
+            # Get user information from the form
             user_name = form.cleaned_data["name"]
             user_email = form.cleaned_data["email"]
             user_phone = form.cleaned_data["phone"]
             user_message = form.cleaned_data["message"]
 
-            # متن ایمیل
-            email_subject = f"New Contact Request from {user_name}"
-            email_message = f"""
-            Name: {user_name}
-            Email: {user_email}
-            Phone: {user_phone}
-            
-            Message:
-            {user_message}
-            """
+            # Get the IP address of the user
+            user_ip = request.META.get("REMOTE_ADDR")
 
-            # ارسال ایمیل به ادمین
-            send_mail(
-                subject=email_subject,
-                message=email_message,
-                from_email="info@newbrickltd.co.uk",
-                recipient_list=["mahdi.emadi@yahoo.com"],
-            )
+            # Check if there are already 3 or more messages from this IP in the last 24 hours
+            last_24_hours = timezone.now() - timedelta(hours=24)
+            recent_messages_count = ContactMessage.objects.filter(
+                ip_address=user_ip, submitted_at__gte=last_24_hours
+            ).count()
 
-            # ذخیره پیام در دیتابیس
-            ContactMessage.objects.create(
-                name=user_name, email=user_email, phone=user_phone, message=user_message
-            )
+            # If the message limit has been reached, set the flag to True
+            if recent_messages_count >= 3:
+                context["message_limit_reached"] = True
+            else:
+                # Proceed with saving and sending the email
+                email_subject = f"New Contact Request from {user_name}"
+                email_message = f"""
+                Name: {user_name}
+                Email: {user_email}
+                Phone: {user_phone}
+                
+                Message:
+                {user_message}
+                """
+
+                send_mail(
+                    subject=email_subject,
+                    message=email_message,
+                    from_email="info@newbrickltd.co.uk",
+                    recipient_list=["mahdi.emadi@yahoo.com"],
+                )
+
+                # Save message to the database
+                ContactMessage.objects.create(
+                    name=user_name,
+                    email=user_email,
+                    phone=user_phone,
+                    message=user_message,
+                    ip_address=user_ip,  # Store IP address
+                )
 
             context["form"] = form
             return TemplateResponse(request, template_name, context)
@@ -363,7 +385,10 @@ class ContactMessage(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=20, blank=True, null=True)
     message = models.TextField()
-    submitted_at = models.DateTimeField(auto_now_add=True)  # زمان ارسال پیام
+    submitted_at = models.DateTimeField(auto_now_add=True)
+    ip_address = models.GenericIPAddressField(
+        null=True, blank=True
+    )  # New field for IP address
 
     def __str__(self):
         return f"Message from {self.name} ({self.email})"

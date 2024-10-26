@@ -86,7 +86,10 @@
                         <div id="successMessage" class="alert alert-success mt-4" style="display:none;">
                             Thank you! Your message has been successfully sent.
                         </div>
-                    
+                        <div id="limitMessage" class="alert mt-4" style="display:none; color: white; background-color: red; padding: 10px; border-radius: 5px;" data-limit-reached="{{ message_limit_reached }}">
+                            You have reached the daily limit for sending messages.
+                        </div>
+                                                                                            
                     </div>
 
                     <div class="col-xl-4 col-lg-5">
