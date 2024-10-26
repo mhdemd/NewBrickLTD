@@ -1559,8 +1559,12 @@
     transition: opacity 1000ms ease, -webkit-transform 1000ms ease;
     transition: transform 1000ms ease, opacity 1000ms ease;
     transition: transform 1000ms ease, opacity 1000ms ease, -webkit-transform 1000ms ease;
-}
+  }
 
+  .main-slider__btn-box .thm-btn {
+    user-select: none; /* جلوگیری از انتخاب متن */
+    cursor: pointer;   /* تغییر نشانگر موس به شکل دست */
+  }
   
   .main-slider__btn {
       color: var(--assimox-white);
