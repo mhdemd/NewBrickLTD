@@ -163,7 +163,12 @@ class HomePage(Page):
             user_message = form.cleaned_data["message"]
 
             # Get the IP address of the user
-            user_ip = request.META.get("REMOTE_ADDR")
+            user_ip = request.META.get("HTTP_X_FORWARDED_FOR")
+            if user_ip:
+                # If there are multiple IPs in X-Forwarded-For, take the first one (client's IP)
+                user_ip = user_ip.split(",")[0].strip()
+            else:
+                user_ip = request.META.get("REMOTE_ADDR")
 
             # Check if there are already 3 or more messages from this IP in the last 24 hours
             last_24_hours = timezone.now() - timedelta(hours=24)
@@ -333,7 +338,12 @@ class ContactUsPage(Page):
             user_message = form.cleaned_data["message"]
 
             # Get the IP address of the user
-            user_ip = request.META.get("REMOTE_ADDR")
+            user_ip = request.META.get("HTTP_X_FORWARDED_FOR")
+            if user_ip:
+                # If there are multiple IPs in X-Forwarded-For, take the first one (client's IP)
+                user_ip = user_ip.split(",")[0].strip()
+            else:
+                user_ip = request.META.get("REMOTE_ADDR")
 
             # Check if there are already 3 or more messages from this IP in the last 24 hours
             last_24_hours = timezone.now() - timedelta(hours=24)
