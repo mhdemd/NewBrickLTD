@@ -24,7 +24,7 @@
     {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}?v={{ STATIC_VERSION }}" /> {% endcomment %}
     
     <!-- Template styles -->
-    <link rel="stylesheet" href="{% static 'assets/css/newbrick-copy.css' %}?v={{ STATIC_VERSION }}" />
+    <link rel="stylesheet" href="{% static 'assets/css/newbrick.css' %}?v={{ STATIC_VERSION }}" />
     <link rel="stylesheet" href="{% static 'assets/css/newbrick-responsive.css' %}?v={{ STATIC_VERSION }}" />
     <link rel="stylesheet" href="{% static 'assets/css/footer.css' %}?v={{ STATIC_VERSION }}" />
 
@@ -37,13 +37,15 @@
         <nav class="main-menu">
             <div class="main-menu__wrapper">
                 <div class="main-menu__wrapper-inner">
-                    
+
                     <!-- main-menu__left -->
                     <div class="main-menu__left">
-                        <div class="main-menu__logo">
-                             New Brick LTD  
-                            {% comment %} <a href="/"><img src="{% static 'assets/images/resources/logo-3.webp' %}" alt="New Brick LTD company logo"></a> {% endcomment %}
-                        </div>
+                        <div class="main-menu__logo"> 
+                            <a href="/">
+                                <img src="{% static 'assets/images/resources/logo-3.webp' %}" alt="New Brick LTD company logo" class="logo-desktop">
+                                <img src="{% static 'assets/images/resources/logo-mobile.webp' %}" alt="New Brick LTD company logo" class="logo-mobile">
+                            </a> 
+                        </div>                        
                         <div class="main-menu__main-menu-box">
                             <!-- Home About Us Services Projects Pages Contact Us -->
 
