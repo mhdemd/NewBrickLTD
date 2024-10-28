@@ -24,7 +24,7 @@
     {% comment %} <link rel="stylesheet" href="{% static 'assets/vendors/free-hand-font/stylesheet.css' %}?v={{ STATIC_VERSION }}" /> {% endcomment %}
     
     <!-- Template styles -->
-    <link rel="stylesheet" href="{% static 'assets/css/newbrick.css' %}?v={{ STATIC_VERSION }}" />
+    <link rel="stylesheet" href="{% static 'assets/css/newbrick-copy.css' %}?v={{ STATIC_VERSION }}" />
     <link rel="stylesheet" href="{% static 'assets/css/newbrick-responsive.css' %}?v={{ STATIC_VERSION }}" />
     <link rel="stylesheet" href="{% static 'assets/css/footer.css' %}?v={{ STATIC_VERSION }}" />
 
@@ -177,13 +177,12 @@
                 <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
         </span>
-                <h3 class="footer-widget__title">New Brick LTD</h3> 
-        <br>
+                
         
-        {% comment %} <div class="logo-box">
-            <a href="/" aria-label="logo image"><img src="{% static 'assets/images/resources/logo-1.png' %}" width="200"
+        <div class="logo-box">
+            <a href="/" aria-label="logo image"><img src="{% static 'assets/images/resources/logo-mobile.webp' %}" width="200"
                     alt="New Brick LTD company logo" loading="lazy" /></a>
-        </div> {% endcomment %}
+        </div> 
 
         <!-- /.logo-box -->
         <div class="mobile-nav__container"></div>
@@ -289,8 +288,7 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__about">
                         <div class="footer-widget__logo">
-                            <h4 class="footer-widget__title">New Brick LTD</h4> 
-                            {% comment %} <a href="index.html"><img src="{% static 'assets/images/resources/footer-logo.png' %}" alt=""></a> {% endcomment %}
+                            <a href="index.html"><img src="{% static 'assets/images/resources/logo-mobile.webp' %}" alt=""></a> 
                         </div>
                         <p class="site-footer__text">Providing 24/7 expert maintenance solutions tailored to your property’s needs, ensuring quality and reliability.</p>
                     </div>
