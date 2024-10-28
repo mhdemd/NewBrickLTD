@@ -619,6 +619,12 @@
     max-height: 80px;
   }
   
+  @media (max-width: 768px) {
+    .main-menu__logo img {
+        max-height: 70px; /* اندازه دلخواه خودتان را اینجا وارد کنید */
+    }
+  }
+
     /* نمایش لوگوی دسکتاپ در حالت عادی */
   .logo-mobile {
     display: none;
@@ -3576,8 +3582,8 @@
     position: relative;
     display: block;
     overflow: hidden;
-    padding: 219px 0 132px;
-    z-index: 10;
+    padding: 219px 0 132px ;
+    z-index: 1;
   }
   
   .page-header__bg {
