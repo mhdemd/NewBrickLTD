@@ -52,7 +52,7 @@ CACHES = {
 MIDDLEWARE.insert(1, "django.middleware.cache.UpdateCacheMiddleware")
 MIDDLEWARE.insert(3, "django.middleware.cache.FetchFromCacheMiddleware")
 
-CACHE_MIDDLEWARE_SECONDS = 436800  # a week
+CACHE_MIDDLEWARE_SECONDS = 60  # 436800  # a week
 
 try:
     from .local import *
