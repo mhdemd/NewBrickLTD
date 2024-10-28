@@ -621,7 +621,7 @@
   
   @media (max-width: 768px) {
     .main-menu__logo img {
-        max-height: 70px; /* اندازه دلخواه خودتان را اینجا وارد کنید */
+        max-height: 80px; /* اندازه دلخواه خودتان را اینجا وارد کنید */
     }
   }
 
