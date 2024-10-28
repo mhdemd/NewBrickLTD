@@ -573,7 +573,7 @@
     right: 0;
     background-color: transparent;
     transition: all 500ms ease;
-    z-index: 999;
+    z-index: 3;
   }
   
   .main-menu {
@@ -729,7 +729,7 @@
     font-weight: 500;
     line-height: 22px;
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
   }
   
   .main-menu__call-number a {
