@@ -207,6 +207,10 @@ class HomePage(Page):
                     ip_address=user_ip,  # Store IP address
                 )
 
+                # Delete messages older than one month
+                one_month_ago = timezone.now() - timedelta(days=30)
+                ContactMessage.objects.filter(submitted_at__lt=one_month_ago).delete()
+
             context["form"] = form
             return TemplateResponse(request, template_name, context)
 
@@ -381,6 +385,10 @@ class ContactUsPage(Page):
                     message=user_message,
                     ip_address=user_ip,  # Store IP address
                 )
+
+                # Delete messages older than one month
+                one_month_ago = timezone.now() - timedelta(days=30)
+                ContactMessage.objects.filter(submitted_at__lt=one_month_ago).delete()
 
             context["form"] = form
             return TemplateResponse(request, template_name, context)
