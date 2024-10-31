@@ -75,8 +75,8 @@
                     <div class="main-menu__left">
                         <div class="main-menu__logo"> 
                             <a href="/">
-                                <img src="{% static 'assets/images/resources/logo-3.webp' %}" alt="New Brick LTD company logo" class="logo-desktop">
-                                <img src="{% static 'assets/images/resources/logo-mobile.webp' %}" alt="New Brick LTD company logo" class="logo-mobile">
+                                <img loading="lazy" src="{% static 'assets/images/resources/logo-3.webp' %}" alt="New Brick LTD company logo" class="logo-desktop">
+                                <img loading="lazy" src="{% static 'assets/images/resources/logo-mobile.webp' %}" alt="New Brick LTD company logo" class="logo-mobile">
                             </a> 
                         </div>                        
                         <div class="main-menu__main-menu-box">
@@ -142,7 +142,7 @@
                 <div class="layer layer-two"><span class="overlay"></span></div>
                 <div class="layer layer-three"><span class="overlay"></span></div>
                 <div class="animation-preloader">
-                    <img src="{% static 'assets/images/resources/logo-png.png' %}" alt="" class="spinner-logo" >
+                    <img loading="lazy" src="{% static 'assets/images/resources/logo-png.png' %}" alt="" class="spinner-logo" >
 
                     <div class="spinner">
                     </div>
@@ -212,8 +212,8 @@
                 
         
         <div class="logo-box">
-            <a href="/" aria-label="logo image"><img src="{% static 'assets/images/resources/logo-mobile.webp' %}" width="200"
-                    alt="New Brick LTD company logo" loading="lazy" /></a>
+            <a href="/" aria-label="logo image"><img loading="lazy" src="{% static 'assets/images/resources/logo-mobile.webp' %}" width="200"
+                    alt="New Brick LTD company logo"  /></a>
         </div> 
 
         <!-- /.logo-box -->
@@ -285,7 +285,7 @@
                     <ul class="site-footer__contact-points list-unstyled">
                         <li>
                             <div class="icon">
-                                <img src="{% static 'assets/images/icon/footer-icon-1.png' %}" alt="New Brick LTD logo" loading="lazy">
+                                <img loading="lazy" src="{% static 'assets/images/icon/footer-icon-1.png' %}" alt="New Brick LTD logo" >
                             </div>
                             <div class="content">
                                 <h4>{{ company_info.address }}</h4>
@@ -294,7 +294,7 @@
                         </li>
                         <li>
                             <div class="icon">
-                                <img src="{% static 'assets/images/icon/footer-icon-2.png' %}" alt="New Brick LTD logo" loading="lazy">
+                                <img loading="lazy" src="{% static 'assets/images/icon/footer-icon-2.png' %}" alt="New Brick LTD logo" >
                             </div>
                             <div class="content">
                                 <h4>Email us :</h4>
@@ -303,7 +303,7 @@
                         </li>
                         <li>
                             <div class="icon">
-                                <img src="{% static 'assets/images/icon/footer-icon-3.png' %}" alt="New Brick LTD logo" loading="lazy">
+                                <img loading="lazy" src="{% static 'assets/images/icon/footer-icon-3.png' %}" alt="New Brick LTD logo" >
                             </div>
                             <div class="content">
                                 <h4>Call us on :</h4>
@@ -354,27 +354,6 @@
                                                     </ul>
                     </div>
                 </div>
-                {% comment %} <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                    <div class="footer-widget__column footer-widget__newsletter">
-                        <div class="footer-widget__title-box">
-                            <h4 class="footer-widget__title">Newsletter</h4>
-                        </div>
-                        <p class="footer-widget__newsletter-text">Get latest updates and offers.</p>
-                        <form class="footer-widget__subscribe-box">
-                            <div class="footer-widget__subscribe-input-box">
-                                <input type="email" placeholder="Enter your email address" name="email">
-                                <button type="submit" class="footer-widget__subscribe-btn"><img
-                                        src="{% static 'assets/images/icon/paper-plan.png' %}" alt=""></button>
-                            </div>
-                        </form>
-                        <div class="site-footer__social">
-                            <a href="{{ company_info.facebook }}"><i class="fab fa-facebook-f"></i></a>
-                            <a href="{{ company_info.linkedin }}"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="{{ company_info.twitter }}"><i class="fab fa-twitter"></i></a>
-                            <a href="{{ company_info.instagram }}"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div> {% endcomment %}
             </div>
         </div>
     </div>
