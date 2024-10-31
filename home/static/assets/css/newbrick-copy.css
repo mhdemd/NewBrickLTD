@@ -360,7 +360,7 @@
     margin: 0 auto 45px auto;
     animation: spinner 1s infinite linear;
   }
-  
+
   .handle-preloader .animation-preloader .txt-loading {
     text-align: center;
     user-select: none;
@@ -464,6 +464,20 @@
     border-top-color: rgba(0, 0, 0, 0.7);
   }
   
+
+
+  .spinner-logo {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 190px;
+    height: 265px;
+    z-index: 1;
+    /* حذف انیمیشن از لوگو */
+    animation: none;
+  }
+
   /* AnimaciÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n del preloader */
   @keyframes spinner {
     to {
