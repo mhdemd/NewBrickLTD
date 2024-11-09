@@ -23,8 +23,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "public", "media")
 
 
 ALLOWED_HOSTS = [
-    "newbrick.runflare.run",
-    "www.newbrick.runflare.run",
+    "newbrickltd.runflare.run",
+    "www.newbrickltd.runflare.run",
     "newbrickltd.co.uk",
     "www.newbrickltd.co.uk",
 ]
