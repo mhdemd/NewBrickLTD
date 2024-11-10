@@ -3,7 +3,7 @@
 /venv/
 /.venv/
 /.env
-
+/new_brick/settings/dev.py
 
 
 # Python #
