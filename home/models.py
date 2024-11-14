@@ -195,7 +195,7 @@ class HomePage(Page):
                     subject=email_subject,
                     message=email_message,
                     from_email="info@newbrickltd.co.uk",
-                    recipient_list=["mahdi.emadi@yahoo.com"],
+                    recipient_list=["info@newbrickltd.co.uk"],
                 )
 
                 # Save message to the database
@@ -374,7 +374,7 @@ class ContactUsPage(Page):
                     subject=email_subject,
                     message=email_message,
                     from_email="info@newbrickltd.co.uk",
-                    recipient_list=["mahdi.emadi@yahoo.com"],
+                    recipient_list=["info@newbrickltd.co.uk"],
                 )
 
                 # Save message to the database
