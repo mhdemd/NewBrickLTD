@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://newbrickltd.runflare.run",
     "https://newbrickltd.co.uk",
+    "https://www.newbrickltd.co.uk",
 ]
 
 CSRF_COOKIE_SECURE = True
