@@ -331,66 +331,6 @@
         </div>
     </div>
     
-    <style>
-        #services {
-            margin: 50px auto;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-    
-        #services h1 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-    
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 columns */
-            gap: 20px;
-            max-height: 50px; /* Show only 4 items initially */
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            justify-items: start; /* Align items to the left */
-            text-align: left; /* Text alignment inside each item */
-        }
-    
-        .services-grid.expanded {
-            max-height: none; /* Expand to show all items */
-        }
-    
-        .service-item {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            font-weight: 500;
-            padding: 5px 0;
-            transition: color 0.2s;
-        }
-    
-        .service-item:hover {
-            color: #007BFF;
-        }
-    
-        .services-btn-box {
-            margin-top: 20px;
-        }
-    
-        #show-more-btn {
-            background-color: var(--assimox-primary); /* Use custom black color */
-            color: var(--assimox-white); /* Use custom white color */
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 14px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-    
-        #show-more-btn:hover {
-            background-color: var(--assimox-base); /* Use custom primary color for hover */
-        }
-    </style>
     
     <script>
         function toggleServices() {
