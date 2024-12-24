@@ -311,3 +311,17 @@ const lazyLoadBackgroundImages = () => {
 
 // Execute the function after DOM is fully loaded
 document.addEventListener("DOMContentLoaded", lazyLoadBackgroundImages);
+
+// Script for Services We Provide top of footer
+function toggleServices() {
+    const servicesGrid = document.querySelector('.services-grid');
+    const showMoreBtn = document.getElementById('show-more-btn');
+
+    if (servicesGrid.classList.contains('expanded')) {
+        servicesGrid.classList.remove('expanded');
+        showMoreBtn.textContent = 'Show More';
+    } else {
+        servicesGrid.classList.add('expanded');
+        showMoreBtn.textContent = 'Show Less';
+    }
+}
