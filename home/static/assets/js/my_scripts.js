@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
 ////////////////////////////////////////////////////////// Lazy loading
 // Main function to load all lazy resources after scroll
 function loadAllLazyResources() {
