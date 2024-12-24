@@ -5,15 +5,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> New Brick LTD </title>
+    <title>{% block meta_title %}New Brick LTD{% endblock %}</title>
 
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/apple-touch-icon.png' %}" />
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/favicon-32x32.png' %}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicons/favicon-16x16.png' %}" />
     <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest' %}" />
-    <meta name="description" content="New Brick LTD provides expert emergency building services, specializing in plumbing, electrical repairs, and small-scale construction tasks. Our reliable and fast-response team ensures high-quality solutions for urgent residential and commercial maintenance needs." />
-
+    <meta name="description" content="{% block meta_description %}New Brick LTD provides expert emergency building services, specializing in plumbing, electrical repairs, and small-scale construction tasks. Our reliable and fast-response team ensures high-quality solutions for urgent residential and commercial maintenance needs.{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}building services, maintenance{% endblock %}">
+    
     <!-- fonts preload -->
     <link rel="stylesheet" href="{% static 'assets/fonts/fonts.css' %}?v={{ STATIC_VERSION }}">
 

@@ -2,13 +2,21 @@
 {% load static %}
 {% load wagtailimages_tags %}
 
-{% block extra_meta %}
-<head>
-    <title>{{ service.name }}</title>
-    <meta name="description" content="{{ service.description|truncatechars:150 }}">
-    <meta name="keywords" content="{{ service.name }}">
-</head>
+{% block meta_title %}
+{{ service.meta_title }}
 {% endblock %}
+
+{% block meta_description %}
+{{ service.meta_description|default:service.description|truncatechars:150 }}
+{% endblock %}
+
+{% block meta_keywords %}
+{{ service.meta_keywords }}
+{% endblock %}
+
+
+<h1>{{ service.meta_h1|default:service.name }}</h1>
+
 
 {% block content %}
 <body class="custom-cursor">
@@ -52,7 +60,7 @@
                         <div class="services-details__right">
                             <div class="section-title text-left">
                                 <span class="section-title__tagline">service details</span>
-                                <h1 class="section-title__title">{{ service.name }}</h1>
+                                <h1 class="section-title__title">{{ service.name|striptags }}</h1>
                             </div>
                             <p class="services-details__text-1">{{ service.description }}</p>
                             <ul class="services-details__points-list list-unstyled">

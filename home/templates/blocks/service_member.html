@@ -14,7 +14,8 @@
             </div>
             <div class="team-one__content">
                 <h3 class="team-one__name">
-                    <a href="{% url 'service_detail' value.name|striptags|slugify %}">{{ value.name }}</a>
+
+                    <a href="{% url 'service_detail' value.slug|striptags|slugify %}">{{ value.name }}</a>
 
                 </h3>
             </div>
