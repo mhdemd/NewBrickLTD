@@ -96,22 +96,41 @@ class HomePageSlide(Orderable):
 
 
 class ServiceMemberBlock(blocks.StructBlock):
-    name = RichTextBlock(required=True, help_text="Name of the service")
+    name = RichTextBlock(
+        required=True,
+        help_text="Name of the service (used to generate the slug for the URL and show in home page)",
+    )
     image = ImageChooserBlock(required=True, help_text="Image of the service")
     second_image = ImageChooserBlock(required=True, help_text="Image of the service")
 
     description = blocks.TextBlock(
-        required=True, help_text="Description of the service", max_length=1000
+        required=True,
+        help_text="Description of the service above the checkmarks",
+        max_length=1000,
     )
 
     second_description = blocks.TextBlock(
-        required=True, help_text="Description of the service", max_length=1000
+        required=True,
+        help_text="Description of the service below the checkmarks",
+        max_length=1000,
     )
 
     # Three checkmark items as separate CharBlocks
     checkmark_one = blocks.CharBlock(required=True, help_text="First checkmark item")
     checkmark_two = blocks.CharBlock(required=True, help_text="Second checkmark item")
     checkmark_three = blocks.CharBlock(required=True, help_text="Third checkmark item")
+
+    # Meta fields
+    meta_title = blocks.CharBlock(
+        required=False, help_text="Meta title for the service page"
+    )
+    meta_description = blocks.TextBlock(
+        required=False, help_text="Meta description for the service page"
+    )
+    meta_h1 = blocks.CharBlock(required=False, help_text="Meta H1 for the service page")
+    meta_keywords = blocks.TextBlock(
+        required=False, help_text="Meta keywords for the service page"
+    )
 
     class Meta:
         template = "blocks/service_member.html"
