@@ -260,48 +260,6 @@ class HomePage(Page):
         context["form"] = form
         return TemplateResponse(request, template_name, context)
 
-    # Service Show details of each service
-    # def serve_service_detail(self, request, service_name):
-    #     """
-    #     Handle requests to display service details based on the given service_name.
-    #     Searches through service groups and matches the 'slug' field with the URL parameter.
-    #     """
-    #     service_group = None
-
-    #     # Iterate over the blocks in the page body to find the service group
-    #     for block in self.body:
-    #         if block.block_type == "service_group":
-    #             # Iterate over the service members within the service group
-    #             for member in block.value.get("members", []):
-    #                 # Use the 'slug' field instead of slugifying the 'name' field
-    #                 raw_slug = member.get("slug")
-    #                 # Clean the raw slug if necessary
-    #                 cleaned_slug = (
-    #                     bleach.clean(raw_slug, tags=[], strip=True)
-    #                     .replace("\n", " ")
-    #                     .replace("\r", " ")
-    #                     .strip()
-    #                 )
-
-    #                 # Compare with the requested service_name from the URL
-    #                 if cleaned_slug == service_name:
-    #                     service_group = member
-    #                     break
-
-    #             if service_group:
-    #                 break
-
-    #     # If no matching service group is found, raise a 404 error
-    #     if not service_group:
-    #         raise Http404("Service not found")
-
-    #     # Add the found service group to the context
-    #     context = self.get_context(request)
-    #     context["service"] = service_group
-
-    #     # Render the service details template with the context
-    #     return TemplateResponse(request, "home/service_details.html", context)
-
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [InlinePanel("slides", label="Slides")],
