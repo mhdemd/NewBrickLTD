@@ -219,56 +219,55 @@ class HomePage(Page):
 
     # Service Show details of each service
     def serve_service_detail(self, request, service_name):
+        """
+        Handle requests to display service details based on the given service_name.
+        Searches through service groups and matches the slugified service_name with the URL parameter.
+        """
         service_group = None
 
-        # جستجو در block برای پیدا کردن سرویس
+        # Iterate over the blocks in the page body to find the service group
         for block in self.body:
             if block.block_type == "service_group":
+                # Iterate over the service members within the service group
                 for member in block.value.get("members", []):
-                    # اگر نام سرویس RichText است، از source آن استفاده کنید
+                    # Extract the raw service name
                     service_name_raw = (
                         member.get("name").source
                         if hasattr(member.get("name"), "source")
                         else str(member.get("name"))
                     )
 
-                    # حذف تگ‌های HTML از نام سرویس، جایگزینی <br/> و &amp; با فضای مناسب
-                    cleaned_service_name = bleach.clean(
-                        service_name_raw, tags=[], strip=True
-                    )
+                    # Clean the raw service name by removing HTML tags and special characters
                     cleaned_service_name = (
-                        cleaned_service_name.replace("&amp;", "amp-")
-                        .replace("&", "")
+                        bleach.clean(service_name_raw, tags=[], strip=True)
                         .replace("\n", " ")
                         .replace("\r", " ")
+                        .strip()
                     )
 
-                    # اضافه کردن فاصله به جای <br/> و تگ‌های حذف‌شده
-                    cleaned_service_name = cleaned_service_name.replace(
-                        "  ", " "
-                    )  # حذف فاصله‌های مضاعف
-
-                    # تبدیل نام سرویس به اسلاگ برای مقایسه صحیح
+                    # Convert the cleaned service name into a slug-friendly format
                     slugified_name = slugify(cleaned_service_name)
 
-                    # چاپ مقادیر برای دیباگ
+                    # Debugging logs for matching process
                     print(
                         f"Original name: {service_name_raw}, Cleaned name: {cleaned_service_name}, Slugified name: {slugified_name}"
                     )
                     print(f"Requested service name: {service_name}")
 
-                    # بررسی تطابق
+                    # Compare the slugified name with the requested service name
                     if slugified_name == service_name:
                         service_group = member
                         break
 
-        # اگر سرویس پیدا نشد
+        # If no matching service group is found, raise a 404 error
         if not service_group:
             raise Http404("Service not found")
 
+        # Add the found service group to the context
         context = self.get_context(request)
         context["service"] = service_group
 
+        # Render the service details template with the context
         return TemplateResponse(request, "home/service_details.html", context)
 
     content_panels = Page.content_panels + [
