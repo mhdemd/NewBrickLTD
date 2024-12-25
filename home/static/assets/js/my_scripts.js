@@ -312,15 +312,30 @@ const lazyLoadBackgroundImages = () => {
 document.addEventListener("DOMContentLoaded", lazyLoadBackgroundImages);
 
 // Script for Services We Provide top of footer
-function toggleServices() {
+document.addEventListener('DOMContentLoaded', function () {
     const servicesGrid = document.querySelector('.services-grid');
     const showMoreBtn = document.getElementById('show-more-btn');
 
-    if (servicesGrid.classList.contains('expanded')) {
-        servicesGrid.classList.remove('expanded');
-        showMoreBtn.textContent = 'Show More';
-    } else {
-        servicesGrid.classList.add('expanded');
-        showMoreBtn.textContent = 'Show Less';
+    function toggleServices() {
+        if (servicesGrid.classList.contains('expanded')) {
+            servicesGrid.classList.remove('expanded');
+            showMoreBtn.textContent = 'Show More';
+
+            // Reset button styles to dark when closed
+            showMoreBtn.style.backgroundColor = 'var(--assimox-primary)';
+            showMoreBtn.style.color = 'var(--assimox-white)';
+        } else {
+            servicesGrid.classList.add('expanded');
+            showMoreBtn.textContent = 'Show Less';
+
+            // Ensure button styles remain dark when expanded
+            showMoreBtn.style.backgroundColor = 'var(--assimox-primary)';
+            showMoreBtn.style.color = 'var(--assimox-white)';
+        }
     }
-}
+
+    // Add click event listener to the button
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', toggleServices);
+    }
+});
