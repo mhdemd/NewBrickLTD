@@ -29,7 +29,17 @@
     <link rel="stylesheet" href="{% static 'assets/css/newbrick-responsive.css' %}?v={{ STATIC_VERSION }}" />
     <link rel="stylesheet" href="{% static 'assets/css/footer.css' %}?v={{ STATIC_VERSION }}" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16835769986">
+    </script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'AW-16835769986');
+    </script>
+    
     <!-- JSON-LD structured data for business information -->
     <script type="application/ld+json">
         {
