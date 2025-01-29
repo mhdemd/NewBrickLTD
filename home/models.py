@@ -197,6 +197,7 @@ class HomePage(Page):
         form = ContactForm(request.POST or None)
         context = self.get_context(request)
         context["message_limit_reached"] = False  # Add a flag for message limit
+        context["submitted"] = False  # Initialize submitted flag
 
         if request.method == "POST" and form.is_valid():
             # Get user information from the form
@@ -253,6 +254,8 @@ class HomePage(Page):
                 # Delete messages older than one month
                 one_month_ago = timezone.now() - timedelta(days=30)
                 ContactMessage.objects.filter(submitted_at__lt=one_month_ago).delete()
+
+                context["submitted"] = True  # Form successfully submitted
 
             context["form"] = form
             return TemplateResponse(request, template_name, context)
