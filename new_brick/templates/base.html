@@ -395,9 +395,16 @@
 <div class="fixed-footer" style="text-align: center; display: none;">
     <p class="main-menu__call-sub-title" style="margin-bottom: 10px;">Need help?</p>
     <h4 class="main-menu__call-number" style="display: flex; justify-content: center; align-items: center; width: 100%; margin: 0 auto;">
-        <a href="tel:{{ company_info.phone }}" class="btn-call" style="flex: 1; display: flex; justify-content: center; align-items: center; text-decoration: none; color: var(--assimox-white);">
+        {% comment %} <a href="tel:{{ company_info.phone }}" class="btn-call" 
+            style="flex: 1; display: flex; justify-content: center; align-items: center; text-decoration: none; color: var(--assimox-white);">
+            <i class="fas fa-phone-alt" style="margin-right: 5px;"></i> Call
+        </a> {% endcomment %}
+        <a href="tel:{{ company_info.phone }}" class="btn-call" 
+            style="flex: 1; display: flex; justify-content: center; align-items: center; text-decoration: none; color: var(--assimox-white);"
+            onclick="gtag('event', 'conversion', {'send_to': 'AW-16835769986/cTEZCPbq15UaEILt9ds-'});">
             <i class="fas fa-phone-alt" style="margin-right: 5px;"></i> Call
         </a>
+     
         <span class="separator" style="margin: 0 20px; color: #666;">|</span>
         <a href="https://wa.me/{{ company_info.whatsapp }}" target="_blank" class="btn-whatsapp" style="flex: 1; display: flex; justify-content: center; align-items: center; text-decoration: none; color: var(--assimox-white);">
             <i class="fab fa-whatsapp" style="margin-right: 5px;"></i> WhatsApp
