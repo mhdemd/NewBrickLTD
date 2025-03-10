@@ -60,6 +60,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "new_brick.middleware.Redirect404Middleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 

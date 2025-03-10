@@ -1,5 +1,6 @@
 # Environments #
 ################
+
 /venv/
 /.venv/
 /.env
@@ -20,6 +21,8 @@ __pycache__/
 
 # Django #
 ##########
+/public
+/public/db.sqlite3
 /public/media
 #/db.sqlite3
 /local_settings.py
