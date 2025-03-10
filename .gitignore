@@ -83,6 +83,8 @@ coverage.xml
 
 # Other #
 ##########
+codered_pass.txt
+/speed/
 /*.log
 *.tmp
 *.bak
